@@ -103,3 +103,6 @@ docs/
 dokumentacja/
 *.pdf
 *.txt
+runTests*
+build/
+*.csv
