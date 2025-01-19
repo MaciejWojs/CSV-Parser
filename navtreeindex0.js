@@ -40,6 +40,5 @@ var NAVTREEINDEX0 =
 "utils_8cpp.html":[1,0,5],
 "utils_8cpp.html#a76e5e79ce66375ea90e5aad0a84e7c96":[1,0,5,0],
 "utils_8hpp.html":[1,0,6],
-"utils_8hpp.html#a76e5e79ce66375ea90e5aad0a84e7c96":[1,0,6,0],
 "utils_8hpp_source.html":[1,0,6]
 };

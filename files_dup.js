@@ -6,5 +6,5 @@ var files_dup =
     [ "Record.cpp", "Record_8cpp.html", "Record_8cpp" ],
     [ "Record.hpp", "Record_8hpp.html", "Record_8hpp" ],
     [ "utils.cpp", "utils_8cpp.html", "utils_8cpp" ],
-    [ "utils.hpp", "utils_8hpp.html", "utils_8hpp" ]
+    [ "utils.hpp", "utils_8hpp.html", null ]
 ];

@@ -6,3 +6,17 @@ class CSVParser {
 
 }
 @enduml
+@startuml inline_umlgraph_3.png
+class Record {
+-AutoConsumption : float
+-Consumption : float
+-Export : float
+-Import : float
+-Production : float
+-Time : std::string
++Record()
++operator>>(std::istream& is, Record& Record) : std :: istream&
++operator<<(std::ostream& os, const Record& Record) : std :: ostream&
+
+}
+@enduml
