@@ -22,9 +22,10 @@ std::istream& operator>>(std::istream& is, Record& Record) {
     std::string line;
     if (!std::getline(is, line) || line.empty()) {
 
-        std::cerr << "Error: Could not read line from file or empty line" << std::endl;
-        exit(1);
+        // std::cerr << "Error: Could not read line from file or empty line" << std::endl;
+        // exit(1);
         // return is;
+        throw std::runtime_error("Could not read line from file");
 
     }
     line = trimAllQuotationMarks(line);
@@ -33,15 +34,42 @@ std::istream& operator>>(std::istream& is, Record& Record) {
     std::istringstream ss(line);
 
     std::getline(ss, Record.Time, ',');
-    ss >> Record.AutoConsumption;
-    ss.ignore(1);
-    ss >> Record.Export;
-    ss.ignore(1);
-    ss >> Record.Import;
-    ss.ignore(1);
-    ss >> Record.Consumption;
-    ss.ignore(1);
-    ss >> Record.Production;
+    std::string value;
+
+    try {
+        std::getline(ss, value, ',');
+        Record.AutoConsumption = std::stod(value);
+    } catch (const std::exception& e) {
+        std::throw_with_nested(std::runtime_error("Could not convert string to double in AutoConsumption [second field]"));
+    }
+    try {
+        std::getline(ss, value, ',');
+        Record.Export = std::stod(value);
+    } catch (const std::exception& e) {
+        std::throw_with_nested(std::runtime_error("Could not convert string to double in Export [third field]"));
+    }
+
+    try {
+        std::getline(ss, value, ',');
+        Record.Import = std::stod(value);
+    } catch (const std::exception& e) {
+        std::throw_with_nested(std::runtime_error("Could not convert string to double in Import [fourth field]"));
+    }
+
+    try {
+        std::getline(ss, value, ',');
+        Record.Consumption = std::stod(value);
+    } catch (const std::exception& e) {
+        std::throw_with_nested(std::runtime_error("Could not convert string to double in Consumption [fifth field]"));
+    }
+
+    try {
+        std::getline(ss, value, ',');
+        Record.Production = std::stod(value);
+    } catch (const std::exception& e) {
+        std::throw_with_nested(std::runtime_error("Could not convert string to double in Production [sixth field]"));
+    }
+
     return is;
 }
 
