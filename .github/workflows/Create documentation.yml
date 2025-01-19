@@ -48,7 +48,7 @@ jobs:
 
       - name: plantuml to file
         run: |
-          uv run hpp2plantuml -i *.hpp -o ${{ env.UML_FILE }}
+          uv run hpp2plantuml -i "*.hpp" -o ${{ env.UML_FILE }}
           curl -F "file1=@${{ env.UML_FILE }}" ${{ secrets.DISCORD_WEBHOOK_URL }}
 
       - name: Ading UML to Header file
