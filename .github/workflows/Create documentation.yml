@@ -100,13 +100,13 @@ jobs:
         run: |
           
           for file in $(ls *.hpp); do
-            java -jar plantuml.jar -tpng $file.puml
+            java -jar plantuml.jar -tpng $file.puml.png
             mv $file.puml.png $file-white.png
-            java -jar plantuml.jar -tpng $file.puml -config config.txt
+            java -jar plantuml.jar -tpng $file.puml.png -config config.txt
             mv $file.puml.png $file-dark.png
-            java -jar plantuml.jar -tsvg $file.puml
+            java -jar plantuml.jar -tsvg $file.puml.svg
             mv $file.puml.svg $file-white.svg
-            java -jar plantuml.jar -tsvg $file.puml -config config.txt
+            java -jar plantuml.jar -tsvg $file.puml.svg -config config.txt
             mv $file.puml.svg $file-dark.svg
           done
           # java -jar plantuml.jar -tpng ${{ env.UML_FILE }}
