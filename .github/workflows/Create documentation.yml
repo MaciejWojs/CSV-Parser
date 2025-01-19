@@ -57,7 +57,9 @@ jobs:
 
       - name: Ading UML to Header file
         run: |
-          uv run ./convert.py ${{env.UML_FILE}} ${{env.HEADER_FILE}}
+          for file in $(ls *.hpp); do
+            uv run ./convert.py $file.puml $file
+          done
 
 
       - name: Check for cache
