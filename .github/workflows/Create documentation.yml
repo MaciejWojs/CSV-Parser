@@ -98,16 +98,16 @@ jobs:
 
       - name: Generate UML assets
         run: |
-          
-          for file in $(ls *.hpp); do
-            java -jar plantuml.jar -tpng $file.puml.png
-            mv $file.puml.png $file-white.png
-            java -jar plantuml.jar -tpng $file.puml.png -config config.txt
-            mv $file.puml.png $file-dark.png
-            java -jar plantuml.jar -tsvg $file.puml.svg
-            mv $file.puml.svg $file-white.svg
-            java -jar plantuml.jar -tsvg $file.puml.svg -config config.txt
-            mv $file.puml.svg $file-dark.svg
+          ls *.puml
+          for file in $(ls *.puml); do
+            java -jar plantuml.jar -tpng $file.png
+            mv $file.png $file-white.png
+            java -jar plantuml.jar -tpng $file.png -config config.txt
+            mv $file.png $file-dark.png
+            java -jar plantuml.jar -tsvg $file.svg
+            mv $file.svg $file-white.svg
+            java -jar plantuml.jar -tsvg $file.svg -config config.txt
+            mv $file.svg $file-dark.svg
           done
           # java -jar plantuml.jar -tpng ${{ env.UML_FILE }}
           # mv ${{env.UML_WITHOUT_EXT}}.png uml-white.png
