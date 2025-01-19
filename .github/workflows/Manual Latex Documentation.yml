@@ -8,7 +8,7 @@ on:
 
 env:
     FILE_NAME: Latex-Documentation
-    REPO: ${{ github.event.repository.name }}-Docs
+    REPO: ${{ github.repository }}-Docs
     PACKAGES: graphviz ghostscript inkscape python3
     IS_TAG: ${{ startsWith(github.ref, 'refs/tags/') }}
     OTHER_REPO_PATH: ./docs
