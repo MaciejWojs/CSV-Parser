@@ -3,6 +3,8 @@
 #include <ranges>
 #include <algorithm>
 
+
+
 std::string trimAllQuotationMarks(const std::string& str) {
     auto copy = str;
     auto const first = std::ranges::remove(copy, '"');

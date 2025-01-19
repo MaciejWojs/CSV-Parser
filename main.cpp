@@ -3,28 +3,18 @@
 #include <string>
 #include <sstream>
 #include <limits>
-#include "Record.hpp"
-#define FILENAME "Chart-Export2.csv"
+#include "CSV-Parser.hpp"
 
 int main() {
-    std::ifstream file(FILENAME);
-    if (!file.is_open()) {
-        std::cerr << "Error: Could not open file " << FILENAME << std::endl;
-        return 1;
+    CSVParser parser("Chart-Export.csv");
+    std::vector<Record> records = parser.parse();
+
+
+    for (const auto& record : records) {
+        std::cout << record << std::endl;
     }
 
-    // int i = 0;
-    std::string line;
-    // std::istringstream ss(line);
-    file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cout << "Ilosc rekordow: " << records.size() << std::endl;
 
-    Record it;
-    file >> it;
-    // while (file >> it) {
-    std::cout << it << std::endl;
-    // if (i++ == 10) break;
-// }
-
-    std::cout << "Hello, World!" << std::endl;
     return 0;
 }

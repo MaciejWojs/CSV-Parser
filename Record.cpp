@@ -21,7 +21,11 @@ Record::Record() :
 std::istream& operator>>(std::istream& is, Record& Record) {
     std::string line;
     if (!std::getline(is, line) || line.empty()) {
-        return is;
+
+        std::cerr << "Error: Could not read line from file or empty line" << std::endl;
+        exit(1);
+        // return is;
+
     }
     line = trimAllQuotationMarks(line);
     std::cout << line << std::endl;
