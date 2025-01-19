@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSV-Parser: Dokumentacja klasy Record</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CSV-Parser<span id="projectnumber">&#160;v0.0.2</span>
+   </div>
+   <div id="projectbrief">Implementacja CSV-Parser</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classRecord.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
+<a href="#friends">Przyjaciele</a> &#124;
+<a href="classRecord-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy Record</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Record_8hpp_source.html">Record.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:ae8ee53ffec6ff4dac9911517d47e86a5" id="r_ae8ee53ffec6ff4dac9911517d47e86a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8ee53ffec6ff4dac9911517d47e86a5">Record</a> ()</td></tr>
+<tr class="separator:ae8ee53ffec6ff4dac9911517d47e86a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a0ab199529200222fbe5d06411e36084c" id="r_a0ab199529200222fbe5d06411e36084c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ab199529200222fbe5d06411e36084c">Time</a></td></tr>
+<tr class="separator:a0ab199529200222fbe5d06411e36084c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6580edcfaf84ceefc03468870a324bc" id="r_aa6580edcfaf84ceefc03468870a324bc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6580edcfaf84ceefc03468870a324bc">AutoConsumption</a></td></tr>
+<tr class="separator:aa6580edcfaf84ceefc03468870a324bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea68c2e23e48f8e7316b9f3e932787be" id="r_aea68c2e23e48f8e7316b9f3e932787be"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea68c2e23e48f8e7316b9f3e932787be">Export</a></td></tr>
+<tr class="separator:aea68c2e23e48f8e7316b9f3e932787be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6daba87ddf40bcc86c2852ab1aa0c6bc" id="r_a6daba87ddf40bcc86c2852ab1aa0c6bc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6daba87ddf40bcc86c2852ab1aa0c6bc">Import</a></td></tr>
+<tr class="separator:a6daba87ddf40bcc86c2852ab1aa0c6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a67e2449c79bce4340276a1ac989f3" id="r_a62a67e2449c79bce4340276a1ac989f3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62a67e2449c79bce4340276a1ac989f3">Consumption</a></td></tr>
+<tr class="separator:a62a67e2449c79bce4340276a1ac989f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3945cdb36df3ca909459894451db477b" id="r_a3945cdb36df3ca909459894451db477b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3945cdb36df3ca909459894451db477b">Production</a></td></tr>
+<tr class="separator:a3945cdb36df3ca909459894451db477b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Przyjaciele</h2></td></tr>
+<tr class="memitem:a80c4cb4b2179c66896a66052b26891f4" id="r_a80c4cb4b2179c66896a66052b26891f4"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80c4cb4b2179c66896a66052b26891f4">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classRecord.html">Record</a> &amp;<a class="el" href="classRecord.html">Record</a>)</td></tr>
+<tr class="separator:a80c4cb4b2179c66896a66052b26891f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a092e129e09b8d3a4cfa1793a2fb6d486" id="r_a092e129e09b8d3a4cfa1793a2fb6d486"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a092e129e09b8d3a4cfa1793a2fb6d486">operator&gt;&gt;</a> (std::istream &amp;is, <a class="el" href="classRecord.html">Record</a> &amp;<a class="el" href="classRecord.html">Record</a>)</td></tr>
+<tr class="separator:a092e129e09b8d3a4cfa1793a2fb6d486"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="ae8ee53ffec6ff4dac9911517d47e86a5" name="ae8ee53ffec6ff4dac9911517d47e86a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8ee53ffec6ff4dac9911517d47e86a5">&#9670;&#160;</a></span>Record()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Record::Record </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja przyjaciół i powiązanych symboli</h2>
+<a id="a80c4cb4b2179c66896a66052b26891f4" name="a80c4cb4b2179c66896a66052b26891f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80c4cb4b2179c66896a66052b26891f4">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classRecord.html">Record</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>Record</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a092e129e09b8d3a4cfa1793a2fb6d486" name="a092e129e09b8d3a4cfa1793a2fb6d486"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a092e129e09b8d3a4cfa1793a2fb6d486">&#9670;&#160;</a></span>operator&gt;&gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::istream &amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;</td>          <td class="paramname"><span class="paramname"><em>is</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRecord.html">Record</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>Record</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="aa6580edcfaf84ceefc03468870a324bc" name="aa6580edcfaf84ceefc03468870a324bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6580edcfaf84ceefc03468870a324bc">&#9670;&#160;</a></span>AutoConsumption</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Record::AutoConsumption</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62a67e2449c79bce4340276a1ac989f3" name="a62a67e2449c79bce4340276a1ac989f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62a67e2449c79bce4340276a1ac989f3">&#9670;&#160;</a></span>Consumption</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Record::Consumption</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea68c2e23e48f8e7316b9f3e932787be" name="aea68c2e23e48f8e7316b9f3e932787be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea68c2e23e48f8e7316b9f3e932787be">&#9670;&#160;</a></span>Export</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Record::Export</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6daba87ddf40bcc86c2852ab1aa0c6bc" name="a6daba87ddf40bcc86c2852ab1aa0c6bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6daba87ddf40bcc86c2852ab1aa0c6bc">&#9670;&#160;</a></span>Import</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Record::Import</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3945cdb36df3ca909459894451db477b" name="a3945cdb36df3ca909459894451db477b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3945cdb36df3ca909459894451db477b">&#9670;&#160;</a></span>Production</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Record::Production</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ab199529200222fbe5d06411e36084c" name="a0ab199529200222fbe5d06411e36084c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ab199529200222fbe5d06411e36084c">&#9670;&#160;</a></span>Time</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Record::Time</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="Record_8hpp_source.html">Record.hpp</a></li>
+<li><a class="el" href="Record_8cpp.html">Record.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classRecord.html">Record</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
