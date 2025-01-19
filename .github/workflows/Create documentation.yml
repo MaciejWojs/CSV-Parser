@@ -98,14 +98,25 @@ jobs:
 
       - name: Generate UML assets
         run: |
-          java -jar plantuml.jar -tpng ${{ env.UML_FILE }}
-          mv ${{env.UML_WITHOUT_EXT}}.png uml-white.png
-          java -jar plantuml.jar -tpng ${{ env.UML_FILE }} -config config.txt
-          mv ${{env.UML_WITHOUT_EXT}}.png uml-dark.png
-          java -jar plantuml.jar -tsvg ${{ env.UML_FILE }}
-          mv ${{env.UML_WITHOUT_EXT}}.svg uml-white.svg
-          java -jar plantuml.jar -tsvg ${{ env.UML_FILE }} -config config.txt
-          mv ${{env.UML_WITHOUT_EXT}}.svg uml-dark.svg
+          
+          for file in $(ls *.hpp); do
+            java -jar plantuml.jar -tpng $file.puml
+            mv $file.puml.png $file-white.png
+            java -jar plantuml.jar -tpng $file.puml -config config.txt
+            mv $file.puml.png $file-dark.png
+            java -jar plantuml.jar -tsvg $file.puml
+            mv $file.puml.svg $file-white.svg
+            java -jar plantuml.jar -tsvg $file.puml -config config.txt
+            mv $file.puml.svg $file-dark.svg
+          done
+          # java -jar plantuml.jar -tpng ${{ env.UML_FILE }}
+          # mv ${{env.UML_WITHOUT_EXT}}.png uml-white.png
+          # java -jar plantuml.jar -tpng ${{ env.UML_FILE }} -config config.txt
+          # mv ${{env.UML_WITHOUT_EXT}}.png uml-dark.png
+          # java -jar plantuml.jar -tsvg ${{ env.UML_FILE }}
+          # mv ${{env.UML_WITHOUT_EXT}}.svg uml-white.svg
+          # java -jar plantuml.jar -tsvg ${{ env.UML_FILE }} -config config.txt
+          # mv ${{env.UML_WITHOUT_EXT}}.svg uml-dark.svg
       
       - name: Prettify doxygen
         run: |
@@ -194,10 +205,8 @@ jobs:
           artifacts: |
             pl-${{ env.FILE_NAME }}.pdf
             en-${{ env.FILE_NAME }}.pdf
-            ${{env.UML_WITHOUT_EXT}}-white.png
-            ${{env.UML_WITHOUT_EXT}}-dark.png
-            ${{env.UML_WITHOUT_EXT}}-white.svg
-            ${{env.UML_WITHOUT_EXT}}-dark.svg
+            *.png
+            *.svg
 
       - name: Send Discord Notification
         if: env.IS_TAG == 'true'
