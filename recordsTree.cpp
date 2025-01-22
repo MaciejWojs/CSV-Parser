@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <iomanip>
+#include <ranges>
 
 // RecordsTree::RecordsTree() {}
 Quarter RecordsTree::getQuarter(const std::string& time) {
@@ -112,7 +113,7 @@ void RecordsTree::sortRecords() {
         for (auto& [month, monthNode] : yearNode.months) {
             for (auto& [day, dayNode] : monthNode.days) {
                 for (auto& [quarter, quarterNode] : dayNode.quarters) {
-                    std::sort(quarterNode.records.begin(), quarterNode.records.end(), [&](const Record& a, const Record& b) {
+                    std::ranges::sort(quarterNode.records, [&](const Record& a, const Record& b) {
                         return a.getTime() < b.getTime();
                         });
                 }
