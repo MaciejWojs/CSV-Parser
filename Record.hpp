@@ -12,7 +12,7 @@
 #define FIELDS_IN_CSV 6
 
 class Record {
-    std::string Time;
+    time_t Time;
     float AutoConsumption;
     float Export;
     float Import;
@@ -21,6 +21,7 @@ class Record {
 
     public:
     Record();
+    const time_t& getTime() const;
     friend std::ostream& operator<<(std::ostream& os, const Record& Record);
     friend std::istream& operator>>(std::istream& is, Record& Record);
 };

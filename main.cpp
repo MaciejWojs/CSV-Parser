@@ -4,6 +4,7 @@
 #include <sstream>
 #include <limits>
 #include "CSV-Parser.hpp"
+#include "recordsTree.hpp"
 
 int main() {
     CSVParser parser("Chart-Export.csv");
@@ -15,6 +16,15 @@ int main() {
     }
 
     std::cout << "Ilosc rekordow: " << records.size() << std::endl;
+
+    RecordsTree tree;
+    for (const auto& record : records) {
+        tree.addRecord(record);
+    }
+
+    tree.sortRecords();
+    tree.printTree();
+    tree.printRecord();
 
     return 0;
 }

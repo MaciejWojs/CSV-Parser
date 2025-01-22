@@ -7,6 +7,8 @@
 #include <ranges>
 #include "utils.hpp"
 #include "Record.hpp"
+#include <ctime>
+#include <iomanip>
 
 Record::Record() :
     Time{},
@@ -33,8 +35,18 @@ std::istream& operator>>(std::istream& is, Record& Record) {
 
     std::istringstream ss(line);
 
-    std::getline(ss, Record.Time, ',');
     std::string value;
+    try {
+        std::getline(ss, value, ',');
+        std::string time = value;
+        std::tm tm = {};
+        std::istringstream ss(time);
+        ss >> std::get_time(&tm, "%d.%m.%Y %H:%M");
+        Record.Time = std::mktime(&tm);
+    } catch (const std::exception& e) {
+        std::throw_with_nested(std::runtime_error("Could not convert string to time_t in Time [first field]"));
+    }
+
 
     try {
         std::getline(ss, value, ',');
@@ -74,7 +86,12 @@ std::istream& operator>>(std::istream& is, Record& Record) {
 }
 
 std::ostream& operator<<(std::ostream& os, const Record& Record) {
-    os << "Time: " << Record.Time << " AutoConsumption: " << Record.AutoConsumption << " Export: " << Record.Export
+    std::tm tm = *std::localtime(&Record.Time);
+    os << "Time: " << std::put_time(&tm, "%d.%m.%Y %H:%M") << " AutoConsumption: " << Record.AutoConsumption << " Export: " << Record.Export
         << " Import: " << Record.Import << " Consumption: " << Record.Consumption << " Production: " << Record.Production;
     return os;
+}
+
+const time_t& Record::getTime() const {
+    return Time;
 }
