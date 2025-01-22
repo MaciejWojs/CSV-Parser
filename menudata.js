@@ -37,4 +37,5 @@ var menudata={children:[
 {text:"Składowe plików",url:"globals.html",children:[
 {text:"Wszystko",url:"globals.html"},
 {text:"Funkcje",url:"globals_func.html"},
+{text:"Wyliczenia",url:"globals_enum.html"},
 {text:"Definicje",url:"globals_defs.html"}]}]}]}

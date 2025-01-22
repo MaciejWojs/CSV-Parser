@@ -1,12 +1,14 @@
 var indexSectionsWithContent =
 {
-  0: "acefimoprtu",
-  1: "cr",
+  0: "acdefgimopqrstuy",
+  1: "cdmqry",
   2: "cmru",
-  3: "cmoprt",
-  4: "acefipt",
-  5: "o",
-  6: "f"
+  3: "acgmoprst",
+  4: "acdefimpqrty",
+  5: "q",
+  6: "q",
+  7: "o",
+  8: "f"
 };
 
 var indexSectionNames =
@@ -16,8 +18,10 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "related",
-  6: "defines"
+  5: "enums",
+  6: "enumvalues",
+  7: "related",
+  8: "defines"
 };
 
 var indexSectionLabels =
@@ -27,7 +31,9 @@ var indexSectionLabels =
   2: "Pliki",
   3: "Funkcje",
   4: "Zmienne",
-  5: "Przyjaciele",
-  6: "Definicje"
+  5: "Wyliczenia",
+  6: "Wartości wyliczeń",
+  7: "Przyjaciele",
+  8: "Definicje"
 };
 

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['operator_3c_3c_0',['operator&lt;&lt;',['../Record_8cpp.html#a80c4cb4b2179c66896a66052b26891f4',1,'Record.cpp']]],
-  ['operator_3e_3e_1',['operator&gt;&gt;',['../Record_8cpp.html#a092e129e09b8d3a4cfa1793a2fb6d486',1,'Record.cpp']]]
+  ['getquarter_0',['getQuarter',['../classRecordsTree.html#ad158c0a392345b8682fef8c664943765',1,'RecordsTree']]],
+  ['gettime_1',['getTime',['../classRecord.html#a9e5c0e6d1bac76a3cf59df7411ba78cc',1,'Record']]]
 ];

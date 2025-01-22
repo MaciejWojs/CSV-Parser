@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['import_0',['Import',['../classRecord.html#a6daba87ddf40bcc86c2852ab1aa0c6bc',1,'Record']]]
+  ['filename_0',['filename',['../classCSVParser.html#adeac14aa5f4cf638f69c033beb2a2ccb',1,'CSVParser']]]
 ];

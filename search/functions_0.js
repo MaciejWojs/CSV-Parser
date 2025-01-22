@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['csvparser_0',['CSVParser',['../classCSVParser.html#a3700e49c67b4e4831a734f6a7140135b',1,'CSVParser']]]
+  ['addrecord_0',['addRecord',['../classRecordsTree.html#a6e63285e70bcf63eb2f08ca930c93c5e',1,'RecordsTree']]]
 ];

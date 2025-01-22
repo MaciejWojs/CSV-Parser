@@ -13,10 +13,21 @@ class Record {
 -Export : float
 -Import : float
 -Production : float
--Time : std::string
+-Time : time_t
 +Record()
 +operator>>(std::istream& is, Record& Record) : std :: istream&
 +operator<<(std::ostream& os, const Record& Record) : std :: ostream&
++getTime() : time_t& {query}
+
+}
+@enduml
+@startuml inline_umlgraph_5.png
+class RecordsTree {
+-getQuarter(const std::string& time) : int
+-years : std::map<int, YearNode>
+-parseDateTime(const time_t& time, int& year, int& month, int& day, Quarter& quarter) : void
+-print(void (* ) ( const Record& Record ) callable) : void {query}
++addRecord(const Record& record) : void
 
 }
 @enduml
