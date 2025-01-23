@@ -203,13 +203,12 @@ jobs:
         if: env.IS_TAG == 'true'
         run: cp ${{env.LATEX_DIR}}refman.pdf ./en-${{ env.FILE_NAME }}.pdf
 
-      - name: Upload PDFs and UML assets
+      - name: Release PDFs
         if: env.IS_TAG == 'true'
-        uses: actions/upload-artifact@v4.6.0
+        uses: ncipollo/release-action@v1
         with:
-          overwrite: true
-          name: documentation-assets
-          path: |
+          allowUpdates: true
+          artifacts: |
             pl-${{ env.FILE_NAME }}.pdf
             en-${{ env.FILE_NAME }}.pdf
             *.png
