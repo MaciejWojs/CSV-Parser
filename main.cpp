@@ -32,12 +32,12 @@ int main() {
     // double sum4 = tree.getConsumptionSum(records, "01.10.2020 8:00", "01.10.2020 9:30");
     // double sum5 = tree.getProductionSum(records, "01.10.2020 8:00", "01.10.2020 9:30");
 
-    tree.printRecordsBetweenTimes("01.10.2020 8:00", "01.10.2020 9:30");
+    // tree.printRecordsBetweenTimes("01.10.2020 8:00", "01.10.2020 9:30");
 
 
     // std::cout << "Ilosc rekordow pomiedzy 8:00 a 9:30: " << tree.getNumberOfItemsBetweenTimes(records, "01.10.2020 8:00", "01.10.2020 9:30") << std::endl;
 
-    tree.compareAutoConsumption(records, "01.10.2020 8:00", "01.10.2020 9:30", "01.10.2020 9:45", "01.10.2020 10:45");
+    // tree.compareAutoConsumption(records, "01.10.2020 8:00", "01.10.2020 9:30", "01.10.2020 9:45", "01.10.2020 10:45");
     // tree.compareExport(records, "01.10.2020 8:00", "01.10.2020 9:30", "01.10.2020 9:45", "01.10.2020 10:45");
     // tree.compareImport(records, "01.10.2020 8:00", "01.10.2020 9:30", "01.10.2020 9:45", "01.10.2020 10:45");
     // tree.compareProduction(records, "01.10.2020 8:00", "01.10.2020 9:30", "01.10.2020 9:45", "01.10.2020 10:45");
@@ -46,7 +46,7 @@ int main() {
     //------------------------------------------------------------------------------------------------------------
 
     enum class Operation {
-        PrintRecordsBetweenTimes,
+        PrintRecordsBetweenTimes = 1,
         CompareAutoConsumption,
         CompareExport,
         CompareImport,
@@ -62,12 +62,7 @@ int main() {
         GetImportAverage,
         GetConsumptionAverage,
         GetProductionAverage,
-        //TODO ULTRA 
-
         SearchThroughRecords,
-
-        //TODO ULTRA  
-
         Exit
     };
 
@@ -91,7 +86,7 @@ int main() {
         std::cout << "17. Wyszukaj rekordy" << std::endl;
         std::cout << "18. Wyjdz" << std::endl;
 
-        int switchOperation;
+        int switchOperation{};
         std::cin >> switchOperation;
 
         auto operation = static_cast<Operation>(switchOperation);
@@ -101,10 +96,10 @@ int main() {
             {
                 std::string time1, time2;
                 std::cout << "Podaj pierwsza godzine: ";
-                std::cin >> time1;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1);
                 std::cout << "Podaj druga godzine: ";
-                std::cin >> time2;
-
+                std::getline(std::cin, time2);
                 tree.printRecordsBetweenTimes(time1, time2);
                 break;
             }
@@ -112,13 +107,14 @@ int main() {
             {
                 std::string time1_begin, time1_end, time2_begin, time2_end;
                 std::cout << "Podaj poczatek pierwszego okresu: ";
-                std::cin >> time1_begin;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1_begin);
                 std::cout << "Podaj koniec pierwszego okresu: ";
-                std::cin >> time1_end;
+                std::getline(std::cin, time1_end);
                 std::cout << "Podaj poczatek drugiego okresu: ";
-                std::cin >> time2_begin;
+                std::getline(std::cin, time2_begin);
                 std::cout << "Podaj koniec drugiego okresu: ";
-                std::cin >> time2_end;
+                std::getline(std::cin, time2_end);
 
                 tree.compareAutoConsumption(records, time1_begin, time1_end, time2_begin, time2_end);
                 break;
@@ -127,13 +123,14 @@ int main() {
             {
                 std::string time1_begin, time1_end, time2_begin, time2_end;
                 std::cout << "Podaj poczatek pierwszego okresu: ";
-                std::cin >> time1_begin;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1_begin);
                 std::cout << "Podaj koniec pierwszego okresu: ";
-                std::cin >> time1_end;
+                std::getline(std::cin, time1_end);
                 std::cout << "Podaj poczatek drugiego okresu: ";
-                std::cin >> time2_begin;
+                std::getline(std::cin, time2_begin);
                 std::cout << "Podaj koniec drugiego okresu: ";
-                std::cin >> time2_end;
+                std::getline(std::cin, time2_end);
 
                 tree.compareExport(records, time1_begin, time1_end, time2_begin, time2_end);
                 break;
@@ -142,13 +139,14 @@ int main() {
             {
                 std::string time1_begin, time1_end, time2_begin, time2_end;
                 std::cout << "Podaj poczatek pierwszego okresu: ";
-                std::cin >> time1_begin;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1_begin);
                 std::cout << "Podaj koniec pierwszego okresu: ";
-                std::cin >> time1_end;
+                std::getline(std::cin, time1_end);
                 std::cout << "Podaj poczatek drugiego okresu: ";
-                std::cin >> time2_begin;
+                std::getline(std::cin, time2_begin);
                 std::cout << "Podaj koniec drugiego okresu: ";
-                std::cin >> time2_end;
+                std::getline(std::cin, time2_end);
 
                 tree.compareImport(records, time1_begin, time1_end, time2_begin, time2_end);
                 break;
@@ -157,13 +155,14 @@ int main() {
             {
                 std::string time1_begin, time1_end, time2_begin, time2_end;
                 std::cout << "Podaj poczatek pierwszego okresu: ";
-                std::cin >> time1_begin;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1_begin);
                 std::cout << "Podaj koniec pierwszego okresu: ";
-                std::cin >> time1_end;
+                std::getline(std::cin, time1_end);
                 std::cout << "Podaj poczatek drugiego okresu: ";
-                std::cin >> time2_begin;
+                std::getline(std::cin, time2_begin);
                 std::cout << "Podaj koniec drugiego okresu: ";
-                std::cin >> time2_end;
+                std::getline(std::cin, time2_end);
 
                 tree.compareConsumption(records, time1_begin, time1_end, time2_begin, time2_end);
                 break;
@@ -172,13 +171,14 @@ int main() {
             {
                 std::string time1_begin, time1_end, time2_begin, time2_end;
                 std::cout << "Podaj poczatek pierwszego okresu: ";
-                std::cin >> time1_begin;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1_begin);
                 std::cout << "Podaj koniec pierwszego okresu: ";
-                std::cin >> time1_end;
+                std::getline(std::cin, time1_end);
                 std::cout << "Podaj poczatek drugiego okresu: ";
-                std::cin >> time2_begin;
+                std::getline(std::cin, time2_begin);
                 std::cout << "Podaj koniec drugiego okresu: ";
-                std::cin >> time2_end;
+                std::getline(std::cin, time2_end);
 
                 tree.compareProduction(records, time1_begin, time1_end, time2_begin, time2_end);
                 break;
@@ -189,9 +189,10 @@ int main() {
             {
                 std::string time1, time2;
                 std::cout << "Podaj poczatek okresu: ";
-                std::cin >> time1;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1);
                 std::cout << "Podaj koniec okresu: ";
-                std::cin >> time2;
+                std::getline(std::cin, time2);
 
                 double sum = tree.getAutoConsumptionSum(records, time1, time2);
                 std::cout << "Suma autokonsumpcji: " << sum << std::endl;
@@ -201,9 +202,10 @@ int main() {
             {
                 std::string time1, time2;
                 std::cout << "Podaj poczatek okresu: ";
-                std::cin >> time1;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1);
                 std::cout << "Podaj koniec okresu: ";
-                std::cin >> time2;
+                std::getline(std::cin, time2);
 
                 double sum = tree.getExportSum(records, time1, time2);
                 std::cout << "Suma eksportu: " << sum << std::endl;
@@ -213,9 +215,10 @@ int main() {
             {
                 std::string time1, time2;
                 std::cout << "Podaj poczatek okresu: ";
-                std::cin >> time1;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1);
                 std::cout << "Podaj koniec okresu: ";
-                std::cin >> time2;
+                std::getline(std::cin, time2);
 
                 double sum = tree.getImportSum(records, time1, time2);
                 std::cout << "Suma importu: " << sum << std::endl;
@@ -225,9 +228,10 @@ int main() {
             {
                 std::string time1, time2;
                 std::cout << "Podaj poczatek okresu: ";
-                std::cin >> time1;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1);
                 std::cout << "Podaj koniec okresu: ";
-                std::cin >> time2;
+                std::getline(std::cin, time2);
 
                 double sum = tree.getConsumptionSum(records, time1, time2);
                 std::cout << "Suma konsumpcji: " << sum << std::endl;
@@ -237,9 +241,10 @@ int main() {
             {
                 std::string time1, time2;
                 std::cout << "Podaj poczatek okresu: ";
-                std::cin >> time1;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1);
                 std::cout << "Podaj koniec okresu: ";
-                std::cin >> time2;
+                std::getline(std::cin, time2);
 
                 double sum = tree.getProductionSum(records, time1, time2);
                 std::cout << "Suma produkcji: " << sum << std::endl;
@@ -249,9 +254,10 @@ int main() {
             {
                 std::string time1, time2;
                 std::cout << "Podaj poczatek okresu: ";
-                std::cin >> time1;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1);
                 std::cout << "Podaj koniec okresu: ";
-                std::cin >> time2;
+                std::getline(std::cin, time2);
 
                 double avg = tree.getAutoConsumptionAverage(records, time1, time2);
                 std::cout << "Srednia autokonsumpcji: " << avg << std::endl;
@@ -261,9 +267,10 @@ int main() {
             {
                 std::string time1, time2;
                 std::cout << "Podaj poczatek okresu: ";
-                std::cin >> time1;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1);
                 std::cout << "Podaj koniec okresu: ";
-                std::cin >> time2;
+                std::getline(std::cin, time2);
 
                 double avg = tree.getExportAverage(records, time1, time2);
                 std::cout << "Srednia eksportu: " << avg << std::endl;
@@ -273,9 +280,10 @@ int main() {
             {
                 std::string time1, time2;
                 std::cout << "Podaj poczatek okresu: ";
-                std::cin >> time1;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1);
                 std::cout << "Podaj koniec okresu: ";
-                std::cin >> time2;
+                std::getline(std::cin, time2);
 
                 double avg = tree.getImportAverage(records, time1, time2);
                 std::cout << "Srednia importu: " << avg << std::endl;
@@ -285,9 +293,10 @@ int main() {
             {
                 std::string time1, time2;
                 std::cout << "Podaj poczatek okresu: ";
-                std::cin >> time1;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1);
                 std::cout << "Podaj koniec okresu: ";
-                std::cin >> time2;
+                std::getline(std::cin, time2);
 
                 double avg = tree.getConsumptionAverage(records, time1, time2);
                 std::cout << "Srednia konsumpcji: " << avg << std::endl;
@@ -297,9 +306,10 @@ int main() {
             {
                 std::string time1, time2;
                 std::cout << "Podaj poczatek okresu: ";
-                std::cin >> time1;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time1);
                 std::cout << "Podaj koniec okresu: ";
-                std::cin >> time2;
+                std::getline(std::cin, time2);
 
                 double avg = tree.getProductionAverage(records, time1, time2);
                 std::cout << "Srednia produkcji: " << avg << std::endl;
@@ -309,10 +319,10 @@ int main() {
         case Operation::SearchThroughRecords:
             {
 
-                int selectedSearchOperation;
-                double value;
-                double tolerance;
-                std::string time;
+                int selectedSearchOperation{};
+                double value{};
+                double tolerance{};
+                std::string time{};
 
                 //TODO
 
@@ -327,19 +337,19 @@ int main() {
                 auto searchOperation = static_cast<SearchOperation>(selectedSearchOperation);
 
 
+                break;
+            }
+
 
 
 
         case Operation::Exit:
-
+            return 0;
         default:
             std::cout << "Niepoprawna operacja" << std::endl;
-            return 0;
-            }
+            break;
         }
-
-
-
-
-        return 0;
+        std::cout << "Nacisnij enter aby kontynuowac...\n";
+        std::cin.get();
     }
+}
