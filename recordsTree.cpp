@@ -317,3 +317,107 @@ double RecordsTree::getConsumptionAverage(const std::vector<Record>& records, co
 double RecordsTree::getProductionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
     return getProductionSum(records, time1, time2) / getNumberOfItemsBetweenTimes(records, time1, time2);
 }
+
+void RecordsTree::compareAutoConsumption(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
+    bool error_occurred_case1 = checkError(records, time1_begin, time1_end) != Error::NoError;
+    bool error_occurred_case2 = checkError(records, time2_begin, time2_end) != Error::NoError;
+    bool error_occurred = error_occurred_case1 || error_occurred_case2;
+    if (error_occurred) {
+        return;
+    }
+
+    auto period1_sum = getAutoConsumptionSum(records, time1_begin, time1_end);
+    auto period2_sum = getAutoConsumptionSum(records, time2_begin, time2_end);
+    auto period1_avg = getAutoConsumptionAverage(records, time1_begin, time1_end);
+    auto period2_avg = getAutoConsumptionAverage(records, time2_begin, time2_end);
+    compareSumsAndAverages(time1_begin, time1_end, time2_begin, time2_end, period1_sum, period2_sum, period1_avg, period2_avg);
+}
+
+void RecordsTree::compareConsumption(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
+    bool error_occurred_case1 = checkError(records, time1_begin, time1_end) != Error::NoError;
+    bool error_occurred_case2 = checkError(records, time2_begin, time2_end) != Error::NoError;
+    bool error_occurred = error_occurred_case1 || error_occurred_case2;
+    if (error_occurred) {
+        return;
+    }
+
+    auto period1_sum = getConsumptionSum(records, time1_begin, time1_end);
+    auto period2_sum = getConsumptionSum(records, time2_begin, time2_end);
+    auto period1_avg = getConsumptionAverage(records, time1_begin, time1_end);
+    auto period2_avg = getConsumptionAverage(records, time2_begin, time2_end);
+    compareSumsAndAverages(time1_begin, time1_end, time2_begin, time2_end, period1_sum, period2_sum, period1_avg, period2_avg);
+}
+
+void RecordsTree::compareExport(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
+    bool error_occurred_case1 = checkError(records, time1_begin, time1_end) != Error::NoError;
+    bool error_occurred_case2 = checkError(records, time2_begin, time2_end) != Error::NoError;
+    bool error_occurred = error_occurred_case1 || error_occurred_case2;
+    if (error_occurred) {
+        return;
+    }
+
+    auto period1_sum = getExportSum(records, time1_begin, time1_end);
+    auto period2_sum = getExportSum(records, time2_begin, time2_end);
+    auto period1_avg = getExportAverage(records, time1_begin, time1_end);
+    auto period2_avg = getExportAverage(records, time2_begin, time2_end);
+    compareSumsAndAverages(time1_begin, time1_end, time2_begin, time2_end, period1_sum, period2_sum, period1_avg, period2_avg);
+}
+
+void RecordsTree::compareImport(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
+    bool error_occurred_case1 = checkError(records, time1_begin, time1_end) != Error::NoError;
+    bool error_occurred_case2 = checkError(records, time2_begin, time2_end) != Error::NoError;
+    bool error_occurred = error_occurred_case1 || error_occurred_case2;
+    if (error_occurred) {
+        return;
+    }
+
+    auto period1_sum = getImportSum(records, time1_begin, time1_end);
+    auto period2_sum = getImportSum(records, time2_begin, time2_end);
+    auto period1_avg = getImportAverage(records, time1_begin, time1_end);
+    auto period2_avg = getImportAverage(records, time2_begin, time2_end);
+    compareSumsAndAverages(time1_begin, time1_end, time2_begin, time2_end, period1_sum, period2_sum, period1_avg, period2_avg);
+}
+
+void RecordsTree::compareProduction(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
+    bool error_occurred_case1 = checkError(records, time1_begin, time1_end) != Error::NoError;
+    bool error_occurred_case2 = checkError(records, time2_begin, time2_end) != Error::NoError;
+    bool error_occurred = error_occurred_case1 || error_occurred_case2;
+    if (error_occurred) {
+        return;
+    }
+
+    auto period1_sum = getProductionSum(records, time1_begin, time1_end);
+    auto period2_sum = getProductionSum(records, time2_begin, time2_end);
+    auto period1_avg = getProductionAverage(records, time1_begin, time1_end);
+    auto period2_avg = getProductionAverage(records, time2_begin, time2_end);
+    compareSumsAndAverages(time1_begin, time1_end, time2_begin, time2_end, period1_sum, period2_sum, period1_avg, period2_avg);
+}
+
+
+void RecordsTree::compareSumsAndAverages(const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end, double period1_sum, double period2_sum, double period1_avg, double period2_avg) const {
+    std::cout << "Suma zużycia energii elektrycznej w okresie " << time1_begin << " - " << time1_end << ": " << period1_sum << " kWh\n";
+    std::cout << "Suma zużycia energii elektrycznej w okresie " << time2_begin << " - " << time2_end << ": " << period2_sum << " kWh\n";
+    std::cout << "Średnie zużycie energii elektrycznej w okresie " << time1_begin << " - " << time1_end << ": " << period1_avg << " kWh\n";
+    std::cout << "Średnie zużycie energii elektrycznej w okresie " << time2_begin << " - " << time2_end << ": " << period2_avg << " kWh\n";
+
+    auto diff_sum = period1_sum - period2_sum;
+    auto diff_avg = period1_avg - period2_avg;
+    auto diff_sum_percent = (diff_sum / period1_sum) * 100;
+    auto diff_avg_percent = (diff_avg / period1_avg) * 100;
+
+    if (period1_sum != period2_sum) {
+        std::cout << "Okres " << (period1_sum > period2_sum ? time1_begin + " - " + time1_end : time2_begin + " - " + time2_end)
+            << " charakteryzuje się większym zużyciem energii elektrycznej\n";
+        std::cout << "Różnica w zużyciu energii elektrycznej wynosi " << diff_sum << " kWh (" << diff_sum_percent << "%)\n";
+    } else {
+        std::cout << "Okresy " << time1_begin << " - " << time1_end << " oraz " << time2_begin << " - " << time2_end << " charakteryzują się takim samym zużyciem energii elektrycznej\n";
+    }
+
+    if (period1_avg != period2_avg) {
+        std::cout << "Okres " << (period1_avg > period2_avg ? time1_begin + " - " + time1_end : time2_begin + " - " + time2_end)
+            << " charakteryzuje się większym średnim zużyciem energii elektrycznej\n";
+        std::cout << "Różnica w średnim zużyciu energii elektrycznej wynosi " << diff_avg << " kWh (" << diff_avg_percent << "%)\n";
+    } else {
+        std::cout << "Okresy " << time1_begin << " - " << time1_end << " oraz " << time2_begin << " - " << time2_end << " charakteryzują się takim samym średnim zużyciem energii elektrycznej\n";
+    }
+}

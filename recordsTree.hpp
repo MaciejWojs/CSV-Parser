@@ -46,6 +46,7 @@ class RecordsTree {
     void print(std::function<void(const Record&)> callable) const;
     double Query(std::function<double(const std::vector<Record>&)> func) const;
     Error checkError(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
+    void compareSumsAndAverages(const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end, double period1_sum, double period2_sum, double period1_avg, double period2_avg) const;
 
 
     public:
@@ -67,6 +68,12 @@ class RecordsTree {
     double getImportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
     double getConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
     double getProductionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
+
+    void compareAutoConsumption(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const;
+    void compareExport(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const;
+    void compareImport(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const;
+    void compareConsumption(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const;
+    void compareProduction(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const;
 };
 
 #endif
