@@ -465,7 +465,8 @@ void RecordsTree::searchAndPrint(const std::string& time_begin, const std::strin
             [&](const Record& r) {
                 return r.getTime() >= convertToTimeT(time_begin) &&
                     r.getTime() <= convertToTimeT(time_end) &&
-                    std::abs(getValue(r, operation) - value) <= tolerance;
+                    getValue(r, operation) >= value - tolerance &&
+                    getValue(r, operation) <= value + tolerance;
             });
         return 0.0;
         });
