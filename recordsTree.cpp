@@ -20,6 +20,15 @@ inline void run_callables(const std::vector<Record>& records, std::function<void
     }
 }
 
+RecordsTree::iterator RecordsTree::begin() const {
+    return RecordsTreeIterator(const_cast<RecordsTree*>(this), false);
+}
+
+// Returns an iterator pointing to the end of the RecordsTree
+RecordsTree::iterator RecordsTree::end() const {
+    return RecordsTreeIterator(const_cast<RecordsTree*>(this), true);
+}
+
 // RecordsTree::RecordsTree() {}
 Quarter RecordsTree::getQuarter(const std::string& time) {
     std::istringstream ss(time);
@@ -63,35 +72,12 @@ void RecordsTree::addRecord(const Record& record) {
 }
 
 void RecordsTree::print(std::function<void(const Record&)> callable = nullptr) const {
-    for (const auto& [year, yearNode] : years) {
-        std::cout << "Rok: " << year << "\n";
-        for (const auto& [month, monthNode] : yearNode.months) {
-            std::cout << "  Miesiąc: " << month << "\n";
-            for (const auto& [day, dayNode] : monthNode.days) {
-                std::cout << "    Dzień: " << day << "\n";
-                for (const auto& [quarter, quarterNode] : dayNode.quarters) {
-                    std::cout << "      Ćwiartka ";
-                    switch (static_cast<Quarter>(quarter)) {
-                    case Quarter::Q1:
-                        std::cout << "1 (00:00-05:45)";
-                        run_callables(quarterNode.records, callable);
-                        break;
-                    case Quarter::Q2:
-                        std::cout << "2 (06:00-11:45)";
-                        run_callables(quarterNode.records, callable);
-                        break;
-                    case Quarter::Q3:
-                        std::cout << "3 (12:00-17:45)";
-                        run_callables(quarterNode.records, callable);
-                        break;
-                    case Quarter::Q4:
-                        std::cout << "4 (18:00-23:45)";
-                        run_callables(quarterNode.records, callable);
-                        break;
-                    }
-                    std::cout << ": " << quarterNode.records.size() << " rekordów\n";
-                }
-            }
+    for (auto it = begin(); it != end(); ++it) {
+        const auto& record = *it;
+        if (callable) {
+            callable(record);
+        } else {
+            std::cout << record << std::endl;
         }
     }
 }
@@ -120,80 +106,59 @@ void RecordsTree::sortRecords() {
     }
 }
 
-double RecordsTree::Query(std::function<double(const std::vector<Record>&)> func) const {
+double RecordsTree::Query(std::function<double(const Record&)> func) const {
     double total = 0.0;
-    for (auto& [year, yearNode] : years) {
-        for (auto& [month, monthNode] : yearNode.months) {
-            for (auto& [day, dayNode] : monthNode.days) {
-                for (auto& [quarter, quarterNode] : dayNode.quarters) {
-                    total += func(quarterNode.records);
-                }
-            }
-        }
+    for (const auto& record : *this) {
+        total += func(record);
     }
     return total;
 }
+
 void RecordsTree::Query(std::function<void(const Record&)> func, const std::string time1, std::string time2) const {
-    for (const auto& [year, yearNode] : years) {
-        for (const auto& [month, monthNode] : yearNode.months) {
-            for (const auto& [day, dayNode] : monthNode.days) {
-                for (const auto& [quarter, quarterNode] : dayNode.quarters) {
-                    for (const auto& record : quarterNode.records) {
-                        time_t recordTime = record.getTime();
-                        if (recordTime >= convertToTimeT(time1) && recordTime <= convertToTimeT(time2)) {
-                            func(record);
-                        }
-                    }
-                }
-            }
+    for (const auto& record : *this) {
+        time_t recordTime = record.getTime();
+        if (recordTime >= convertToTimeT(time1) && recordTime <= convertToTimeT(time2)) {
+            func(record);
         }
     }
 }
 
 
-double RecordsTree::getAutoConsumptionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    if (checkError(records, time1, time2) != Error::NoError) {
+double RecordsTree::getAutoConsumptionSum(const std::string& time1, const std::string& time2) const {
+    if (checkError(time1, time2) != Error::NoError) {
         return 0.0;
     }
     // convert time1 and time2 to time_t
     time_t time1_t = convertToTimeT(time1);
     time_t time2_t = convertToTimeT(time2);
 
-
-    return Query([time1_t, time2_t](const std::vector<Record>& records) {
-        return std::accumulate(records.begin(), records.end(), 0.0, [&](double sum, const Record& record) {
-            time_t recordTime = record.getTime();
-            if (recordTime >= time1_t && recordTime <= time2_t) {
-                // std::cout << record << std::endl;
-                return sum + record.getAutoConsumption();
-            }
-            return sum;
-            });
+    return Query([time1_t, time2_t](const Record& record) {
+        time_t recordTime = record.getTime();
+        bool inRange = recordTime >= time1_t && recordTime <= time2_t;
+        auto finalValue = (inRange) ? record.getAutoConsumption() : 0.0;
+        return finalValue;
         });
 };
 
 
-double RecordsTree::getExportSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    if (checkError(records, time1, time2) != Error::NoError) {
+double RecordsTree::getExportSum(const std::string& time1, const std::string& time2) const {
+    if (checkError(time1, time2) != Error::NoError) {
         return 0.0;
     }
     // convert time1 and time2 to time_t
     time_t time1_t = convertToTimeT(time1);
     time_t time2_t = convertToTimeT(time2);
 
-    return Query([time1_t, time2_t](const std::vector<Record>& records) {
-        return std::accumulate(records.begin(), records.end(), 0.0, [&](double sum, const Record& record) {
-            time_t recordTime = record.getTime();
-            if (recordTime >= time1_t && recordTime <= time2_t) {
-                return sum + record.getExport();
-            }
-            return sum;
-            });
+    return Query([time1_t, time2_t](const Record& record) {
+        time_t recordTime = record.getTime();
+        bool inRange = recordTime >= time1_t && recordTime <= time2_t;
+        auto finalValue = (inRange) ? record.getExport() : 0.0;
+        return finalValue;
         });
 };
 
-double RecordsTree::getImportSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    if (checkError(records, time1, time2) != Error::NoError) {
+double RecordsTree::getImportSum(const std::string& time1, const std::string& time2) const {
+    if (checkError(time1, time2) != Error::NoError) {
         return 0.0;
     }
 
@@ -201,19 +166,16 @@ double RecordsTree::getImportSum(const std::vector<Record>& records, const std::
     time_t time1_t = convertToTimeT(time1);
     time_t time2_t = convertToTimeT(time2);
 
-    return Query([time1_t, time2_t](const std::vector<Record>& records) {
-        return std::accumulate(records.begin(), records.end(), 0.0, [&](double sum, const Record& record) {
-            time_t recordTime = record.getTime();
-            if (recordTime >= time1_t && recordTime <= time2_t) {
-                return sum + record.getImport();
-            }
-            return sum;
-            });
+    return Query([time1_t, time2_t](const Record& record) {
+        time_t recordTime = record.getTime();
+        bool inRange = recordTime >= time1_t && recordTime <= time2_t;
+        auto finalValue = (inRange) ? record.getImport() : 0.0;
+        return finalValue;
         });
 };
 
-double RecordsTree::getConsumptionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    if (checkError(records, time1, time2) != Error::NoError) {
+double RecordsTree::getConsumptionSum(const std::string& time1, const std::string& time2) const {
+    if (checkError(time1, time2) != Error::NoError) {
         return 0.0;
     }
 
@@ -221,20 +183,17 @@ double RecordsTree::getConsumptionSum(const std::vector<Record>& records, const 
     time_t time1_t = convertToTimeT(time1);
     time_t time2_t = convertToTimeT(time2);
 
-    return Query([time1_t, time2_t](const std::vector<Record>& records) {
-        return std::accumulate(records.begin(), records.end(), 0.0, [&](double sum, const Record& record) {
-            time_t recordTime = record.getTime();
-            if (recordTime >= time1_t && recordTime <= time2_t) {
-                return sum + record.getConsumption();
-            }
-            return sum;
-            });
+    return Query([time1_t, time2_t](const Record& record) {
+        time_t recordTime = record.getTime();
+        bool inRange = recordTime >= time1_t && recordTime <= time2_t;
+        auto finalValue = (inRange) ? record.getConsumption() : 0.0;
+        return finalValue;
         });
 };
 
 
-double RecordsTree::getProductionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    if (checkError(records, time1, time2) != Error::NoError) {
+double RecordsTree::getProductionSum(const std::string& time1, const std::string& time2) const {
+    if (checkError(time1, time2) != Error::NoError) {
         return 0.0;
     }
 
@@ -242,20 +201,16 @@ double RecordsTree::getProductionSum(const std::vector<Record>& records, const s
     time_t time1_t = convertToTimeT(time1);
     time_t time2_t = convertToTimeT(time2);
 
-    return Query([time1_t, time2_t](const std::vector<Record>& records) {
-        return std::accumulate(records.begin(), records.end(), 0.0, [&](double sum, const Record& record) {
-            time_t recordTime = record.getTime();
-            if (recordTime >= time1_t && recordTime <= time2_t) {
-                return sum + record.getProduction();
-            }
-            return sum;
-            });
+    return Query([time1_t, time2_t](const Record& record) {
+        time_t recordTime = record.getTime();
+        bool inRange = recordTime >= time1_t && recordTime <= time2_t;
+        auto finalValue = (inRange) ? record.getProduction() : 0.0;
+        return finalValue;
         });
 };
 
-Error RecordsTree::checkError(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    if (records.empty()) {
-        std::cerr << "Brak rekordów w drzewie\n";
+Error RecordsTree::checkError(const std::string& time1, const std::string& time2) const {
+    if (checkIfEmpty() == Error::EmptyRecords) {
         return Error::EmptyRecords;
     }
 
@@ -272,8 +227,8 @@ Error RecordsTree::checkError(const std::vector<Record>& records, const std::str
     return Error::NoError;
 }
 
-int RecordsTree::getNumberOfItemsBetweenTimes(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    if (checkError(records, time1, time2) != Error::NoError) {
+int RecordsTree::getNumberOfItemsBetweenTimes(const std::string& time1, const std::string& time2) const {
+    if (checkError(time1, time2) != Error::NoError) {
         return 0;
     }
 
@@ -281,10 +236,18 @@ int RecordsTree::getNumberOfItemsBetweenTimes(const std::vector<Record>& records
     time_t time1_t = convertToTimeT(time1);
     time_t time2_t = convertToTimeT(time2);
 
-    return std::count_if(records.begin(), records.end(), [&](const Record& record) {
+    return static_cast<int>(Query([time1_t, time2_t](const Record& record) {
         time_t recordTime = record.getTime();
-        return recordTime >= time1_t && recordTime <= time2_t;
-        });
+        if (recordTime >= time1_t && recordTime <= time2_t) {
+            return 1.0;
+        }
+        return 0.0;
+        }));
+
+    // return std::count_if(records.begin(), records.end(), [&](const Record& record) {
+    //     time_t recordTime = record.getTime();
+    //     return recordTime >= time1_t && recordTime <= time2_t;
+    //     });
 }
 
 void RecordsTree::printRecordsBetweenTimes(const std::string& time1, const std::string& time2) const {
@@ -298,139 +261,144 @@ void RecordsTree::printRecordsBetweenTimes(const std::string& time1, const std::
         return;
     }
 
-    for (const auto& [year, yearNode] : years) {
-        for (const auto& [month, monthNode] : yearNode.months) {
-            for (const auto& [day, dayNode] : monthNode.days) {
-                for (const auto& [quarter, quarterNode] : dayNode.quarters) {
-                    for (const auto& record : quarterNode.records) {
-                        time_t recordTime = record.getTime();
-                        if (recordTime >= convertToTimeT(time1) && recordTime <= convertToTimeT(time2)) {
-                            std::cout << record << std::endl;
-                        }
-                    }
-                }
-            }
-        }
-    }
+    Query([](const Record& record) {
+        std::cout << record << std::endl;
+        }, time1, time2);
 }
 
-double RecordsTree::getAutoConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    auto numberOfItems = getNumberOfItemsBetweenTimes(records, time1, time2);
+double RecordsTree::getAutoConsumptionAverage(const std::string& time1, const std::string& time2) const {
+    if (checkError(time1, time2) != Error::NoError) {
+        return 0.0;
+    }
+
+    auto numberOfItems = getNumberOfItemsBetweenTimes(time1, time2);
     if (numberOfItems == 0) {
         std::cerr << "Brak rekordów w podanym przedziale czasowym\n";
         return 0.0;
     }
-    return getAutoConsumptionSum(records, time1, time2) / numberOfItems;
+    return getAutoConsumptionSum(time1, time2) / numberOfItems;
 }
 
-double RecordsTree::getExportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    auto numberOfItems = getNumberOfItemsBetweenTimes(records, time1, time2);
+double RecordsTree::getExportAverage(const std::string& time1, const std::string& time2) const {
+    if (checkError(time1, time2) != Error::NoError) {
+        return 0.0;
+    }
+    auto numberOfItems = getNumberOfItemsBetweenTimes(time1, time2);
     if (numberOfItems == 0) {
         std::cerr << "Brak rekordów w podanym przedziale czasowym\n";
         return 0.0;
     }
-    return getExportSum(records, time1, time2) / numberOfItems;
+    return getExportSum(time1, time2) / numberOfItems;
 }
 
-double RecordsTree::getImportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    auto numberOfItems = getNumberOfItemsBetweenTimes(records, time1, time2);
+double RecordsTree::getImportAverage(const std::string& time1, const std::string& time2) const {
+    if (checkError(time1, time2) != Error::NoError) {
+        return 0.0;
+    }
+    auto numberOfItems = getNumberOfItemsBetweenTimes(time1, time2);
     if (numberOfItems == 0) {
         std::cerr << "Brak rekordów w podanym przedziale czasowym\n";
         return 0.0;
     }
-    return getImportSum(records, time1, time2) / numberOfItems;
+    return getImportSum(time1, time2) / numberOfItems;
 }
 
-double RecordsTree::getConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    auto numberOfItems = getNumberOfItemsBetweenTimes(records, time1, time2);
+double RecordsTree::getConsumptionAverage(const std::string& time1, const std::string& time2) const {
+    if (checkError(time1, time2) != Error::NoError) {
+        return 0.0;
+    }
+    auto numberOfItems = getNumberOfItemsBetweenTimes(time1, time2);
     if (numberOfItems == 0) {
         std::cerr << "Brak rekordów w podanym przedziale czasowym\n";
         return 0.0;
     }
-    return getConsumptionSum(records, time1, time2) / numberOfItems;
+    return getConsumptionSum(time1, time2) / numberOfItems;
 }
 
-double RecordsTree::getProductionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    auto numberOfItems = getNumberOfItemsBetweenTimes(records, time1, time2);
+double RecordsTree::getProductionAverage(const std::string& time1, const std::string& time2) const {
+    if (checkError(time1, time2) != Error::NoError) {
+        return 0.0;
+    }
+    auto numberOfItems = getNumberOfItemsBetweenTimes(time1, time2);
     if (numberOfItems == 0) {
         std::cerr << "Brak rekordów w podanym przedziale czasowym\n";
         return 0.0;
     }
-    return getProductionSum(records, time1, time2) / numberOfItems;
+    return getProductionSum(time1, time2) / numberOfItems;
 }
 
-void RecordsTree::compareAutoConsumption(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
-    bool error_occurred_case1 = checkError(records, time1_begin, time1_end) != Error::NoError;
-    bool error_occurred_case2 = checkError(records, time2_begin, time2_end) != Error::NoError;
+void RecordsTree::compareAutoConsumption(const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
+    bool error_occurred_case1 = checkError(time1_begin, time1_end) != Error::NoError;
+    bool error_occurred_case2 = checkError(time2_begin, time2_end) != Error::NoError;
     bool error_occurred = error_occurred_case1 || error_occurred_case2;
     if (error_occurred) {
         return;
     }
 
-    auto period1_sum = getAutoConsumptionSum(records, time1_begin, time1_end);
-    auto period2_sum = getAutoConsumptionSum(records, time2_begin, time2_end);
-    auto period1_avg = getAutoConsumptionAverage(records, time1_begin, time1_end);
-    auto period2_avg = getAutoConsumptionAverage(records, time2_begin, time2_end);
+    auto period1_sum = getAutoConsumptionSum(time1_begin, time1_end);
+    auto period2_sum = getAutoConsumptionSum(time2_begin, time2_end);
+    auto period1_avg = getAutoConsumptionAverage(time1_begin, time1_end);
+    auto period2_avg = getAutoConsumptionAverage(time2_begin, time2_end);
     compareSumsAndAverages(time1_begin, time1_end, time2_begin, time2_end, period1_sum, period2_sum, period1_avg, period2_avg);
 }
 
-void RecordsTree::compareConsumption(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
-    bool error_occurred_case1 = checkError(records, time1_begin, time1_end) != Error::NoError;
-    bool error_occurred_case2 = checkError(records, time2_begin, time2_end) != Error::NoError;
+void RecordsTree::compareConsumption(const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
+    bool error_occurred_case1 = checkError(time1_begin, time1_end) != Error::NoError;
+    bool error_occurred_case2 = checkError(time2_begin, time2_end) != Error::NoError;
     bool error_occurred = error_occurred_case1 || error_occurred_case2;
     if (error_occurred) {
         return;
     }
 
-    auto period1_sum = getConsumptionSum(records, time1_begin, time1_end);
-    auto period2_sum = getConsumptionSum(records, time2_begin, time2_end);
-    auto period1_avg = getConsumptionAverage(records, time1_begin, time1_end);
-    auto period2_avg = getConsumptionAverage(records, time2_begin, time2_end);
+    auto period1_sum = getConsumptionSum(time1_begin, time1_end);
+    auto period2_sum = getConsumptionSum(time2_begin, time2_end);
+    auto period1_avg = getConsumptionAverage(time1_begin, time1_end);
+    auto period2_avg = getConsumptionAverage(time2_begin, time2_end);
     compareSumsAndAverages(time1_begin, time1_end, time2_begin, time2_end, period1_sum, period2_sum, period1_avg, period2_avg);
 }
 
-void RecordsTree::compareExport(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
-    bool error_occurred_case1 = checkError(records, time1_begin, time1_end) != Error::NoError;
-    bool error_occurred_case2 = checkError(records, time2_begin, time2_end) != Error::NoError;
+void RecordsTree::compareExport(const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
+    bool error_occurred_case1 = checkError(time1_begin, time1_end) != Error::NoError;
+    bool error_occurred_case2 = checkError(time2_begin, time2_end) != Error::NoError;
     bool error_occurred = error_occurred_case1 || error_occurred_case2;
     if (error_occurred) {
         return;
     }
 
-    auto period1_sum = getExportSum(records, time1_begin, time1_end);
-    auto period2_sum = getExportSum(records, time2_begin, time2_end);
-    auto period1_avg = getExportAverage(records, time1_begin, time1_end);
-    auto period2_avg = getExportAverage(records, time2_begin, time2_end);
+    auto period1_sum = getExportSum(time1_begin, time1_end);
+    auto period2_sum = getExportSum(time2_begin, time2_end);
+    auto period1_avg = getExportAverage(time1_begin, time1_end);
+    auto period2_avg = getExportAverage(time2_begin, time2_end);
     compareSumsAndAverages(time1_begin, time1_end, time2_begin, time2_end, period1_sum, period2_sum, period1_avg, period2_avg);
 }
 
-void RecordsTree::compareImport(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
-    bool error_occurred_case1 = checkError(records, time1_begin, time1_end) != Error::NoError;
-    bool error_occurred_case2 = checkError(records, time2_begin, time2_end) != Error::NoError;
+void RecordsTree::compareImport(const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
+    bool error_occurred_case1 = checkError(time1_begin, time1_end) != Error::NoError;
+    bool error_occurred_case2 = checkError(time2_begin, time2_end) != Error::NoError;
     bool error_occurred = error_occurred_case1 || error_occurred_case2;
     if (error_occurred) {
         return;
     }
 
-    auto period1_sum = getImportSum(records, time1_begin, time1_end);
-    auto period2_sum = getImportSum(records, time2_begin, time2_end);
-    auto period1_avg = getImportAverage(records, time1_begin, time1_end);
-    auto period2_avg = getImportAverage(records, time2_begin, time2_end);
+    auto period1_sum = getImportSum(time1_begin, time1_end);
+    auto period2_sum = getImportSum(time2_begin, time2_end);
+    auto period1_avg = getImportAverage(time1_begin, time1_end);
+    auto period2_avg = getImportAverage(time2_begin, time2_end);
     compareSumsAndAverages(time1_begin, time1_end, time2_begin, time2_end, period1_sum, period2_sum, period1_avg, period2_avg);
 }
 
-void RecordsTree::compareProduction(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
-    bool error_occurred_case1 = checkError(records, time1_begin, time1_end) != Error::NoError;
-    bool error_occurred_case2 = checkError(records, time2_begin, time2_end) != Error::NoError;
+void RecordsTree::compareProduction(const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
+    bool error_occurred_case1 = checkError(time1_begin, time1_end) != Error::NoError;
+    bool error_occurred_case2 = checkError(time2_begin, time2_end) != Error::NoError;
     bool error_occurred = error_occurred_case1 || error_occurred_case2;
     if (error_occurred) {
         return;
     }
 
-    auto period1_sum = getProductionSum(records, time1_begin, time1_end);
-    auto period2_sum = getProductionSum(records, time2_begin, time2_end);
-    auto period1_avg = getProductionAverage(records, time1_begin, time1_end);
-    auto period2_avg = getProductionAverage(records, time2_begin, time2_end);
+    auto period1_sum = getProductionSum(time1_begin, time1_end);
+    auto period2_sum = getProductionSum(time2_begin, time2_end);
+    auto period1_avg = getProductionAverage(time1_begin, time1_end);
+    auto period2_avg = getProductionAverage(time2_begin, time2_end);
     compareSumsAndAverages(time1_begin, time1_end, time2_begin, time2_end, period1_sum, period2_sum, period1_avg, period2_avg);
 }
 
@@ -498,14 +466,25 @@ void RecordsTree::searchAndPrint(const std::string& time_begin, const std::strin
             }
         }
         if (lower_bound <= recordValue && recordValue <= upper_bound) {
-            std::cout << record.getAutoConsumption() << std::endl;
             std::cout << record << std::endl;
+#ifdef DEBUG
+            std::cout << record.getAutoConsumption() << std::endl;
             std::cout << "Record value: " << recordValue << std::endl;
 
             std::cout << "Tolerance: " << tolerance << std::endl;
             std::cout << "Value: " << value << std::endl;
             std::cout << "Lower bound: " << lower_bound << std::endl;
             std::cout << "Upper bound: " << upper_bound << std::endl;
+#endif
         }
         }, time_begin, time_end);
+}
+
+Error RecordsTree::checkIfEmpty() const {
+    if (years.empty()) {
+        std::cerr << "Brak rekordów w drzewie\n";
+        return Error::EmptyRecords;
+    }
+
+    return Error::NoError;
 }
