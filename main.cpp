@@ -328,6 +328,13 @@ int main() {
                 //TODO
 
                 while (true) {
+                    std::cout << "Podaj operacje wyszukiwania: " << std::endl;
+                    std::cout << "1. Wyszukaj po autokonsumpcji" << std::endl;
+                    std::cout << "2. Wyszukaj po eksporcie" << std::endl;
+                    std::cout << "3. Wyszukaj po imporcie" << std::endl;
+                    std::cout << "4. Wyszukaj po konsumpcji" << std::endl;
+                    std::cout << "5. Wyszukaj po produkcji" << std::endl;
+
                     std::cin >> selectedSearchOperation;
                     if (selectedSearchOperation >= static_cast<int>(SearchOperation::SearchByAutoConsumption) && selectedSearchOperation <= static_cast<int>(SearchOperation::SearchByProduction)) {
 
