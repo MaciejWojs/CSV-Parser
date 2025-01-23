@@ -299,23 +299,48 @@ void RecordsTree::printRecordsBetweenTimes(const std::string& time1, const std::
 }
 
 double RecordsTree::getAutoConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    return getAutoConsumptionSum(records, time1, time2) / getNumberOfItemsBetweenTimes(records, time1, time2);
+    auto numberOfItems = getNumberOfItemsBetweenTimes(records, time1, time2);
+    if (numberOfItems == 0) {
+        std::cout << "Brak rekordów w podanym przedziale czasowym\n";
+        return 0.0;
+    }
+    return getAutoConsumptionSum(records, time1, time2) / numberOfItems;
 }
 
 double RecordsTree::getExportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    return getExportSum(records, time1, time2) / getNumberOfItemsBetweenTimes(records, time1, time2);
+    auto numberOfItems = getNumberOfItemsBetweenTimes(records, time1, time2);
+    if (numberOfItems == 0) {
+        std::cout << "Brak rekordów w podanym przedziale czasowym\n";
+        return 0.0;
+    }
+    return getExportSum(records, time1, time2) / numberOfItems;
 }
 
 double RecordsTree::getImportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    return getImportSum(records, time1, time2) / getNumberOfItemsBetweenTimes(records, time1, time2);
+    auto numberOfItems = getNumberOfItemsBetweenTimes(records, time1, time2);
+    if (numberOfItems == 0) {
+        std::cout << "Brak rekordów w podanym przedziale czasowym\n";
+        return 0.0;
+    }
+    return getImportSum(records, time1, time2) / numberOfItems;
 }
 
 double RecordsTree::getConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    return getConsumptionSum(records, time1, time2) / getNumberOfItemsBetweenTimes(records, time1, time2);
+    auto numberOfItems = getNumberOfItemsBetweenTimes(records, time1, time2);
+    if (numberOfItems == 0) {
+        std::cout << "Brak rekordów w podanym przedziale czasowym\n";
+        return 0.0;
+    }
+    return getConsumptionSum(records, time1, time2) / numberOfItems;
 }
 
 double RecordsTree::getProductionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
-    return getProductionSum(records, time1, time2) / getNumberOfItemsBetweenTimes(records, time1, time2);
+    auto numberOfItems = getNumberOfItemsBetweenTimes(records, time1, time2);
+    if (numberOfItems == 0) {
+        std::cout << "Brak rekordów w podanym przedziale czasowym\n";
+        return 0.0;
+    }
+    return getProductionSum(records, time1, time2) / numberOfItems;
 }
 
 void RecordsTree::compareAutoConsumption(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const {
