@@ -329,7 +329,7 @@ int main() {
 
                 while (true) {
                     std::cin >> selectedSearchOperation;
-                    if (selectedSearchOperation >= static_cast<int>(SearchOperation::SearchByTime) && selectedSearchOperation <= static_cast<int>(SearchOperation::SearchByProduction)) {
+                    if (selectedSearchOperation >= static_cast<int>(SearchOperation::SearchByAutoConsumption) && selectedSearchOperation <= static_cast<int>(SearchOperation::SearchByProduction)) {
 
                         break;
                     }
