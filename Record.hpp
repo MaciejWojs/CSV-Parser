@@ -18,15 +18,15 @@
 #include <algorithm>
 #include <ranges>
 
-#define FIELDS_IN_CSV 6
 
-/**
- * @~english
- * @brief Class for storing and managing energy data records.
- *
- * @~polish
- * @brief Klasa do przechowywania i zarządzania rekordami danych energetycznych.
- */
+
+ /**
+  * @~english
+  * @brief Class for storing and managing energy data records.
+  *
+  * @~polish
+  * @brief Klasa do przechowywania i zarządzania rekordami danych energetycznych.
+  */
 class Record {
     time_t Time; ///< @~english Time of the record @~polish Czas rekordu
     double AutoConsumption; ///< @~english Auto consumption value @~polish Wartość autokonsumpcji

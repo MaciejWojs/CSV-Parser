@@ -16,18 +16,69 @@
 #include <vector>
 #include <functional>
 
-/**
- * @~english
- * @brief Enumeration representing the quarters of a year.
- *
- * @~polish
- * @brief Wyliczenie reprezentujące kwartały roku.
- */
+ /**
+  * @~english
+  * @brief Enumeration representing the quarters of a year.
+  *
+  * @~polish
+  * @brief Wyliczenie reprezentujące kwartały roku.
+  */
 enum class Quarter {
     Q1,
     Q2,
     Q3,
     Q4
+};
+
+/**
+ * @enum SearchOperation
+ * @~polish
+ * @brief Operacje wyszukiwania w drzewie rekordów.
+ * @~english
+ * @brief Search operations in the records tree.
+ */
+enum class SearchOperation {
+    /**
+     * @brief Wyszukiwanie według czasu.
+     * @~english
+     * @brief Search by time.
+     */
+    SearchByTime = 1,
+    /**
+     * @~polish
+     * @brief Wyszukiwanie według autokonsumpcji.
+     * @~english
+     * @brief Search by auto consumption.
+     */
+    SearchByAutoConsumption,
+    /**
+     * @~polish
+     * @brief Wyszukiwanie według eksportu.
+     * @~english
+     * @brief Search by export.
+     */
+    SearchByExport,
+    /**
+     * @~polish
+     * @brief Wyszukiwanie według importu.
+     * @~english
+     * @brief Search by import.
+     */
+    SearchByImport,
+    /**
+     * @~polish
+     * @brief Wyszukiwanie według poboru.
+     * @~english
+     * @brief Search by consumption.
+     */
+    SearchByConsumption,
+    /**
+     * @~polish
+     * @brief Wyszukiwanie według produkcji.
+     * @~english
+     * @brief Search by production.
+     */
+    SearchByProduction,
 };
 
 /**

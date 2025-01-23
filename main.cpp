@@ -31,73 +31,73 @@ int main() {
     // double sum3 = tree.getImportSum(records, "01.10.2020 8:00", "01.10.2020 9:30");
     // double sum4 = tree.getConsumptionSum(records, "01.10.2020 8:00", "01.10.2020 9:30");
     // double sum5 = tree.getProductionSum(records, "01.10.2020 8:00", "01.10.2020 9:30");
-<<<<<<< HEAD
 
     tree.printRecordsBetweenTimes("01.10.2020 8:00", "01.10.2020 9:30");
-
-    // std::cout << "getAutoConsumptionSum: " << sum1 << std::endl;
-    // std::cout << "getExportSum: " << sum2 << std::endl;
-    // std::cout << "getImportSum: " << sum3 << std::endl;
-    // std::cout << "getConsumptionSum: " << sum4 << std::endl;
-    // std::cout << "getProductionSum: " << sum5 << std::endl;
-
-    // std::cout << "getAutoConsumptionAverage: " << tree.getAutoConsumptionAverage(records, "01.10.2020 8:00", "01.10.2020 9:30") << std::endl;
-    // std::cout << "getExportAverage: " << tree.getExportAverage(records, "01.10.2020 8:00", "01.10.2020 9:30") << std::endl;
-    // std::cout << "getImportAverage: " << tree.getImportAverage(records, "01.10.2020 8:00", "01.10.2020 9:30") << std::endl;
-    // std::cout << "getConsumptionAverage: " << tree.getConsumptionAverage(records, "01.10.2020 8:00", "01.10.2020 9:30") << std::endl;
-    // std::cout << "getProductionAverage: " << tree.getProductionAverage(records, "01.10.2020 8:00", "01.10.2020 9:30") << std::endl;
 
 
     // std::cout << "Ilosc rekordow pomiedzy 8:00 a 9:30: " << tree.getNumberOfItemsBetweenTimes(records, "01.10.2020 8:00", "01.10.2020 9:30") << std::endl;
 
-    // tree.compareAutoConsumption(records, "01.10.2020 8:00", "01.10.2020 9:30", "01.10.2020 9:45", "01.10.2020 10:45");
-=======
-
-    // tree.printRecordsBetweenTimes("01.10.2020 8:00", "01.10.2020 9:30");
-
-    // std::cout << "getAutoConsumptionSum: " << sum1 << std::endl;
-    // std::cout << "getExportSum: " << sum2 << std::endl;
-    // std::cout << "getImportSum: " << sum3 << std::endl;
-    // std::cout << "getConsumptionSum: " << sum4 << std::endl;
-    // std::cout << "getProductionSum: " << sum5 << std::endl;
-
-    // std::cout << "getAutoConsumptionAverage: " << tree.getAutoConsumptionAverage(records, "01.10.2020 8:00", "01.10.2020 9:30") << std::endl;
-    // std::cout << "getExportAverage: " << tree.getExportAverage(records, "01.10.2020 8:00", "01.10.2020 9:30") << std::endl;
-    // std::cout << "getImportAverage: " << tree.getImportAverage(records, "01.10.2020 8:00", "01.10.2020 9:30") << std::endl;
-    // std::cout << "getConsumptionAverage: " << tree.getConsumptionAverage(records, "01.10.2020 8:00", "01.10.2020 9:30") << std::endl;
-    // std::cout << "getProductionAverage: " << tree.getProductionAverage(records, "01.10.2020 8:00", "01.10.2020 9:30") << std::endl;
-
-
-    // std::cout << "Ilosc rekordow pomiedzy 8:00 a 9:30: " << tree.getNumberOfItemsBetweenTimes(records, "01.10.2020 8:00", "01.10.2020 9:30") << std::endl;
-
-
-    tree.printRecordsBetweenTimes("01.10.2020 8:00", "01.10.2020 9:30");
     tree.compareAutoConsumption(records, "01.10.2020 8:00", "01.10.2020 9:30", "01.10.2020 9:45", "01.10.2020 10:45");
->>>>>>> 8315efa (switch case menu)
     // tree.compareExport(records, "01.10.2020 8:00", "01.10.2020 9:30", "01.10.2020 9:45", "01.10.2020 10:45");
     // tree.compareImport(records, "01.10.2020 8:00", "01.10.2020 9:30", "01.10.2020 9:45", "01.10.2020 10:45");
     // tree.compareProduction(records, "01.10.2020 8:00", "01.10.2020 9:30", "01.10.2020 9:45", "01.10.2020 10:45");
     // tree.compareConsumption(records, "01.10.2020 8:00", "01.10.2020 9:30", "01.10.2020 9:45", "01.10.2020 10:45");
-<<<<<<< HEAD
-=======
 
     //------------------------------------------------------------------------------------------------------------
 
-    int operation;
+    enum class Operation {
+        PrintRecordsBetweenTimes,
+        CompareAutoConsumption,
+        CompareExport,
+        CompareImport,
+        CompareConsumption,
+        CompareProduction,
+        GetAutoConsumptionSum,
+        GetExportSum,
+        GetImportSum,
+        GetConsumptionSum,
+        GetProductionSum,
+        GetAutoConsumptionAverage,
+        GetExportAverage,
+        GetImportAverage,
+        GetConsumptionAverage,
+        GetProductionAverage,
+        //TODO ULTRA 
+
+        SearchThroughRecords,
+
+        //TODO ULTRA  
+
+        Exit
+    };
 
     while (true) {
         std::cout << "1. Wyswietl rekordy pomiedzy dwoma godzinami" << std::endl;
-        std::cout << "2. Porownaj sumy i srednie autokonsumpcji" << std::endl;
-        std::cout << "3. Porownaj sumy i srednie eksportu" << std::endl;
-        std::cout << "4. Porownaj sumy i srednie importu" << std::endl;
-        std::cout << "5. Porownaj sumy i srednie konsumpcji" << std::endl;
-        std::cout << "6. Porownaj sumy i srednie produkcji" << std::endl;
-        std::cout << "7. Wyjdz" << std::endl;
+        std::cout << "2. Porownaj autokonsumpcje pomiedzy dwoma okresami" << std::endl;
+        std::cout << "3. Porownaj eksport pomiedzy dwoma okresami" << std::endl;
+        std::cout << "4. Porownaj import pomiedzy dwoma okresami" << std::endl;
+        std::cout << "5. Porownaj konsumpcje pomiedzy dwoma okresami" << std::endl;
+        std::cout << "6. Porownaj produkcje pomiedzy dwoma okresami" << std::endl;
+        std::cout << "7. Suma autokonsumpcji w okresie" << std::endl;
+        std::cout << "8. Suma eksportu w okresie" << std::endl;
+        std::cout << "9. Suma importu w okresie" << std::endl;
+        std::cout << "10. Suma konsumpcji w okresie" << std::endl;
+        std::cout << "11. Suma produkcji w okresie" << std::endl;
+        std::cout << "12. Srednia autokonsumpcji w okresie" << std::endl;
+        std::cout << "13. Srednia eksportu w okresie" << std::endl;
+        std::cout << "14. Srednia importu w okresie" << std::endl;
+        std::cout << "15. Srednia konsumpcji w okresie" << std::endl;
+        std::cout << "16. Srednia produkcji w okresie" << std::endl;
+        std::cout << "17. Wyszukaj rekordy" << std::endl;
+        std::cout << "18. Wyjdz" << std::endl;
 
-        std::cin >> operation;
+        int switchOperation;
+        std::cin >> switchOperation;
+
+        auto operation = static_cast<Operation>(switchOperation);
 
         switch (operation) {
-        case 1:
+        case Operation::PrintRecordsBetweenTimes:
             {
                 std::string time1, time2;
                 std::cout << "Podaj pierwsza godzine: ";
@@ -108,7 +108,7 @@ int main() {
                 tree.printRecordsBetweenTimes(time1, time2);
                 break;
             }
-        case 2:
+        case Operation::CompareAutoConsumption:
             {
                 std::string time1_begin, time1_end, time2_begin, time2_end;
                 std::cout << "Podaj poczatek pierwszego okresu: ";
@@ -123,7 +123,7 @@ int main() {
                 tree.compareAutoConsumption(records, time1_begin, time1_end, time2_begin, time2_end);
                 break;
             }
-        case 3:
+        case Operation::CompareExport:
             {
                 std::string time1_begin, time1_end, time2_begin, time2_end;
                 std::cout << "Podaj poczatek pierwszego okresu: ";
@@ -138,7 +138,7 @@ int main() {
                 tree.compareExport(records, time1_begin, time1_end, time2_begin, time2_end);
                 break;
             }
-        case 4:
+        case Operation::CompareImport:
             {
                 std::string time1_begin, time1_end, time2_begin, time2_end;
                 std::cout << "Podaj poczatek pierwszego okresu: ";
@@ -153,7 +153,7 @@ int main() {
                 tree.compareImport(records, time1_begin, time1_end, time2_begin, time2_end);
                 break;
             }
-        case 5:
+        case Operation::CompareConsumption:
             {
                 std::string time1_begin, time1_end, time2_begin, time2_end;
                 std::cout << "Podaj poczatek pierwszego okresu: ";
@@ -168,7 +168,7 @@ int main() {
                 tree.compareConsumption(records, time1_begin, time1_end, time2_begin, time2_end);
                 break;
             }
-        case 6:
+        case Operation::CompareProduction:
             {
                 std::string time1_begin, time1_end, time2_begin, time2_end;
                 std::cout << "Podaj poczatek pierwszego okresu: ";
@@ -183,18 +183,163 @@ int main() {
                 tree.compareProduction(records, time1_begin, time1_end, time2_begin, time2_end);
                 break;
             }
-        case 7:
-            return 0;
+
+
+        case Operation::GetAutoConsumptionSum:
+            {
+                std::string time1, time2;
+                std::cout << "Podaj poczatek okresu: ";
+                std::cin >> time1;
+                std::cout << "Podaj koniec okresu: ";
+                std::cin >> time2;
+
+                double sum = tree.getAutoConsumptionSum(records, time1, time2);
+                std::cout << "Suma autokonsumpcji: " << sum << std::endl;
+                break;
+            }
+        case Operation::GetExportSum:
+            {
+                std::string time1, time2;
+                std::cout << "Podaj poczatek okresu: ";
+                std::cin >> time1;
+                std::cout << "Podaj koniec okresu: ";
+                std::cin >> time2;
+
+                double sum = tree.getExportSum(records, time1, time2);
+                std::cout << "Suma eksportu: " << sum << std::endl;
+                break;
+            }
+        case Operation::GetImportSum:
+            {
+                std::string time1, time2;
+                std::cout << "Podaj poczatek okresu: ";
+                std::cin >> time1;
+                std::cout << "Podaj koniec okresu: ";
+                std::cin >> time2;
+
+                double sum = tree.getImportSum(records, time1, time2);
+                std::cout << "Suma importu: " << sum << std::endl;
+                break;
+            }
+        case Operation::GetConsumptionSum:
+            {
+                std::string time1, time2;
+                std::cout << "Podaj poczatek okresu: ";
+                std::cin >> time1;
+                std::cout << "Podaj koniec okresu: ";
+                std::cin >> time2;
+
+                double sum = tree.getConsumptionSum(records, time1, time2);
+                std::cout << "Suma konsumpcji: " << sum << std::endl;
+                break;
+            }
+        case Operation::GetProductionSum:
+            {
+                std::string time1, time2;
+                std::cout << "Podaj poczatek okresu: ";
+                std::cin >> time1;
+                std::cout << "Podaj koniec okresu: ";
+                std::cin >> time2;
+
+                double sum = tree.getProductionSum(records, time1, time2);
+                std::cout << "Suma produkcji: " << sum << std::endl;
+                break;
+            }
+        case Operation::GetAutoConsumptionAverage:
+            {
+                std::string time1, time2;
+                std::cout << "Podaj poczatek okresu: ";
+                std::cin >> time1;
+                std::cout << "Podaj koniec okresu: ";
+                std::cin >> time2;
+
+                double avg = tree.getAutoConsumptionAverage(records, time1, time2);
+                std::cout << "Srednia autokonsumpcji: " << avg << std::endl;
+                break;
+            }
+        case Operation::GetExportAverage:
+            {
+                std::string time1, time2;
+                std::cout << "Podaj poczatek okresu: ";
+                std::cin >> time1;
+                std::cout << "Podaj koniec okresu: ";
+                std::cin >> time2;
+
+                double avg = tree.getExportAverage(records, time1, time2);
+                std::cout << "Srednia eksportu: " << avg << std::endl;
+                break;
+            }
+        case Operation::GetImportAverage:
+            {
+                std::string time1, time2;
+                std::cout << "Podaj poczatek okresu: ";
+                std::cin >> time1;
+                std::cout << "Podaj koniec okresu: ";
+                std::cin >> time2;
+
+                double avg = tree.getImportAverage(records, time1, time2);
+                std::cout << "Srednia importu: " << avg << std::endl;
+                break;
+            }
+        case Operation::GetConsumptionAverage:
+            {
+                std::string time1, time2;
+                std::cout << "Podaj poczatek okresu: ";
+                std::cin >> time1;
+                std::cout << "Podaj koniec okresu: ";
+                std::cin >> time2;
+
+                double avg = tree.getConsumptionAverage(records, time1, time2);
+                std::cout << "Srednia konsumpcji: " << avg << std::endl;
+                break;
+            }
+        case Operation::GetProductionAverage:
+            {
+                std::string time1, time2;
+                std::cout << "Podaj poczatek okresu: ";
+                std::cin >> time1;
+                std::cout << "Podaj koniec okresu: ";
+                std::cin >> time2;
+
+                double avg = tree.getProductionAverage(records, time1, time2);
+                std::cout << "Srednia produkcji: " << avg << std::endl;
+                break;
+            }
+
+        case Operation::SearchThroughRecords:
+            {
+
+                int selectedSearchOperation;
+                double value;
+                double tolerance;
+                std::string time;
+
+                //TODO
+
+                while (true) {
+                    std::cin >> selectedSearchOperation;
+                    if (selectedSearchOperation >= static_cast<int>(SearchOperation::SearchByTime) && selectedSearchOperation <= static_cast<int>(SearchOperation::SearchByProduction)) {
+
+                        break;
+                    }
+                    std::cerr << "Niepoprawna operacja" << std::endl;
+                }
+                auto searchOperation = static_cast<SearchOperation>(selectedSearchOperation);
+
+
+
+
+
+        case Operation::Exit:
+
         default:
             std::cout << "Niepoprawna operacja" << std::endl;
-            break;
+            return 0;
+            }
         }
+
+
+
+
+        return 0;
     }
-
-
-
-
-
->>>>>>> 8315efa (switch case menu)
-    return 0;
-}
