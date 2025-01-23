@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['record_0',['Record',['../classRecord.html#ae8ee53ffec6ff4dac9911517d47e86a5',1,'Record']]]
+  ['query_0',['Query',['../classRecordsTree.html#a91ee58b39bb2a89e61b8fea71d5f3014',1,'RecordsTree']]]
 ];

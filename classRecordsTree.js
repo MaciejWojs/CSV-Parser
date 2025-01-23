@@ -1,11 +1,25 @@
 var classRecordsTree =
 [
     [ "addRecord", "classRecordsTree.html#a6e63285e70bcf63eb2f08ca930c93c5e", null ],
+    [ "checkError", "classRecordsTree.html#a5faf66a4961701c720f8de31134debe7", null ],
+    [ "getAutoConsumptionAverage", "classRecordsTree.html#a62dc564fe4064d283570b32376374342", null ],
+    [ "getAutoConsumptionSum", "classRecordsTree.html#a7554610e938357865b4e90cf70b912c7", null ],
+    [ "getConsumptionAverage", "classRecordsTree.html#ad7b8504faed7d1d8950fdebeb5b7a3ec", null ],
+    [ "getConsumptionSum", "classRecordsTree.html#ab7f0a0a886205a9fd289f89c4808d706", null ],
+    [ "getExportAverage", "classRecordsTree.html#a0a1169584c6cfc0de02cf4746f4a0f77", null ],
+    [ "getExportSum", "classRecordsTree.html#a884bb2fb1da1c70b75851efe48266def", null ],
+    [ "getImportAverage", "classRecordsTree.html#af0ad0d98711ff78153169094eddac348", null ],
+    [ "getImportSum", "classRecordsTree.html#a98d6e1fda49733947fd2d0bac0852118", null ],
+    [ "getNumberOfItemsBetweenTimes", "classRecordsTree.html#aedb67f091a93d78c8cef8cb709381a71", null ],
+    [ "getProductionAverage", "classRecordsTree.html#a4d60bc2d6a6b7fe630fe61bf6e3c6a76", null ],
+    [ "getProductionSum", "classRecordsTree.html#a4de4e4ec94dd3d51cef25de7f97e6694", null ],
     [ "getQuarter", "classRecordsTree.html#ad158c0a392345b8682fef8c664943765", null ],
     [ "parseDateTime", "classRecordsTree.html#a7bac39bf150951e4979a10bd62134f59", null ],
-    [ "print", "classRecordsTree.html#ab7cb6e135ba73bda41454532253bffb6", null ],
-    [ "printRecord", "classRecordsTree.html#a30c33765225f25033ddf4d9f48f968aa", null ],
+    [ "print", "classRecordsTree.html#aa83c74b08725ced5c277979d4c49e7d3", null ],
+    [ "printRecord", "classRecordsTree.html#ae7fb6f362e8e54e8da4896f74e5556ed", null ],
+    [ "printRecordsBetweenTimes", "classRecordsTree.html#ac921d600e24078e0c7a43644ec6d6e2f", null ],
     [ "printTree", "classRecordsTree.html#aad2cb37e4b0e5fc2344bb765467bb0aa", null ],
+    [ "Query", "classRecordsTree.html#a91ee58b39bb2a89e61b8fea71d5f3014", null ],
     [ "sortRecords", "classRecordsTree.html#aa8d5678e420214b6f783897cdb26de4d", null ],
     [ "years", "classRecordsTree.html#a50c3e5a86d2cb0e8a1c068d033e0ed53", null ]
 ];

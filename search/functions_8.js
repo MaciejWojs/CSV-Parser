@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trimallquotationmarks_0',['trimAllQuotationMarks',['../utils_8cpp.html#a76e5e79ce66375ea90e5aad0a84e7c96',1,'utils.cpp']]]
+  ['sortrecords_0',['sortRecords',['../classRecordsTree.html#aa8d5678e420214b6f783897cdb26de4d',1,'RecordsTree']]]
 ];

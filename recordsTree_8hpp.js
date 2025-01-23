@@ -5,6 +5,12 @@ var recordsTree_8hpp =
     [ "MonthNode", "structMonthNode.html", "structMonthNode" ],
     [ "YearNode", "structYearNode.html", "structYearNode" ],
     [ "RecordsTree", "classRecordsTree.html", "classRecordsTree" ],
+    [ "Error", "recordsTree_8hpp.html#a2c3e4bb40f36b262a5214e2da2bca9c5", [
+      [ "EmptyRecords", "recordsTree_8hpp.html#a2c3e4bb40f36b262a5214e2da2bca9c5a71b32ccd06e7ecfb2c78da55cf843fb4", null ],
+      [ "EmptyTime", "recordsTree_8hpp.html#a2c3e4bb40f36b262a5214e2da2bca9c5a72d223347fbc917f2f9cb72168f9638d", null ],
+      [ "SameTime", "recordsTree_8hpp.html#a2c3e4bb40f36b262a5214e2da2bca9c5a1dc544daf7065dd18298957b9468f7af", null ],
+      [ "NoError", "recordsTree_8hpp.html#a2c3e4bb40f36b262a5214e2da2bca9c5a70a47cae4eb221930f2663fd244369ea", null ]
+    ] ],
     [ "Quarter", "recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495a", [
       [ "Q1", "recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa8860370af76c01de5337d4626c2678f4", null ],
       [ "Q2", "recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa3bb284154c27cd76e8dbac26517addbd", null ],

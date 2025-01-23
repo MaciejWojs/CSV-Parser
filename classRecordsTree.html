@@ -112,14 +112,38 @@ $(function(){initNavTree('classRecordsTree.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
-<tr class="memitem:a30c33765225f25033ddf4d9f48f968aa" id="r_a30c33765225f25033ddf4d9f48f968aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30c33765225f25033ddf4d9f48f968aa">printRecord</a> ()</td></tr>
-<tr class="separator:a30c33765225f25033ddf4d9f48f968aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedb67f091a93d78c8cef8cb709381a71" id="r_aedb67f091a93d78c8cef8cb709381a71"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedb67f091a93d78c8cef8cb709381a71">getNumberOfItemsBetweenTimes</a> (const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;records, const std::string &amp;time1, const std::string &amp;time2)</td></tr>
+<tr class="separator:aedb67f091a93d78c8cef8cb709381a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7fb6f362e8e54e8da4896f74e5556ed" id="r_ae7fb6f362e8e54e8da4896f74e5556ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7fb6f362e8e54e8da4896f74e5556ed">printRecord</a> () const</td></tr>
+<tr class="separator:ae7fb6f362e8e54e8da4896f74e5556ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac921d600e24078e0c7a43644ec6d6e2f" id="r_ac921d600e24078e0c7a43644ec6d6e2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac921d600e24078e0c7a43644ec6d6e2f">printRecordsBetweenTimes</a> (const std::string &amp;time1, const std::string &amp;time2) const</td></tr>
+<tr class="separator:ac921d600e24078e0c7a43644ec6d6e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8d5678e420214b6f783897cdb26de4d" id="r_aa8d5678e420214b6f783897cdb26de4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8d5678e420214b6f783897cdb26de4d">sortRecords</a> ()</td></tr>
 <tr class="separator:aa8d5678e420214b6f783897cdb26de4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e63285e70bcf63eb2f08ca930c93c5e" id="r_a6e63285e70bcf63eb2f08ca930c93c5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e63285e70bcf63eb2f08ca930c93c5e">addRecord</a> (const <a class="el" href="classRecord.html">Record</a> &amp;record)</td></tr>
 <tr class="separator:a6e63285e70bcf63eb2f08ca930c93c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad2cb37e4b0e5fc2344bb765467bb0aa" id="r_aad2cb37e4b0e5fc2344bb765467bb0aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad2cb37e4b0e5fc2344bb765467bb0aa">printTree</a> () const</td></tr>
 <tr class="separator:aad2cb37e4b0e5fc2344bb765467bb0aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7554610e938357865b4e90cf70b912c7" id="r_a7554610e938357865b4e90cf70b912c7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7554610e938357865b4e90cf70b912c7">getAutoConsumptionSum</a> (const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;records, const std::string &amp;time1, const std::string &amp;time2)</td></tr>
+<tr class="separator:a7554610e938357865b4e90cf70b912c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a884bb2fb1da1c70b75851efe48266def" id="r_a884bb2fb1da1c70b75851efe48266def"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a884bb2fb1da1c70b75851efe48266def">getExportSum</a> (const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;records, const std::string &amp;time1, const std::string &amp;time2)</td></tr>
+<tr class="separator:a884bb2fb1da1c70b75851efe48266def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d6e1fda49733947fd2d0bac0852118" id="r_a98d6e1fda49733947fd2d0bac0852118"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98d6e1fda49733947fd2d0bac0852118">getImportSum</a> (const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;records, const std::string &amp;time1, const std::string &amp;time2)</td></tr>
+<tr class="separator:a98d6e1fda49733947fd2d0bac0852118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7f0a0a886205a9fd289f89c4808d706" id="r_ab7f0a0a886205a9fd289f89c4808d706"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7f0a0a886205a9fd289f89c4808d706">getConsumptionSum</a> (const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;records, const std::string &amp;time1, const std::string &amp;time2)</td></tr>
+<tr class="separator:ab7f0a0a886205a9fd289f89c4808d706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4de4e4ec94dd3d51cef25de7f97e6694" id="r_a4de4e4ec94dd3d51cef25de7f97e6694"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4de4e4ec94dd3d51cef25de7f97e6694">getProductionSum</a> (const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;records, const std::string &amp;time1, const std::string &amp;time2)</td></tr>
+<tr class="separator:a4de4e4ec94dd3d51cef25de7f97e6694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62dc564fe4064d283570b32376374342" id="r_a62dc564fe4064d283570b32376374342"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62dc564fe4064d283570b32376374342">getAutoConsumptionAverage</a> (const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;records, const std::string &amp;time1, const std::string &amp;time2)</td></tr>
+<tr class="separator:a62dc564fe4064d283570b32376374342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a1169584c6cfc0de02cf4746f4a0f77" id="r_a0a1169584c6cfc0de02cf4746f4a0f77"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a1169584c6cfc0de02cf4746f4a0f77">getExportAverage</a> (const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;records, const std::string &amp;time1, const std::string &amp;time2)</td></tr>
+<tr class="separator:a0a1169584c6cfc0de02cf4746f4a0f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0ad0d98711ff78153169094eddac348" id="r_af0ad0d98711ff78153169094eddac348"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0ad0d98711ff78153169094eddac348">getImportAverage</a> (const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;records, const std::string &amp;time1, const std::string &amp;time2)</td></tr>
+<tr class="separator:af0ad0d98711ff78153169094eddac348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7b8504faed7d1d8950fdebeb5b7a3ec" id="r_ad7b8504faed7d1d8950fdebeb5b7a3ec"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7b8504faed7d1d8950fdebeb5b7a3ec">getConsumptionAverage</a> (const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;records, const std::string &amp;time1, const std::string &amp;time2)</td></tr>
+<tr class="separator:ad7b8504faed7d1d8950fdebeb5b7a3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d60bc2d6a6b7fe630fe61bf6e3c6a76" id="r_a4d60bc2d6a6b7fe630fe61bf6e3c6a76"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d60bc2d6a6b7fe630fe61bf6e3c6a76">getProductionAverage</a> (const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;records, const std::string &amp;time1, const std::string &amp;time2)</td></tr>
+<tr class="separator:a4d60bc2d6a6b7fe630fe61bf6e3c6a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Metody prywatne</h2></td></tr>
@@ -127,8 +151,12 @@ Metody prywatne</h2></td></tr>
 <tr class="separator:ad158c0a392345b8682fef8c664943765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bac39bf150951e4979a10bd62134f59" id="r_a7bac39bf150951e4979a10bd62134f59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bac39bf150951e4979a10bd62134f59">parseDateTime</a> (const time_t &amp;time, int &amp;year, int &amp;month, int &amp;day, <a class="el" href="recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495a">Quarter</a> &amp;quarter)</td></tr>
 <tr class="separator:a7bac39bf150951e4979a10bd62134f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7cb6e135ba73bda41454532253bffb6" id="r_ab7cb6e135ba73bda41454532253bffb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7cb6e135ba73bda41454532253bffb6">print</a> (void(*callable)(const <a class="el" href="classRecord.html">Record</a> &amp;<a class="el" href="classRecord.html">Record</a>)) const</td></tr>
-<tr class="separator:ab7cb6e135ba73bda41454532253bffb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa83c74b08725ced5c277979d4c49e7d3" id="r_aa83c74b08725ced5c277979d4c49e7d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa83c74b08725ced5c277979d4c49e7d3">print</a> (std::function&lt; void(const <a class="el" href="classRecord.html">Record</a> &amp;)&gt; callable) const</td></tr>
+<tr class="separator:aa83c74b08725ced5c277979d4c49e7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91ee58b39bb2a89e61b8fea71d5f3014" id="r_a91ee58b39bb2a89e61b8fea71d5f3014"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91ee58b39bb2a89e61b8fea71d5f3014">Query</a> (std::function&lt; double(const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;)&gt; func)</td></tr>
+<tr class="separator:a91ee58b39bb2a89e61b8fea71d5f3014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5faf66a4961701c720f8de31134debe7" id="r_a5faf66a4961701c720f8de31134debe7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="recordsTree_8hpp.html#a2c3e4bb40f36b262a5214e2da2bca9c5">Error</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5faf66a4961701c720f8de31134debe7">checkError</a> (const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;records, const std::string &amp;time1, const std::string &amp;time2)</td></tr>
+<tr class="separator:a5faf66a4961701c720f8de31134debe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Atrybuty prywatne</h2></td></tr>
@@ -151,6 +179,326 @@ Atrybuty prywatne</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classRecord.html">Record</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>record</em></span></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5faf66a4961701c720f8de31134debe7" name="a5faf66a4961701c720f8de31134debe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5faf66a4961701c720f8de31134debe7">&#9670;&#160;</a></span>checkError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="recordsTree_8hpp.html#a2c3e4bb40f36b262a5214e2da2bca9c5">Error</a> RecordsTree::checkError </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>records</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62dc564fe4064d283570b32376374342" name="a62dc564fe4064d283570b32376374342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62dc564fe4064d283570b32376374342">&#9670;&#160;</a></span>getAutoConsumptionAverage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RecordsTree::getAutoConsumptionAverage </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>records</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7554610e938357865b4e90cf70b912c7" name="a7554610e938357865b4e90cf70b912c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7554610e938357865b4e90cf70b912c7">&#9670;&#160;</a></span>getAutoConsumptionSum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RecordsTree::getAutoConsumptionSum </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>records</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad7b8504faed7d1d8950fdebeb5b7a3ec" name="ad7b8504faed7d1d8950fdebeb5b7a3ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7b8504faed7d1d8950fdebeb5b7a3ec">&#9670;&#160;</a></span>getConsumptionAverage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RecordsTree::getConsumptionAverage </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>records</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7f0a0a886205a9fd289f89c4808d706" name="ab7f0a0a886205a9fd289f89c4808d706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f0a0a886205a9fd289f89c4808d706">&#9670;&#160;</a></span>getConsumptionSum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RecordsTree::getConsumptionSum </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>records</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a1169584c6cfc0de02cf4746f4a0f77" name="a0a1169584c6cfc0de02cf4746f4a0f77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a1169584c6cfc0de02cf4746f4a0f77">&#9670;&#160;</a></span>getExportAverage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RecordsTree::getExportAverage </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>records</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a884bb2fb1da1c70b75851efe48266def" name="a884bb2fb1da1c70b75851efe48266def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a884bb2fb1da1c70b75851efe48266def">&#9670;&#160;</a></span>getExportSum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RecordsTree::getExportSum </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>records</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0ad0d98711ff78153169094eddac348" name="af0ad0d98711ff78153169094eddac348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0ad0d98711ff78153169094eddac348">&#9670;&#160;</a></span>getImportAverage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RecordsTree::getImportAverage </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>records</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a98d6e1fda49733947fd2d0bac0852118" name="a98d6e1fda49733947fd2d0bac0852118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98d6e1fda49733947fd2d0bac0852118">&#9670;&#160;</a></span>getImportSum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RecordsTree::getImportSum </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>records</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aedb67f091a93d78c8cef8cb709381a71" name="aedb67f091a93d78c8cef8cb709381a71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedb67f091a93d78c8cef8cb709381a71">&#9670;&#160;</a></span>getNumberOfItemsBetweenTimes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int RecordsTree::getNumberOfItemsBetweenTimes </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>records</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4d60bc2d6a6b7fe630fe61bf6e3c6a76" name="a4d60bc2d6a6b7fe630fe61bf6e3c6a76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d60bc2d6a6b7fe630fe61bf6e3c6a76">&#9670;&#160;</a></span>getProductionAverage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RecordsTree::getProductionAverage </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>records</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4de4e4ec94dd3d51cef25de7f97e6694" name="a4de4e4ec94dd3d51cef25de7f97e6694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4de4e4ec94dd3d51cef25de7f97e6694">&#9670;&#160;</a></span>getProductionSum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RecordsTree::getProductionSum </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>records</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time2</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -226,8 +574,8 @@ Atrybuty prywatne</h2></td></tr>
 
 </div>
 </div>
-<a id="ab7cb6e135ba73bda41454532253bffb6" name="ab7cb6e135ba73bda41454532253bffb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7cb6e135ba73bda41454532253bffb6">&#9670;&#160;</a></span>print()</h2>
+<a id="aa83c74b08725ced5c277979d4c49e7d3" name="aa83c74b08725ced5c277979d4c49e7d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa83c74b08725ced5c277979d4c49e7d3">&#9670;&#160;</a></span>print()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -238,7 +586,7 @@ Atrybuty prywatne</h2></td></tr>
         <tr>
           <td class="memname">void RecordsTree::print </td>
           <td>(</td>
-          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>callable&#160;</em></span>)(const <a class="el" href="classRecord.html">Record</a> &amp;<a class="el" href="classRecord.html">Record</a>)<span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td class="paramtype">std::function&lt; void(const <a class="el" href="classRecord.html">Record</a> &amp;)&gt;</td>          <td class="paramname"><span class="paramname"><em>callable</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -251,8 +599,8 @@ Atrybuty prywatne</h2></td></tr>
 
 </div>
 </div>
-<a id="a30c33765225f25033ddf4d9f48f968aa" name="a30c33765225f25033ddf4d9f48f968aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30c33765225f25033ddf4d9f48f968aa">&#9670;&#160;</a></span>printRecord()</h2>
+<a id="ae7fb6f362e8e54e8da4896f74e5556ed" name="ae7fb6f362e8e54e8da4896f74e5556ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7fb6f362e8e54e8da4896f74e5556ed">&#9670;&#160;</a></span>printRecord()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -261,7 +609,28 @@ Atrybuty prywatne</h2></td></tr>
           <td class="memname">void RecordsTree::printRecord </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac921d600e24078e0c7a43644ec6d6e2f" name="ac921d600e24078e0c7a43644ec6d6e2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac921d600e24078e0c7a43644ec6d6e2f">&#9670;&#160;</a></span>printRecordsBetweenTimes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RecordsTree::printRecordsBetweenTimes </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>time2</em></span>&#160;) const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -281,6 +650,31 @@ Atrybuty prywatne</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91ee58b39bb2a89e61b8fea71d5f3014" name="a91ee58b39bb2a89e61b8fea71d5f3014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91ee58b39bb2a89e61b8fea71d5f3014">&#9670;&#160;</a></span>Query()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RecordsTree::Query </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; double(const std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt; &amp;)&gt;</td>          <td class="paramname"><span class="paramname"><em>func</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

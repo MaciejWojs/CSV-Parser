@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['q1_0',['Q1',['../recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa8860370af76c01de5337d4626c2678f4',1,'recordsTree.hpp']]],
-  ['q2_1',['Q2',['../recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa3bb284154c27cd76e8dbac26517addbd',1,'recordsTree.hpp']]],
-  ['q3_2',['Q3',['../recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa4eebf705200f6e823ef85d95711c3a6c',1,'recordsTree.hpp']]],
-  ['q4_3',['Q4',['../recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa966242192147c8f490bf262b04a7970e',1,'recordsTree.hpp']]]
+  ['emptyrecords_0',['EmptyRecords',['../recordsTree_8hpp.html#a2c3e4bb40f36b262a5214e2da2bca9c5a71b32ccd06e7ecfb2c78da55cf843fb4',1,'recordsTree.hpp']]],
+  ['emptytime_1',['EmptyTime',['../recordsTree_8hpp.html#a2c3e4bb40f36b262a5214e2da2bca9c5a72d223347fbc917f2f9cb72168f9638d',1,'recordsTree.hpp']]]
 ];

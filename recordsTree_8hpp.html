@@ -109,20 +109,23 @@ $(function(){initNavTree('recordsTree_8hpp.html',''); initResizable(true); });
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Wykres zależności załączania dla recordsTree.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="recordsTree_8hpp__incl.png" border="0" usemap="#arecordsTree_8hpp" alt=""/></div>
 <map name="arecordsTree_8hpp" id="arecordsTree_8hpp">
-<area shape="rect" title=" " alt="" coords="476,5,590,31"/>
+<area shape="rect" title=" " alt="" coords="506,5,621,31"/>
 <area shape="rect" href="Record_8hpp.html" title=" " alt="" coords="304,79,397,105"/>
-<area shape="poly" title=" " alt="" coords="503,34,396,75,394,71,501,29"/>
+<area shape="poly" title=" " alt="" coords="528,34,402,76,400,71,527,29"/>
 <area shape="rect" title=" " alt="" coords="544,153,602,178"/>
-<area shape="poly" title=" " alt="" coords="532,32,528,65,528,85,532,104,541,123,553,140,548,143,536,125,526,106,522,85,522,65,527,31"/>
+<area shape="poly" title=" " alt="" coords="555,33,535,65,530,85,532,104,541,123,553,140,548,143,536,125,526,105,525,84,530,63,551,30"/>
 <area shape="rect" title=" " alt="" coords="540,79,587,105"/>
-<area shape="poly" title=" " alt="" coords="541,30,555,64,550,66,536,32"/>
+<area shape="poly" title=" " alt="" coords="566,31,566,63,561,63,561,31"/>
 <area shape="rect" title=" " alt="" coords="611,79,679,105"/>
-<area shape="poly" title=" " alt="" coords="553,29,615,68,612,73,551,34"/>
+<area shape="poly" title=" " alt="" coords="579,30,622,67,618,71,576,34"/>
+<area shape="rect" title=" " alt="" coords="702,79,780,105"/>
+<area shape="poly" title=" " alt="" coords="595,29,698,70,696,75,593,34"/>
 <area shape="rect" title=" " alt="" coords="5,153,77,178"/>
 <area shape="poly" title=" " alt="" coords="304,106,92,154,91,149,303,101"/>
 <area shape="rect" title=" " alt="" coords="100,153,166,178"/>
@@ -174,8 +177,42 @@ Wyliczenia</h2></td></tr>
 , <a class="el" href="#a90c364256882adf957d344b6e65e495aa966242192147c8f490bf262b04a7970e">Q4</a>
  }</td></tr>
 <tr class="separator:a90c364256882adf957d344b6e65e495a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c3e4bb40f36b262a5214e2da2bca9c5" id="r_a2c3e4bb40f36b262a5214e2da2bca9c5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c3e4bb40f36b262a5214e2da2bca9c5">Error</a> { <a class="el" href="#a2c3e4bb40f36b262a5214e2da2bca9c5a71b32ccd06e7ecfb2c78da55cf843fb4">EmptyRecords</a>
+, <a class="el" href="#a2c3e4bb40f36b262a5214e2da2bca9c5a72d223347fbc917f2f9cb72168f9638d">EmptyTime</a>
+, <a class="el" href="#a2c3e4bb40f36b262a5214e2da2bca9c5a1dc544daf7065dd18298957b9468f7af">SameTime</a>
+, <a class="el" href="#a2c3e4bb40f36b262a5214e2da2bca9c5a70a47cae4eb221930f2663fd244369ea">NoError</a>
+ }</td></tr>
+<tr class="separator:a2c3e4bb40f36b262a5214e2da2bca9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Dokumentacja typów wyliczanych</h2>
+<a id="a2c3e4bb40f36b262a5214e2da2bca9c5" name="a2c3e4bb40f36b262a5214e2da2bca9c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c3e4bb40f36b262a5214e2da2bca9c5">&#9670;&#160;</a></span>Error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a2c3e4bb40f36b262a5214e2da2bca9c5">Error</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Wartości wyliczeń</th></tr><tr><td class="fieldname"><a id="a2c3e4bb40f36b262a5214e2da2bca9c5a71b32ccd06e7ecfb2c78da55cf843fb4" name="a2c3e4bb40f36b262a5214e2da2bca9c5a71b32ccd06e7ecfb2c78da55cf843fb4"></a>EmptyRecords&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2c3e4bb40f36b262a5214e2da2bca9c5a72d223347fbc917f2f9cb72168f9638d" name="a2c3e4bb40f36b262a5214e2da2bca9c5a72d223347fbc917f2f9cb72168f9638d"></a>EmptyTime&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2c3e4bb40f36b262a5214e2da2bca9c5a1dc544daf7065dd18298957b9468f7af" name="a2c3e4bb40f36b262a5214e2da2bca9c5a1dc544daf7065dd18298957b9468f7af"></a>SameTime&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2c3e4bb40f36b262a5214e2da2bca9c5a70a47cae4eb221930f2663fd244369ea" name="a2c3e4bb40f36b262a5214e2da2bca9c5a70a47cae4eb221930f2663fd244369ea"></a>NoError&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <a id="a90c364256882adf957d344b6e65e495a" name="a90c364256882adf957d344b6e65e495a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90c364256882adf957d344b6e65e495a">&#9670;&#160;</a></span>Quarter</h2>
 
