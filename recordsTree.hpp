@@ -38,18 +38,6 @@ enum class Quarter {
  * @brief Search operations in the records tree.
  */
 enum class SearchOperation {
-    /**
-     * @brief Wyszukiwanie według czasu.
-     * @~english
-     * @brief Search by time.
-     */
-    SearchByTime = 1,
-    /**
-     * @~polish
-     * @brief Wyszukiwanie według autokonsumpcji.
-     * @~english
-     * @brief Search by auto consumption.
-     */
     SearchByAutoConsumption,
     /**
      * @~polish
@@ -158,6 +146,7 @@ class RecordsTree {
     void compareSumsAndAverages(const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end, double period1_sum, double period2_sum, double period1_avg, double period2_avg) const;
 
     public:
+    void searchAndPrint(const std::string& time_begin, const std::string& time_end, SearchOperation operation, double value, double tolerance) const;
     int getNumberOfItemsBetweenTimes(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
     void printRecord() const;
     void printRecordsBetweenTimes(const std::string& time1, const std::string& time2) const;

@@ -446,3 +446,30 @@ void RecordsTree::compareSumsAndAverages(const std::string& time1_begin, const s
         std::cout << "Okresy " << time1_begin << " - " << time1_end << " oraz " << time2_begin << " - " << time2_end << " charakteryzują się takim samym średnim zużyciem energii elektrycznej\n";
     }
 }
+
+void RecordsTree::searchAndPrint(const std::string& time_begin, const std::string& time_end, SearchOperation operation, double value, double tolerance) const {
+    std::vector<Record> matchingRecords;
+    Query([&](const std::vector<Record>& records) {
+        auto getValue = [](const Record& r, SearchOperation op) {
+            switch (op) {
+            case SearchOperation::SearchByAutoConsumption: return r.getAutoConsumption();
+            case SearchOperation::SearchByExport: return r.getExport();
+            case SearchOperation::SearchByImport: return r.getImport();
+            case SearchOperation::SearchByConsumption: return r.getConsumption();
+            case SearchOperation::SearchByProduction: return r.getProduction();
+            default: return 0.0;
+            }
+            };
+
+        std::ranges::copy_if(records, std::back_inserter(matchingRecords),
+            [&](const Record& r) {
+                return r.getTime() >= convertToTimeT(time_begin) &&
+                    r.getTime() <= convertToTimeT(time_end) &&
+                    std::abs(getValue(r, operation) - value) <= tolerance;
+            });
+        return 0.0;
+        });
+
+    std::cout << "Rekordy spełniające kryteria wyszukiwania:\n";
+    std::ranges::for_each(matchingRecords, [](const Record& r) { std::cout << r << '\n'; });
+}

@@ -322,7 +322,8 @@ int main() {
                 int selectedSearchOperation{};
                 double value{};
                 double tolerance{};
-                std::string time{};
+                std::string time_begin{};
+                std::string time_end{};
 
                 //TODO
 
@@ -336,6 +337,17 @@ int main() {
                 }
                 auto searchOperation = static_cast<SearchOperation>(selectedSearchOperation);
 
+                std::cout << "Podaj wartosc: ";
+                std::cin >> value;
+                std::cout << "Podaj tolerancje: ";
+                std::cin >> tolerance;
+                std::cout << "Podaj poczatek okresu: ";
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::getline(std::cin, time_begin);
+                std::cout << "Podaj koniec okresu: ";
+                std::getline(std::cin, time_end);
+
+                tree.searchAndPrint(time_begin, time_end, searchOperation, value, tolerance);
 
                 break;
             }
