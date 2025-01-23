@@ -1,3 +1,12 @@
+/**
+ * @file recordsTree.hpp
+ * @~english
+ * @brief Header file containing the RecordsTree class and related structures for managing and querying records.
+ *
+ * @~polish
+ * @brief Plik nagłówkowy zawierający klasę RecordsTree i powiązane struktury do zarządzania i zapytań rekordów.
+ */
+
 #ifndef C943C827_7391_4D56_A271_0E6494FEC661
 #define C943C827_7391_4D56_A271_0E6494FEC661
 
@@ -7,6 +16,13 @@
 #include <vector>
 #include <functional>
 
+/**
+ * @~english
+ * @brief Enumeration representing the quarters of a year.
+ *
+ * @~polish
+ * @brief Wyliczenie reprezentujące kwartały roku.
+ */
 enum class Quarter {
     Q1,
     Q2,
@@ -14,6 +30,13 @@ enum class Quarter {
     Q4
 };
 
+/**
+ * @~english
+ * @brief Enumeration representing possible error states.
+ *
+ * @~polish
+ * @brief Wyliczenie reprezentujące możliwe stany błędów.
+ */
 enum class Error {
     EmptyRecords,
     EmptyTime,
@@ -21,22 +44,57 @@ enum class Error {
     NoError
 };
 
+/**
+ * @~english
+ * @brief Structure representing a node for a quarter containing records.
+ *
+ * @~polish
+ * @brief Struktura reprezentująca węzeł dla kwartału zawierającego rekordy.
+ */
 struct QuarterNode {
     std::vector<Record> records;
 };
 
+/**
+ * @~english
+ * @brief Structure representing a node for a day containing quarters.
+ *
+ * @~polish
+ * @brief Struktura reprezentująca węzeł dla dnia zawierającego kwartały.
+ */
 struct DayNode {
     std::map<int, QuarterNode> quarters; // 0-3 dla każdej ćwiartki dnia
 };
 
+/**
+ * @~english
+ * @brief Structure representing a node for a month containing days.
+ *
+ * @~polish
+ * @brief Struktura reprezentująca węzeł dla miesiąca zawierającego dni.
+ */
 struct MonthNode {
     std::map<int, DayNode> days;
 };
 
+/**
+ * @~english
+ * @brief Structure representing a node for a year containing months.
+ *
+ * @~polish
+ * @brief Struktura reprezentująca węzeł dla roku zawierającego miesiące.
+ */
 struct YearNode {
     std::map<int, MonthNode> months;
 };
 
+/**
+ * @~english
+ * @brief Class for managing and querying records organized by year, month, day, and quarter.
+ *
+ * @~polish
+ * @brief Klasa do zarządzania i zapytań rekordów zorganizowanych według roku, miesiąca, dnia i kwartału.
+ */
 class RecordsTree {
     private:
     std::map<int, YearNode> years;
@@ -47,7 +105,6 @@ class RecordsTree {
     double Query(std::function<double(const std::vector<Record>&)> func) const;
     Error checkError(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
     void compareSumsAndAverages(const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end, double period1_sum, double period2_sum, double period1_avg, double period2_avg) const;
-
 
     public:
     int getNumberOfItemsBetweenTimes(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
@@ -63,7 +120,7 @@ class RecordsTree {
     double getConsumptionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
     double getProductionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
 
-    double getAutoConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;;
+    double getAutoConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
     double getExportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
     double getImportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
     double getConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
@@ -76,4 +133,4 @@ class RecordsTree {
     void compareProduction(const std::vector<Record>& records, const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end) const;
 };
 
-#endif
+#endif /* C943C827_7391_4D56_A271_0E6494FEC661 */
