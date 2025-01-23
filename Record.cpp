@@ -38,48 +38,29 @@ std::istream& operator>>(std::istream& is, Record& Record) {
     std::string value;
     try {
         std::getline(ss, value, ',');
-        std::string time = value;
-        std::tm tm = {};
-        std::istringstream ss(time);
-        ss >> std::get_time(&tm, "%d.%m.%Y %H:%M");
-        Record.Time = std::mktime(&tm);
+        auto time = convertToTimeT(value);
+        Record.Time = time;
     } catch (const std::exception& e) {
         std::throw_with_nested(std::runtime_error("Could not convert string to time_t in Time [first field]"));
     }
 
+    std::vector<std::pair<std::string, double&>> fields = {
+        {"AutoConsumption", Record.AutoConsumption},
+        {"Export", Record.Export},
+        {"Import", Record.Import},
+        {"Consumption", Record.Consumption},
+        {"Production", Record.Production}
+    };
 
-    try {
-        std::getline(ss, value, ',');
-        Record.AutoConsumption = std::stod(value);
-    } catch (const std::exception& e) {
-        std::throw_with_nested(std::runtime_error("Could not convert string to double in AutoConsumption [second field]"));
-    }
-    try {
-        std::getline(ss, value, ',');
-        Record.Export = std::stod(value);
-    } catch (const std::exception& e) {
-        std::throw_with_nested(std::runtime_error("Could not convert string to double in Export [third field]"));
-    }
-
-    try {
-        std::getline(ss, value, ',');
-        Record.Import = std::stod(value);
-    } catch (const std::exception& e) {
-        std::throw_with_nested(std::runtime_error("Could not convert string to double in Import [fourth field]"));
-    }
-
-    try {
-        std::getline(ss, value, ',');
-        Record.Consumption = std::stod(value);
-    } catch (const std::exception& e) {
-        std::throw_with_nested(std::runtime_error("Could not convert string to double in Consumption [fifth field]"));
-    }
-
-    try {
-        std::getline(ss, value, ',');
-        Record.Production = std::stod(value);
-    } catch (const std::exception& e) {
-        std::throw_with_nested(std::runtime_error("Could not convert string to double in Production [sixth field]"));
+    for (auto& [name, field] : fields) {
+        try {
+            if (!std::getline(ss, value, ',')) {
+                throw std::runtime_error("Missing field: " + name);
+            }
+            field = std::stod(value);
+        } catch (const std::exception& e) {
+            std::throw_with_nested(std::runtime_error("Could not convert string to double in " + name));
+        }
     }
 
     return is;
