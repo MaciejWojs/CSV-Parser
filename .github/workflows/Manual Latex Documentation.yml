@@ -82,9 +82,12 @@ jobs:
               mv dokument.pdf ${{env.FILE_NAME}}.pdf
               gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile="${{env.FILE_NAME}}-compressed.pdf" "${{env.FILE_NAME}}.pdf"
 
-          - name: Release the pdf
+          - name: Upload PDF artifact
             if: env.IS_TAG == 'true'
-            uses: ncipollo/release-action@v1.15.0
+            uses: actions/upload-artifact@v4
             with:
-                artifacts: "./docs/${{env.FILE_NAME}}.pdf, ./docs/${{env.FILE_NAME}}-compressed.pdf"
-                allowUpdates: true
+              overwrite: true
+              name: Latex-Documentation
+              path: |
+                ${{env.OTHER_REPO_PATH}}/${{env.FILE_NAME}}.pdf
+                ${{env.OTHER_REPO_PATH}}/${{env.FILE_NAME}}-compressed.pdf
