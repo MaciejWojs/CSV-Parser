@@ -40,8 +40,9 @@ jobs:
           mv output.out ${{ env.FILE_NAME }}.out
           mv output.exe ${{ env.FILE_NAME }}.exe
 
-      - name: Release the compiled program
-        uses: ncipollo/release-action@v1
+      - name: Upload compiled artifacts
+        uses: actions/upload-artifact@v4
         with:
-          artifacts: "${{ env.FILE_NAME }}.exe,${{ env.FILE_NAME }}.out"
-          allowUpdates: true
+          overwrite: true
+          name: compiled-program
+          path: ${{ env.FILE_NAME }}.exe,${{ env.FILE_NAME }}.out
