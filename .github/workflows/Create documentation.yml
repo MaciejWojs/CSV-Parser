@@ -205,7 +205,7 @@ jobs:
 
       - name: Release PDFs
         if: env.IS_TAG == 'true'
-        uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@v1.15.0
         with:
           allowUpdates: true
           artifacts: |

@@ -84,7 +84,7 @@ jobs:
 
           - name: Release the pdf
             if: env.IS_TAG == 'true'
-            uses: ncipollo/release-action@v1
+            uses: ncipollo/release-action@v1.15.0
             with:
                 artifacts: "./docs/${{env.FILE_NAME}}.pdf, ./docs/${{env.FILE_NAME}}-compressed.pdf"
                 allowUpdates: true
