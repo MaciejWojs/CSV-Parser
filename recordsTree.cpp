@@ -120,7 +120,7 @@ void RecordsTree::sortRecords() {
     }
 }
 
-double RecordsTree::Query(std::function<double(const std::vector<Record>&)> func) {
+double RecordsTree::Query(std::function<double(const std::vector<Record>&)> func) const {
     double total = 0.0;
     for (auto& [year, yearNode] : years) {
         for (auto& [month, monthNode] : yearNode.months) {
@@ -135,7 +135,7 @@ double RecordsTree::Query(std::function<double(const std::vector<Record>&)> func
 }
 
 
-double RecordsTree::getAutoConsumptionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) {
+double RecordsTree::getAutoConsumptionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
     if (checkError(records, time1, time2) != Error::NoError) {
         return 0.0;
     }
@@ -157,7 +157,7 @@ double RecordsTree::getAutoConsumptionSum(const std::vector<Record>& records, co
 };
 
 
-double RecordsTree::getExportSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) {
+double RecordsTree::getExportSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
     if (checkError(records, time1, time2) != Error::NoError) {
         return 0.0;
     }
@@ -176,7 +176,7 @@ double RecordsTree::getExportSum(const std::vector<Record>& records, const std::
         });
 };
 
-double RecordsTree::getImportSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) {
+double RecordsTree::getImportSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
     if (checkError(records, time1, time2) != Error::NoError) {
         return 0.0;
     }
@@ -196,7 +196,7 @@ double RecordsTree::getImportSum(const std::vector<Record>& records, const std::
         });
 };
 
-double RecordsTree::getConsumptionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) {
+double RecordsTree::getConsumptionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
     if (checkError(records, time1, time2) != Error::NoError) {
         return 0.0;
     }
@@ -217,7 +217,7 @@ double RecordsTree::getConsumptionSum(const std::vector<Record>& records, const 
 };
 
 
-double RecordsTree::getProductionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) {
+double RecordsTree::getProductionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
     if (checkError(records, time1, time2) != Error::NoError) {
         return 0.0;
     }
@@ -237,7 +237,7 @@ double RecordsTree::getProductionSum(const std::vector<Record>& records, const s
         });
 };
 
-Error RecordsTree::checkError(const std::vector<Record>& records, const std::string& time1, const std::string& time2) {
+Error RecordsTree::checkError(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
     if (records.empty()) {
         std::cerr << "Brak rekordów w drzewie\n";
         return Error::EmptyRecords;
@@ -256,7 +256,7 @@ Error RecordsTree::checkError(const std::vector<Record>& records, const std::str
     return Error::NoError;
 }
 
-int RecordsTree::getNumberOfItemsBetweenTimes(const std::vector<Record>& records, const std::string& time1, const std::string& time2) {
+int RecordsTree::getNumberOfItemsBetweenTimes(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
     if (checkError(records, time1, time2) != Error::NoError) {
         return 0;
     }
@@ -298,24 +298,22 @@ void RecordsTree::printRecordsBetweenTimes(const std::string& time1, const std::
     }
 }
 
-
-double RecordsTree::getAutoConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) {
+double RecordsTree::getAutoConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
     return getAutoConsumptionSum(records, time1, time2) / getNumberOfItemsBetweenTimes(records, time1, time2);
 }
 
-
-double RecordsTree::getExportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) {
+double RecordsTree::getExportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
     return getExportSum(records, time1, time2) / getNumberOfItemsBetweenTimes(records, time1, time2);
 }
 
-double RecordsTree::getImportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) {
+double RecordsTree::getImportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
     return getImportSum(records, time1, time2) / getNumberOfItemsBetweenTimes(records, time1, time2);
 }
 
-double RecordsTree::getConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) {
+double RecordsTree::getConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
     return getConsumptionSum(records, time1, time2) / getNumberOfItemsBetweenTimes(records, time1, time2);
 }
 
-double RecordsTree::getProductionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) {
+double RecordsTree::getProductionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
     return getProductionSum(records, time1, time2) / getNumberOfItemsBetweenTimes(records, time1, time2);
 }
