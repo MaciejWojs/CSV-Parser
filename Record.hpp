@@ -13,15 +13,20 @@
 
 class Record {
     time_t Time;
-    float AutoConsumption;
-    float Export;
-    float Import;
-    float Consumption;
-    float Production;
+    double AutoConsumption;
+    double Export;
+    double Import;
+    double Consumption;
+    double Production;
 
     public:
     Record();
     const time_t& getTime() const;
+    double getAutoConsumption() const;
+    double getExport() const;
+    double getImport() const;
+    double getConsumption() const;
+    double getProduction() const;
     friend std::ostream& operator<<(std::ostream& os, const Record& Record);
     friend std::istream& operator>>(std::istream& is, Record& Record);
 };

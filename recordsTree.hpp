@@ -5,12 +5,20 @@
 #include <map>
 #include <memory>
 #include <vector>
+#include <functional>
 
 enum class Quarter {
     Q1,
     Q2,
     Q3,
     Q4
+};
+
+enum class Error {
+    EmptyRecords,
+    EmptyTime,
+    SameTime,
+    NoError
 };
 
 struct QuarterNode {
@@ -35,13 +43,30 @@ class RecordsTree {
 
     Quarter getQuarter(const std::string& time);
     void parseDateTime(const time_t& time, int& year, int& month, int& day, Quarter& quarter);
-    void print(void(*callable)(const Record& Record)) const;
+    void print(std::function<void(const Record&)> callable) const;
+    double Query(std::function<double(const std::vector<Record>&)> func);
+    Error checkError(const std::vector<Record>& records, const std::string& time1, const std::string& time2);
+
 
     public:
-    void printRecord();
+    int getNumberOfItemsBetweenTimes(const std::vector<Record>& records, const std::string& time1, const std::string& time2);
+    void printRecord() const;
+    void printRecordsBetweenTimes(const std::string& time1, const std::string& time2) const;
     void sortRecords();
     void addRecord(const Record& record);
     void printTree() const;
+
+    double getAutoConsumptionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2);
+    double getExportSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2);
+    double getImportSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2);
+    double getConsumptionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2);
+    double getProductionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2);
+
+    double getAutoConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2);
+    double getExportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2);
+    double getImportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2);
+    double getConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2);
+    double getProductionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2);
 };
 
 #endif

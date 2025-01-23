@@ -31,7 +31,7 @@ std::istream& operator>>(std::istream& is, Record& Record) {
 
     }
     line = trimAllQuotationMarks(line);
-    std::cout << line << std::endl;
+    // std::cout << line << std::endl;
 
     std::istringstream ss(line);
 
@@ -94,4 +94,24 @@ std::ostream& operator<<(std::ostream& os, const Record& Record) {
 
 const time_t& Record::getTime() const {
     return Time;
+}
+
+double Record::getAutoConsumption() const {
+    return AutoConsumption;
+}
+
+double Record::getExport() const {
+    return Export;
+}
+
+double Record::getImport() const {
+    return Import;
+}
+
+double Record::getConsumption() const {
+    return Consumption;
+}
+
+double Record::getProduction() const {
+    return Production;
 }
