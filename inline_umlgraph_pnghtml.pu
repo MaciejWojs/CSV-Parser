@@ -18,26 +18,3 @@ class Record {
 
 }
 @enduml
-@startuml inline_umlgraph_5.png
-class RecordsTree {
--Query(std::function<double ( const std::vector<Record>& )> func) : double
--checkError(const std::vector<Record>& records, const std::string& time1, const std::string& time2) : int
--getQuarter(const std::string& time) : int
--years : std::map<int, YearNode>
--parseDateTime(const time_t& time, int& year, int& month, int& day, Quarter& quarter) : void
--print(std::function<void ( const Record& )> callable) : void {query}
-+getAutoConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) : double
-+getAutoConsumptionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) : double
-+getConsumptionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) : double
-+getConsumptionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) : double
-+getExportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) : double
-+getExportSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) : double
-+getImportAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) : double
-+getImportSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) : double
-+getProductionAverage(const std::vector<Record>& records, const std::string& time1, const std::string& time2) : double
-+getProductionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) : double
-+getNumberOfItemsBetweenTimes(const std::vector<Record>& records, const std::string& time1, const std::string& time2) : int
-+addRecord(const Record& record) : void
-
-}
-@enduml

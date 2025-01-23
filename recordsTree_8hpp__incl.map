@@ -1,15 +1,17 @@
 <map id="recordsTree.hpp" name="recordsTree.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="506,5,621,31"/>
-<area shape="rect" id="Node000002" href="$Record_8hpp.html" title=" " alt="" coords="304,79,397,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="528,34,402,76,400,71,527,29"/>
+<area shape="rect" id="Node000001" title="Plik nagłówkowy zawierający klasę RecordsTree i powiązane struktury do zarządzania i zapytań rekordów..." alt="" coords="628,5,742,31"/>
+<area shape="rect" id="Node000002" href="$Record_8hpp.html" title="Plik nagłówkowy zawierający klasę Record do przechowywania i zarządzania danymi energetycznymi." alt="" coords="304,79,397,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="628,34,413,80,412,75,627,29"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="544,153,602,178"/>
-<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="555,33,535,65,530,85,532,104,541,123,553,140,548,143,536,125,526,105,525,84,530,63,551,30"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="540,79,587,105"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="566,31,566,63,561,63,561,31"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="611,79,679,105"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="579,30,622,67,618,71,576,34"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="702,79,780,105"/>
-<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="595,29,698,70,696,75,593,34"/>
+<area shape="poly" id="edge12_Node000001_Node000007" title=" " alt="" coords="628,28,601,35,575,45,550,60,531,80,526,95,530,110,550,140,546,143,525,112,521,95,527,78,547,56,572,40,600,30,627,23"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="541,79,701,105"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="676,33,644,69,640,66,672,29"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="726,79,772,105"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="698,29,730,66,726,69,694,33"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="797,79,864,105"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="711,29,793,69,791,74,708,34"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="888,79,965,105"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="727,29,874,72,872,77,725,34"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,153,77,178"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="304,106,92,154,91,149,303,101"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="100,153,166,178"/>

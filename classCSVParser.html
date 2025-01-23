@@ -107,22 +107,29 @@ $(function(){initNavTree('classCSVParser.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Klasa do parsowania plików CSV na rekordy.  
+ <a href="#details">Więcej...</a></p>
+
 <p><code>#include &lt;<a class="el" href="CSV-Parser_8hpp_source.html">CSV-Parser.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
 <tr class="memitem:a3700e49c67b4e4831a734f6a7140135b" id="r_a3700e49c67b4e4831a734f6a7140135b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3700e49c67b4e4831a734f6a7140135b">CSVParser</a> (const std::string &amp;<a class="el" href="#adeac14aa5f4cf638f69c033beb2a2ccb">filename</a>)</td></tr>
+<tr class="memdesc:a3700e49c67b4e4831a734f6a7140135b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor inicjalizujący parser z podaną nazwą pliku.  <br /></td></tr>
 <tr class="separator:a3700e49c67b4e4831a734f6a7140135b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b15b7243d0d1d491223f68217986746" id="r_a8b15b7243d0d1d491223f68217986746"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classRecord.html">Record</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b15b7243d0d1d491223f68217986746">parse</a> ()</td></tr>
+<tr class="memdesc:a8b15b7243d0d1d491223f68217986746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parsuje plik CSV i zwraca wektor rekordów.  <br /></td></tr>
 <tr class="separator:a8b15b7243d0d1d491223f68217986746"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Atrybuty prywatne</h2></td></tr>
 <tr class="memitem:adeac14aa5f4cf638f69c033beb2a2ccb" id="r_adeac14aa5f4cf638f69c033beb2a2ccb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adeac14aa5f4cf638f69c033beb2a2ccb">filename</a></td></tr>
+<tr class="memdesc:adeac14aa5f4cf638f69c033beb2a2ccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nazwa pliku CSV do parsowania.  <br /></td></tr>
 <tr class="separator:adeac14aa5f4cf638f69c033beb2a2ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
-<div class="textblock"><div class="plantumlgraph">
+<div class="textblock"><p>Klasa do parsowania plików CSV na rekordy. </p>
+<div class="plantumlgraph">
 <img src="inline_umlgraph_1.png" />
 </div>
  </div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
@@ -141,6 +148,14 @@ Atrybuty prywatne</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Konstruktor inicjalizujący parser z podaną nazwą pliku. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Nazwa pliku CSV do parsowania. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Dokumentacja funkcji składowych</h2>
@@ -158,6 +173,9 @@ Atrybuty prywatne</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Parsuje plik CSV i zwraca wektor rekordów. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Wektor sparsowanych rekordów. </dd></dl>
 
 </div>
 </div>
@@ -181,6 +199,8 @@ Atrybuty prywatne</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Nazwa pliku CSV do parsowania. </p>
 
 </div>
 </div>

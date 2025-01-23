@@ -1,21 +1,4 @@
 var searchData=
 [
-  ['getautoconsumption_0',['getAutoConsumption',['../classRecord.html#a74fd53b48ec5111ed0b7e4beff210a71',1,'Record']]],
-  ['getautoconsumptionaverage_1',['getAutoConsumptionAverage',['../classRecordsTree.html#a62dc564fe4064d283570b32376374342',1,'RecordsTree']]],
-  ['getautoconsumptionsum_2',['getAutoConsumptionSum',['../classRecordsTree.html#a7554610e938357865b4e90cf70b912c7',1,'RecordsTree']]],
-  ['getconsumption_3',['getConsumption',['../classRecord.html#a23379b7f1501d62a3f860fd9e0392df2',1,'Record']]],
-  ['getconsumptionaverage_4',['getConsumptionAverage',['../classRecordsTree.html#ad7b8504faed7d1d8950fdebeb5b7a3ec',1,'RecordsTree']]],
-  ['getconsumptionsum_5',['getConsumptionSum',['../classRecordsTree.html#ab7f0a0a886205a9fd289f89c4808d706',1,'RecordsTree']]],
-  ['getexport_6',['getExport',['../classRecord.html#aea74eeedc7a7cac168bf58b1d50cc076',1,'Record']]],
-  ['getexportaverage_7',['getExportAverage',['../classRecordsTree.html#a0a1169584c6cfc0de02cf4746f4a0f77',1,'RecordsTree']]],
-  ['getexportsum_8',['getExportSum',['../classRecordsTree.html#a884bb2fb1da1c70b75851efe48266def',1,'RecordsTree']]],
-  ['getimport_9',['getImport',['../classRecord.html#a9c67c177e5501b46143404009e64ac92',1,'Record']]],
-  ['getimportaverage_10',['getImportAverage',['../classRecordsTree.html#af0ad0d98711ff78153169094eddac348',1,'RecordsTree']]],
-  ['getimportsum_11',['getImportSum',['../classRecordsTree.html#a98d6e1fda49733947fd2d0bac0852118',1,'RecordsTree']]],
-  ['getnumberofitemsbetweentimes_12',['getNumberOfItemsBetweenTimes',['../classRecordsTree.html#aedb67f091a93d78c8cef8cb709381a71',1,'RecordsTree']]],
-  ['getproduction_13',['getProduction',['../classRecord.html#a21710cbd6dae1f96c1394903e4b4412b',1,'Record']]],
-  ['getproductionaverage_14',['getProductionAverage',['../classRecordsTree.html#a4d60bc2d6a6b7fe630fe61bf6e3c6a76',1,'RecordsTree']]],
-  ['getproductionsum_15',['getProductionSum',['../classRecordsTree.html#a4de4e4ec94dd3d51cef25de7f97e6694',1,'RecordsTree']]],
-  ['getquarter_16',['getQuarter',['../classRecordsTree.html#ad158c0a392345b8682fef8c664943765',1,'RecordsTree']]],
-  ['gettime_17',['getTime',['../classRecord.html#a9e5c0e6d1bac76a3cf59df7411ba78cc',1,'Record']]]
+  ['filename_0',['filename',['../classCSVParser.html#adeac14aa5f4cf638f69c033beb2a2ccb',1,'CSVParser']]]
 ];

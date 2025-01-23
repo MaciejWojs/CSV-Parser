@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['utils_2ecpp_0',['utils.cpp',['../utils_8cpp.html',1,'']]],
-  ['utils_2ehpp_1',['utils.hpp',['../utils_8hpp.html',1,'']]]
+  ['time_0',['Time',['../classRecord.html#a463c910da1ba5fe2693d5c6846ac5b40',1,'Record']]],
+  ['trimallquotationmarks_1',['trimAllQuotationMarks',['../utils_8cpp.html#a76e5e79ce66375ea90e5aad0a84e7c96',1,'utils.cpp']]]
 ];

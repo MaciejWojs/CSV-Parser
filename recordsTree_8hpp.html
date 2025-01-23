@@ -105,7 +105,11 @@ $(function(){initNavTree('recordsTree_8hpp.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Dokumentacja pliku recordsTree.hpp</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Plik nagłówkowy zawierający klasę <a class="el" href="classRecordsTree.html" title="Klasa do zarządzania i zapytań rekordów zorganizowanych według roku, miesiąca, dnia i kwartału.">RecordsTree</a> i powiązane struktury do zarządzania i zapytań rekordów.  
+<a href="#details">Więcej...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Record_8hpp_source.html">./Record.hpp</a>&quot;</code><br />
+<code>#include &quot;RecordsTreeIterator.hpp&quot;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -115,17 +119,19 @@ Wykres zależności załączania dla recordsTree.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="recordsTree_8hpp__incl.png" border="0" usemap="#arecordsTree_8hpp" alt=""/></div>
 <map name="arecordsTree_8hpp" id="arecordsTree_8hpp">
-<area shape="rect" title=" " alt="" coords="506,5,621,31"/>
-<area shape="rect" href="Record_8hpp.html" title=" " alt="" coords="304,79,397,105"/>
-<area shape="poly" title=" " alt="" coords="528,34,402,76,400,71,527,29"/>
+<area shape="rect" title="Plik nagłówkowy zawierający klasę RecordsTree i powiązane struktury do zarządzania i zapytań rekordów..." alt="" coords="628,5,742,31"/>
+<area shape="rect" href="Record_8hpp.html" title="Plik nagłówkowy zawierający klasę Record do przechowywania i zarządzania danymi energetycznymi." alt="" coords="304,79,397,105"/>
+<area shape="poly" title=" " alt="" coords="628,34,413,80,412,75,627,29"/>
 <area shape="rect" title=" " alt="" coords="544,153,602,178"/>
-<area shape="poly" title=" " alt="" coords="555,33,535,65,530,85,532,104,541,123,553,140,548,143,536,125,526,105,525,84,530,63,551,30"/>
-<area shape="rect" title=" " alt="" coords="540,79,587,105"/>
-<area shape="poly" title=" " alt="" coords="566,31,566,63,561,63,561,31"/>
-<area shape="rect" title=" " alt="" coords="611,79,679,105"/>
-<area shape="poly" title=" " alt="" coords="579,30,622,67,618,71,576,34"/>
-<area shape="rect" title=" " alt="" coords="702,79,780,105"/>
-<area shape="poly" title=" " alt="" coords="595,29,698,70,696,75,593,34"/>
+<area shape="poly" title=" " alt="" coords="628,28,601,35,575,45,550,60,531,80,526,95,530,110,550,140,546,143,525,112,521,95,527,78,547,56,572,40,600,30,627,23"/>
+<area shape="rect" title=" " alt="" coords="541,79,701,105"/>
+<area shape="poly" title=" " alt="" coords="676,33,644,69,640,66,672,29"/>
+<area shape="rect" title=" " alt="" coords="726,79,772,105"/>
+<area shape="poly" title=" " alt="" coords="698,29,730,66,726,69,694,33"/>
+<area shape="rect" title=" " alt="" coords="797,79,864,105"/>
+<area shape="poly" title=" " alt="" coords="711,29,793,69,791,74,708,34"/>
+<area shape="rect" title=" " alt="" coords="888,79,965,105"/>
+<area shape="poly" title=" " alt="" coords="727,29,874,72,872,77,725,34"/>
 <area shape="rect" title=" " alt="" coords="5,153,77,178"/>
 <area shape="poly" title=" " alt="" coords="304,106,92,154,91,149,303,101"/>
 <area shape="rect" title=" " alt="" coords="100,153,166,178"/>
@@ -146,7 +152,7 @@ Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten 
 <div class="dyncontent">
 <div class="center"><img src="recordsTree_8hpp__dep__incl.png" border="0" usemap="#arecordsTree_8hppdep" alt=""/></div>
 <map name="arecordsTree_8hppdep" id="arecordsTree_8hppdep">
-<area shape="rect" title=" " alt="" coords="44,5,158,31"/>
+<area shape="rect" title="Plik nagłówkowy zawierający klasę RecordsTree i powiązane struktury do zarządzania i zapytań rekordów..." alt="" coords="44,5,158,31"/>
 <area shape="rect" href="main_8cpp.html" title=" " alt="" coords="5,79,79,105"/>
 <area shape="poly" title=" " alt="" coords="83,45,54,80,50,77,79,41"/>
 <area shape="rect" href="recordsTree_8cpp.html" title=" " alt="" coords="102,79,216,105"/>
@@ -159,14 +165,19 @@ Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten 
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Komponenty</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structQuarterNode.html">QuarterNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struktura reprezentująca węzeł dla kwartału zawierającego rekordy.  <a href="structQuarterNode.html#details">Więcej...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDayNode.html">DayNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struktura reprezentująca węzeł dla dnia zawierającego kwartały.  <a href="structDayNode.html#details">Więcej...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonthNode.html">MonthNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struktura reprezentująca węzeł dla miesiąca zawierającego dni.  <a href="structMonthNode.html#details">Więcej...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structYearNode.html">YearNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struktura reprezentująca węzeł dla roku zawierającego miesiące.  <a href="structYearNode.html#details">Więcej...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRecordsTree.html">RecordsTree</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Klasa do zarządzania i zapytań rekordów zorganizowanych według roku, miesiąca, dnia i kwartału.  <a href="classRecordsTree.html#details">Więcej...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -176,15 +187,30 @@ Wyliczenia</h2></td></tr>
 , <a class="el" href="#a90c364256882adf957d344b6e65e495aa4eebf705200f6e823ef85d95711c3a6c">Q3</a>
 , <a class="el" href="#a90c364256882adf957d344b6e65e495aa966242192147c8f490bf262b04a7970e">Q4</a>
  }</td></tr>
+<tr class="memdesc:a90c364256882adf957d344b6e65e495a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyliczenie reprezentujące kwartały roku.  <a href="#a90c364256882adf957d344b6e65e495a">Więcej...</a><br /></td></tr>
 <tr class="separator:a90c364256882adf957d344b6e65e495a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ef00c92781bb82bdf56301105718a7" id="r_a12ef00c92781bb82bdf56301105718a7"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12ef00c92781bb82bdf56301105718a7">SearchOperation</a> { <br />
+&#160;&#160;<a class="el" href="#a12ef00c92781bb82bdf56301105718a7a1debf16798351a593e9e60ae7bdd3a15">AutoConsumption</a> = 1
+, <a class="el" href="#a12ef00c92781bb82bdf56301105718a7a0095a9fa74d1713e43e370a7d7846224">Export</a>
+, <a class="el" href="#a12ef00c92781bb82bdf56301105718a7a72d6d7a1885885bb55a565fd1070581a">Import</a>
+, <a class="el" href="#a12ef00c92781bb82bdf56301105718a7a7746816aa0289a334a323076c8c2dda4">Consumption</a>
+, <br />
+&#160;&#160;<a class="el" href="#a12ef00c92781bb82bdf56301105718a7a756d97bb256b8580d4d71ee0c547804e">Production</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a12ef00c92781bb82bdf56301105718a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operacje wyszukiwania w drzewie rekordów.  <a href="#a12ef00c92781bb82bdf56301105718a7">Więcej...</a><br /></td></tr>
+<tr class="separator:a12ef00c92781bb82bdf56301105718a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c3e4bb40f36b262a5214e2da2bca9c5" id="r_a2c3e4bb40f36b262a5214e2da2bca9c5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c3e4bb40f36b262a5214e2da2bca9c5">Error</a> { <a class="el" href="#a2c3e4bb40f36b262a5214e2da2bca9c5a71b32ccd06e7ecfb2c78da55cf843fb4">EmptyRecords</a>
 , <a class="el" href="#a2c3e4bb40f36b262a5214e2da2bca9c5a72d223347fbc917f2f9cb72168f9638d">EmptyTime</a>
 , <a class="el" href="#a2c3e4bb40f36b262a5214e2da2bca9c5a1dc544daf7065dd18298957b9468f7af">SameTime</a>
 , <a class="el" href="#a2c3e4bb40f36b262a5214e2da2bca9c5a70a47cae4eb221930f2663fd244369ea">NoError</a>
  }</td></tr>
+<tr class="memdesc:a2c3e4bb40f36b262a5214e2da2bca9c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyliczenie reprezentujące możliwe stany błędów.  <a href="#a2c3e4bb40f36b262a5214e2da2bca9c5">Więcej...</a><br /></td></tr>
 <tr class="separator:a2c3e4bb40f36b262a5214e2da2bca9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Dokumentacja typów wyliczanych</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Plik nagłówkowy zawierający klasę <a class="el" href="classRecordsTree.html" title="Klasa do zarządzania i zapytań rekordów zorganizowanych według roku, miesiąca, dnia i kwartału.">RecordsTree</a> i powiązane struktury do zarządzania i zapytań rekordów. </p>
+</div><h2 class="groupheader">Dokumentacja typów wyliczanych</h2>
 <a id="a2c3e4bb40f36b262a5214e2da2bca9c5" name="a2c3e4bb40f36b262a5214e2da2bca9c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c3e4bb40f36b262a5214e2da2bca9c5">&#9670;&#160;</a></span>Error</h2>
 
@@ -204,6 +230,8 @@ Wyliczenia</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Wyliczenie reprezentujące możliwe stany błędów. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Wartości wyliczeń</th></tr><tr><td class="fieldname"><a id="a2c3e4bb40f36b262a5214e2da2bca9c5a71b32ccd06e7ecfb2c78da55cf843fb4" name="a2c3e4bb40f36b262a5214e2da2bca9c5a71b32ccd06e7ecfb2c78da55cf843fb4"></a>EmptyRecords&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a2c3e4bb40f36b262a5214e2da2bca9c5a72d223347fbc917f2f9cb72168f9638d" name="a2c3e4bb40f36b262a5214e2da2bca9c5a72d223347fbc917f2f9cb72168f9638d"></a>EmptyTime&#160;</td><td class="fielddoc"></td></tr>
@@ -232,11 +260,48 @@ Wyliczenia</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Wyliczenie reprezentujące kwartały roku. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Wartości wyliczeń</th></tr><tr><td class="fieldname"><a id="a90c364256882adf957d344b6e65e495aa8860370af76c01de5337d4626c2678f4" name="a90c364256882adf957d344b6e65e495aa8860370af76c01de5337d4626c2678f4"></a>Q1&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a90c364256882adf957d344b6e65e495aa3bb284154c27cd76e8dbac26517addbd" name="a90c364256882adf957d344b6e65e495aa3bb284154c27cd76e8dbac26517addbd"></a>Q2&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a90c364256882adf957d344b6e65e495aa4eebf705200f6e823ef85d95711c3a6c" name="a90c364256882adf957d344b6e65e495aa4eebf705200f6e823ef85d95711c3a6c"></a>Q3&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a90c364256882adf957d344b6e65e495aa966242192147c8f490bf262b04a7970e" name="a90c364256882adf957d344b6e65e495aa966242192147c8f490bf262b04a7970e"></a>Q4&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a12ef00c92781bb82bdf56301105718a7" name="a12ef00c92781bb82bdf56301105718a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ef00c92781bb82bdf56301105718a7">&#9670;&#160;</a></span>SearchOperation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a12ef00c92781bb82bdf56301105718a7">SearchOperation</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Operacje wyszukiwania w drzewie rekordów. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Wartości wyliczeń</th></tr><tr><td class="fieldname"><a id="a12ef00c92781bb82bdf56301105718a7a1debf16798351a593e9e60ae7bdd3a15" name="a12ef00c92781bb82bdf56301105718a7a1debf16798351a593e9e60ae7bdd3a15"></a>AutoConsumption&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a12ef00c92781bb82bdf56301105718a7a0095a9fa74d1713e43e370a7d7846224" name="a12ef00c92781bb82bdf56301105718a7a0095a9fa74d1713e43e370a7d7846224"></a>Export&#160;</td><td class="fielddoc"><p>Wyszukiwanie według eksportu. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a12ef00c92781bb82bdf56301105718a7a72d6d7a1885885bb55a565fd1070581a" name="a12ef00c92781bb82bdf56301105718a7a72d6d7a1885885bb55a565fd1070581a"></a>Import&#160;</td><td class="fielddoc"><p>Wyszukiwanie według importu. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a12ef00c92781bb82bdf56301105718a7a7746816aa0289a334a323076c8c2dda4" name="a12ef00c92781bb82bdf56301105718a7a7746816aa0289a334a323076c8c2dda4"></a>Consumption&#160;</td><td class="fielddoc"><p>Wyszukiwanie według poboru. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a12ef00c92781bb82bdf56301105718a7a756d97bb256b8580d4d71ee0c547804e" name="a12ef00c92781bb82bdf56301105718a7a756d97bb256b8580d4d71ee0c547804e"></a>Production&#160;</td><td class="fielddoc"><p>Wyszukiwanie według produkcji. </p>
+</td></tr>
 </table>
 
 </div>

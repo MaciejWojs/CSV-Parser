@@ -30,6 +30,7 @@ var menudata={children:[
 {text:"Składowe klas",url:"functions.html",children:[
 {text:"Wszystko",url:"functions.html",children:[
 {text:"a",url:"functions.html#index_a"},
+{text:"b",url:"functions.html#index_b"},
 {text:"c",url:"functions.html#index_c"},
 {text:"d",url:"functions.html#index_d"},
 {text:"e",url:"functions.html#index_e"},
@@ -44,13 +45,22 @@ var menudata={children:[
 {text:"s",url:"functions.html#index_s"},
 {text:"t",url:"functions.html#index_t"},
 {text:"y",url:"functions.html#index_y"}]},
-{text:"Funkcje",url:"functions_func.html"},
+{text:"Funkcje",url:"functions_func.html",children:[
+{text:"a",url:"functions_func.html#index_a"},
+{text:"b",url:"functions_func.html#index_b"},
+{text:"c",url:"functions_func.html#index_c"},
+{text:"e",url:"functions_func.html#index_e"},
+{text:"g",url:"functions_func.html#index_g"},
+{text:"p",url:"functions_func.html#index_p"},
+{text:"q",url:"functions_func.html#index_q"},
+{text:"r",url:"functions_func.html#index_r"},
+{text:"s",url:"functions_func.html#index_s"}]},
 {text:"Zmienne",url:"functions_vars.html"},
+{text:"Definicje typów",url:"functions_type.html"},
 {text:"Powiązane symbole",url:"functions_rela.html"}]}]},
 {text:"Pliki",url:"files.html",children:[
 {text:"Lista plików",url:"files.html"},
 {text:"Składowe plików",url:"globals.html",children:[
 {text:"Wszystko",url:"globals.html"},
 {text:"Funkcje",url:"globals_func.html"},
-{text:"Wyliczenia",url:"globals_enum.html"},
-{text:"Definicje",url:"globals_defs.html"}]}]}]}
+{text:"Wyliczenia",url:"globals_enum.html"}]}]}]}

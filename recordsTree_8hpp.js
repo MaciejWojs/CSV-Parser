@@ -16,5 +16,12 @@ var recordsTree_8hpp =
       [ "Q2", "recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa3bb284154c27cd76e8dbac26517addbd", null ],
       [ "Q3", "recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa4eebf705200f6e823ef85d95711c3a6c", null ],
       [ "Q4", "recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa966242192147c8f490bf262b04a7970e", null ]
+    ] ],
+    [ "SearchOperation", "recordsTree_8hpp.html#a12ef00c92781bb82bdf56301105718a7", [
+      [ "AutoConsumption", "recordsTree_8hpp.html#a12ef00c92781bb82bdf56301105718a7a1debf16798351a593e9e60ae7bdd3a15", null ],
+      [ "Export", "recordsTree_8hpp.html#a12ef00c92781bb82bdf56301105718a7a0095a9fa74d1713e43e370a7d7846224", null ],
+      [ "Import", "recordsTree_8hpp.html#a12ef00c92781bb82bdf56301105718a7a72d6d7a1885885bb55a565fd1070581a", null ],
+      [ "Consumption", "recordsTree_8hpp.html#a12ef00c92781bb82bdf56301105718a7a7746816aa0289a334a323076c8c2dda4", null ],
+      [ "Production", "recordsTree_8hpp.html#a12ef00c92781bb82bdf56301105718a7a756d97bb256b8580d4d71ee0c547804e", null ]
     ] ]
 ];

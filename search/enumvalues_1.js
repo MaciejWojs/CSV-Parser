@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['noerror_0',['NoError',['../recordsTree_8hpp.html#a2c3e4bb40f36b262a5214e2da2bca9c5a70a47cae4eb221930f2663fd244369ea',1,'recordsTree.hpp']]]
+  ['consumption_0',['Consumption',['../recordsTree_8hpp.html#a12ef00c92781bb82bdf56301105718a7a7746816aa0289a334a323076c8c2dda4',1,'recordsTree.hpp']]]
 ];

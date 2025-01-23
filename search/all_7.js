@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['monthnode_2',['MonthNode',['../structMonthNode.html',1,'']]],
-  ['months_3',['months',['../structYearNode.html#a2c5f7835b28d79eec5374e4e2e099eea',1,'YearNode']]]
+  ['import_0',['Import',['../classRecord.html#ad47d08b3411cb9a413b5607c6af36727',1,'Record::Import'],['../recordsTree_8hpp.html#a12ef00c92781bb82bdf56301105718a7a72d6d7a1885885bb55a565fd1070581a',1,'Import:&#160;recordsTree.hpp']]],
+  ['iterator_1',['iterator',['../classRecordsTree.html#a63737cee442b4125628bde0c99cfb291',1,'RecordsTree']]]
 ];

@@ -32,6 +32,7 @@ var NAVTREE =
         [ "Wszystko", "functions.html", null ],
         [ "Funkcje", "functions_func.html", null ],
         [ "Zmienne", "functions_vars.html", null ],
+        [ "Definicje typów", "functions_type.html", null ],
         [ "Powiązane symbole", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -40,8 +41,7 @@ var NAVTREE =
       [ "Składowe plików", "globals.html", [
         [ "Wszystko", "globals.html", null ],
         [ "Funkcje", "globals_func.html", null ],
-        [ "Wyliczenia", "globals_enum.html", null ],
-        [ "Definicje", "globals_defs.html", null ]
+        [ "Wyliczenia", "globals_enum.html", null ]
       ] ]
     ] ]
   ] ]

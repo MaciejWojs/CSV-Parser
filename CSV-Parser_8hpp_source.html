@@ -102,30 +102,33 @@ $(function(){initNavTree('CSV-Parser_8hpp_source.html',''); initResizable(true);
   <div class="headertitle"><div class="title">CSV-Parser.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="CSV-Parser_8hpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef DCC709D6_440B_4E5C_8368_658E24487EFD</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define DCC709D6_440B_4E5C_8368_658E24487EFD</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="Record_8hpp.html">Record.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classCSVParser.html">   19</a></span><span class="keyword">class </span><a class="code hl_function" href="classCSVParser.html#a3700e49c67b4e4831a734f6a7140135b">CSVParser</a> {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="classCSVParser.html#a3700e49c67b4e4831a734f6a7140135b">CSVParser</a>(<span class="keyword">const</span> std::string&amp; <a class="code hl_variable" href="classCSVParser.html#adeac14aa5f4cf638f69c033beb2a2ccb">filename</a>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    std::vector&lt;Record&gt; <a class="code hl_function" href="classCSVParser.html#a8b15b7243d0d1d491223f68217986746">parse</a>();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classCSVParser.html#adeac14aa5f4cf638f69c033beb2a2ccb">   25</a></span>    std::string <a class="code hl_variable" href="classCSVParser.html#adeac14aa5f4cf638f69c033beb2a2ccb">filename</a>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+<a href="CSV-Parser_8hpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef DCC709D6_440B_4E5C_8368_658E24487EFD</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define DCC709D6_440B_4E5C_8368_658E24487EFD</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="Record_8hpp.html">Record.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classCSVParser.html">   35</a></span><span class="keyword">class </span><a class="code hl_function" href="classCSVParser.html#a3700e49c67b4e4831a734f6a7140135b">CSVParser</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="classCSVParser.html#a3700e49c67b4e4831a734f6a7140135b">CSVParser</a>(<span class="keyword">const</span> std::string&amp; <a class="code hl_variable" href="classCSVParser.html#adeac14aa5f4cf638f69c033beb2a2ccb">filename</a>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    std::vector&lt;Record&gt; <a class="code hl_function" href="classCSVParser.html#a8b15b7243d0d1d491223f68217986746">parse</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classCSVParser.html#adeac14aa5f4cf638f69c033beb2a2ccb">   60</a></span>    std::string <a class="code hl_variable" href="classCSVParser.html#adeac14aa5f4cf638f69c033beb2a2ccb">filename</a>; </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
 </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif </span><span class="comment">/* DCC709D6_440B_4E5C_8368_658E24487EFD */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aRecord_8hpp_html"><div class="ttname"><a href="Record_8hpp.html">Record.hpp</a></div></div>
-<div class="ttc" id="aclassCSVParser_html_a3700e49c67b4e4831a734f6a7140135b"><div class="ttname"><a href="classCSVParser.html#a3700e49c67b4e4831a734f6a7140135b">CSVParser::CSVParser</a></div><div class="ttdeci">CSVParser(const std::string &amp;filename)</div><div class="ttdef"><b>Definicja</b> CSV-Parser.cpp:11</div></div>
-<div class="ttc" id="aclassCSVParser_html_a8b15b7243d0d1d491223f68217986746"><div class="ttname"><a href="classCSVParser.html#a8b15b7243d0d1d491223f68217986746">CSVParser::parse</a></div><div class="ttdeci">std::vector&lt; Record &gt; parse()</div><div class="ttdef"><b>Definicja</b> CSV-Parser.cpp:13</div></div>
-<div class="ttc" id="aclassCSVParser_html_adeac14aa5f4cf638f69c033beb2a2ccb"><div class="ttname"><a href="classCSVParser.html#adeac14aa5f4cf638f69c033beb2a2ccb">CSVParser::filename</a></div><div class="ttdeci">std::string filename</div><div class="ttdef"><b>Definicja</b> CSV-Parser.hpp:25</div></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif </span><span class="comment">/* DCC709D6_440B_4E5C_8368_658E24487EFD */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aRecord_8hpp_html"><div class="ttname"><a href="Record_8hpp.html">Record.hpp</a></div><div class="ttdoc">Plik nagłówkowy zawierający klasę Record do przechowywania i zarządzania danymi energetycznymi.</div></div>
+<div class="ttc" id="aclassCSVParser_html_a3700e49c67b4e4831a734f6a7140135b"><div class="ttname"><a href="classCSVParser.html#a3700e49c67b4e4831a734f6a7140135b">CSVParser::CSVParser</a></div><div class="ttdeci">CSVParser(const std::string &amp;filename)</div><div class="ttdoc">Konstruktor inicjalizujący parser z podaną nazwą pliku.</div><div class="ttdef"><b>Definicja</b> CSV-Parser.cpp:11</div></div>
+<div class="ttc" id="aclassCSVParser_html_a8b15b7243d0d1d491223f68217986746"><div class="ttname"><a href="classCSVParser.html#a8b15b7243d0d1d491223f68217986746">CSVParser::parse</a></div><div class="ttdeci">std::vector&lt; Record &gt; parse()</div><div class="ttdoc">Parsuje plik CSV i zwraca wektor rekordów.</div><div class="ttdef"><b>Definicja</b> CSV-Parser.cpp:13</div></div>
+<div class="ttc" id="aclassCSVParser_html_adeac14aa5f4cf638f69c033beb2a2ccb"><div class="ttname"><a href="classCSVParser.html#adeac14aa5f4cf638f69c033beb2a2ccb">CSVParser::filename</a></div><div class="ttdeci">std::string filename</div><div class="ttdoc">Nazwa pliku CSV do parsowania.</div><div class="ttdef"><b>Definicja</b> CSV-Parser.hpp:60</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

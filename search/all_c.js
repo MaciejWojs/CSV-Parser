@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['record_0',['Record',['../classRecord.html',1,'Record'],['../classRecord.html#ae8ee53ffec6ff4dac9911517d47e86a5',1,'Record::Record()']]],
-  ['record_2ecpp_1',['Record.cpp',['../Record_8cpp.html',1,'']]],
-  ['record_2ehpp_2',['Record.hpp',['../Record_8hpp.html',1,'']]],
-  ['records_3',['records',['../structQuarterNode.html#a436c8037da113547960de7ad75db4df7',1,'QuarterNode']]],
-  ['recordstree_4',['RecordsTree',['../classRecordsTree.html',1,'']]],
-  ['recordstree_2ecpp_5',['recordsTree.cpp',['../recordsTree_8cpp.html',1,'']]],
-  ['recordstree_2ehpp_6',['recordsTree.hpp',['../recordsTree_8hpp.html',1,'']]],
-  ['run_5fcallables_7',['run_callables',['../recordsTree_8cpp.html#a507d2d7a7f9918f06a385b21095626f0',1,'recordsTree.cpp']]]
+  ['q1_0',['Q1',['../recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa8860370af76c01de5337d4626c2678f4',1,'recordsTree.hpp']]],
+  ['q2_1',['Q2',['../recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa3bb284154c27cd76e8dbac26517addbd',1,'recordsTree.hpp']]],
+  ['q3_2',['Q3',['../recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa4eebf705200f6e823ef85d95711c3a6c',1,'recordsTree.hpp']]],
+  ['q4_3',['Q4',['../recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa966242192147c8f490bf262b04a7970e',1,'recordsTree.hpp']]],
+  ['quarter_4',['Quarter',['../recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495a',1,'recordsTree.hpp']]],
+  ['quarternode_5',['QuarterNode',['../structQuarterNode.html',1,'']]],
+  ['quarters_6',['quarters',['../structDayNode.html#aecdde8b060d4c8b491336764881aee16',1,'DayNode']]],
+  ['query_7',['Query',['../classRecordsTree.html#aa33d602e0f74ff8a1dbc58eea3ead64f',1,'RecordsTree::Query(std::function&lt; void(const Record &amp;)&gt; func, const std::string time1, std::string time2) const'],['../classRecordsTree.html#a1aa4f8c31403004169601eda6fa54d7a',1,'RecordsTree::Query(std::function&lt; double(const Record &amp;)&gt; func) const']]]
 ];
