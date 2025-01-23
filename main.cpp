@@ -23,14 +23,14 @@ int main() {
     }
 
     tree.sortRecords();
-    // tree.printTree();
+    tree.printTree();
     // tree.printRecord();
 
-    // double sum1 = tree.getAutoConsumptionSum(records, "01.10.2020 8:00", "01.10.2020 9:30");
-    // double sum2 = tree.getExportSum(records, "01.10.2020 8:00", "01.10.2020 9:30");
-    // double sum3 = tree.getImportSum(records, "01.10.2020 8:00", "01.10.2020 9:30");
-    // double sum4 = tree.getConsumptionSum(records, "01.10.2020 8:00", "01.10.2020 9:30");
-    // double sum5 = tree.getProductionSum(records, "01.10.2020 8:00", "01.10.2020 9:30");
+    // double sum1 = tree.getAutoConsumptionSum( "01.10.2020 8:00", "01.10.2020 9:30");
+    // double sum2 = tree.getExportSum( "01.10.2020 8:00", "01.10.2020 9:30");
+    // double sum3 = tree.getImportSum( "01.10.2020 8:00", "01.10.2020 9:30");
+    // double sum4 = tree.getConsumptionSum( "01.10.2020 8:00", "01.10.2020 9:30");
+    // double sum5 = tree.getProductionSum( "01.10.2020 8:00", "01.10.2020 9:30");
 
     // tree.printRecordsBetweenTimes("01.10.2020 8:00", "01.10.2020 9:30");
 
@@ -116,7 +116,7 @@ int main() {
                 std::cout << "Podaj koniec drugiego okresu: ";
                 std::getline(std::cin, time2_end);
 
-                tree.compareAutoConsumption(records, time1_begin, time1_end, time2_begin, time2_end);
+                tree.compareAutoConsumption(time1_begin, time1_end, time2_begin, time2_end);
                 break;
             }
         case Operation::CompareExport:
@@ -132,7 +132,7 @@ int main() {
                 std::cout << "Podaj koniec drugiego okresu: ";
                 std::getline(std::cin, time2_end);
 
-                tree.compareExport(records, time1_begin, time1_end, time2_begin, time2_end);
+                tree.compareExport(time1_begin, time1_end, time2_begin, time2_end);
                 break;
             }
         case Operation::CompareImport:
@@ -148,7 +148,7 @@ int main() {
                 std::cout << "Podaj koniec drugiego okresu: ";
                 std::getline(std::cin, time2_end);
 
-                tree.compareImport(records, time1_begin, time1_end, time2_begin, time2_end);
+                tree.compareImport(time1_begin, time1_end, time2_begin, time2_end);
                 break;
             }
         case Operation::CompareConsumption:
@@ -164,7 +164,7 @@ int main() {
                 std::cout << "Podaj koniec drugiego okresu: ";
                 std::getline(std::cin, time2_end);
 
-                tree.compareConsumption(records, time1_begin, time1_end, time2_begin, time2_end);
+                tree.compareConsumption(time1_begin, time1_end, time2_begin, time2_end);
                 break;
             }
         case Operation::CompareProduction:
@@ -180,7 +180,7 @@ int main() {
                 std::cout << "Podaj koniec drugiego okresu: ";
                 std::getline(std::cin, time2_end);
 
-                tree.compareProduction(records, time1_begin, time1_end, time2_begin, time2_end);
+                tree.compareProduction(time1_begin, time1_end, time2_begin, time2_end);
                 break;
             }
 
@@ -194,7 +194,7 @@ int main() {
                 std::cout << "Podaj koniec okresu: ";
                 std::getline(std::cin, time2);
 
-                double sum = tree.getAutoConsumptionSum(records, time1, time2);
+                double sum = tree.getAutoConsumptionSum(time1, time2);
                 std::cout << "Suma autokonsumpcji: " << sum << std::endl;
                 break;
             }
@@ -207,7 +207,7 @@ int main() {
                 std::cout << "Podaj koniec okresu: ";
                 std::getline(std::cin, time2);
 
-                double sum = tree.getExportSum(records, time1, time2);
+                double sum = tree.getExportSum(time1, time2);
                 std::cout << "Suma eksportu: " << sum << std::endl;
                 break;
             }
@@ -220,7 +220,7 @@ int main() {
                 std::cout << "Podaj koniec okresu: ";
                 std::getline(std::cin, time2);
 
-                double sum = tree.getImportSum(records, time1, time2);
+                double sum = tree.getImportSum(time1, time2);
                 std::cout << "Suma importu: " << sum << std::endl;
                 break;
             }
@@ -233,7 +233,7 @@ int main() {
                 std::cout << "Podaj koniec okresu: ";
                 std::getline(std::cin, time2);
 
-                double sum = tree.getConsumptionSum(records, time1, time2);
+                double sum = tree.getConsumptionSum(time1, time2);
                 std::cout << "Suma konsumpcji: " << sum << std::endl;
                 break;
             }
@@ -246,7 +246,7 @@ int main() {
                 std::cout << "Podaj koniec okresu: ";
                 std::getline(std::cin, time2);
 
-                double sum = tree.getProductionSum(records, time1, time2);
+                double sum = tree.getProductionSum(time1, time2);
                 std::cout << "Suma produkcji: " << sum << std::endl;
                 break;
             }
@@ -259,7 +259,7 @@ int main() {
                 std::cout << "Podaj koniec okresu: ";
                 std::getline(std::cin, time2);
 
-                double avg = tree.getAutoConsumptionAverage(records, time1, time2);
+                double avg = tree.getAutoConsumptionAverage(time1, time2);
                 std::cout << "Srednia autokonsumpcji: " << avg << std::endl;
                 break;
             }
@@ -272,7 +272,7 @@ int main() {
                 std::cout << "Podaj koniec okresu: ";
                 std::getline(std::cin, time2);
 
-                double avg = tree.getExportAverage(records, time1, time2);
+                double avg = tree.getExportAverage(time1, time2);
                 std::cout << "Srednia eksportu: " << avg << std::endl;
                 break;
             }
@@ -285,7 +285,7 @@ int main() {
                 std::cout << "Podaj koniec okresu: ";
                 std::getline(std::cin, time2);
 
-                double avg = tree.getImportAverage(records, time1, time2);
+                double avg = tree.getImportAverage(time1, time2);
                 std::cout << "Srednia importu: " << avg << std::endl;
                 break;
             }
@@ -298,7 +298,7 @@ int main() {
                 std::cout << "Podaj koniec okresu: ";
                 std::getline(std::cin, time2);
 
-                double avg = tree.getConsumptionAverage(records, time1, time2);
+                double avg = tree.getConsumptionAverage(time1, time2);
                 std::cout << "Srednia konsumpcji: " << avg << std::endl;
                 break;
             }
@@ -311,7 +311,7 @@ int main() {
                 std::cout << "Podaj koniec okresu: ";
                 std::getline(std::cin, time2);
 
-                double avg = tree.getProductionAverage(records, time1, time2);
+                double avg = tree.getProductionAverage(time1, time2);
                 std::cout << "Srednia produkcji: " << avg << std::endl;
                 break;
             }
