@@ -38,35 +38,35 @@ enum class Quarter {
  * @brief Search operations in the records tree.
  */
 enum class SearchOperation {
-    SearchByAutoConsumption,
+    AutoConsumption=1,
     /**
      * @~polish
      * @brief Wyszukiwanie według eksportu.
      * @~english
      * @brief Search by export.
      */
-    SearchByExport,
+    Export,
     /**
      * @~polish
      * @brief Wyszukiwanie według importu.
      * @~english
      * @brief Search by import.
      */
-    SearchByImport,
+    Import,
     /**
      * @~polish
      * @brief Wyszukiwanie według poboru.
      * @~english
      * @brief Search by consumption.
      */
-    SearchByConsumption,
+    Consumption,
     /**
      * @~polish
      * @brief Wyszukiwanie według produkcji.
      * @~english
      * @brief Search by production.
      */
-    SearchByProduction,
+    Production,
 };
 
 /**
@@ -142,6 +142,7 @@ class RecordsTree {
     void parseDateTime(const time_t& time, int& year, int& month, int& day, Quarter& quarter);
     void print(std::function<void(const Record&)> callable) const;
     double Query(std::function<double(const std::vector<Record>&)> func) const;
+    void Query(std::function<void(const Record&)> func, const std::string time1, std::string time2) const;
     Error checkError(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const;
     void compareSumsAndAverages(const std::string& time1_begin, const std::string& time1_end, const std::string& time2_begin, const std::string& time2_end, double period1_sum, double period2_sum, double period1_avg, double period2_avg) const;
 

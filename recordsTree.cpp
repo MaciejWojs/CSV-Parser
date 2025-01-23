@@ -133,6 +133,22 @@ double RecordsTree::Query(std::function<double(const std::vector<Record>&)> func
     }
     return total;
 }
+void RecordsTree::Query(std::function<void(const Record&)> func, const std::string time1, std::string time2) const {
+    for (const auto& [year, yearNode] : years) {
+        for (const auto& [month, monthNode] : yearNode.months) {
+            for (const auto& [day, dayNode] : monthNode.days) {
+                for (const auto& [quarter, quarterNode] : dayNode.quarters) {
+                    for (const auto& record : quarterNode.records) {
+                        time_t recordTime = record.getTime();
+                        if (recordTime >= convertToTimeT(time1) && recordTime <= convertToTimeT(time2)) {
+                            func(record);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 double RecordsTree::getAutoConsumptionSum(const std::vector<Record>& records, const std::string& time1, const std::string& time2) const {
@@ -448,29 +464,48 @@ void RecordsTree::compareSumsAndAverages(const std::string& time1_begin, const s
 }
 
 void RecordsTree::searchAndPrint(const std::string& time_begin, const std::string& time_end, SearchOperation operation, double value, double tolerance) const {
-    std::vector<Record> matchingRecords;
-    Query([&](const std::vector<Record>& records) {
-        auto getValue = [](const Record& r, SearchOperation op) {
-            switch (op) {
-            case SearchOperation::SearchByAutoConsumption: return r.getAutoConsumption();
-            case SearchOperation::SearchByExport: return r.getExport();
-            case SearchOperation::SearchByImport: return r.getImport();
-            case SearchOperation::SearchByConsumption: return r.getConsumption();
-            case SearchOperation::SearchByProduction: return r.getProduction();
-            default: return 0.0;
+    Query([&](const Record& record) {
+        auto lower_bound = value - tolerance;
+        auto upper_bound = value + tolerance;
+        double recordValue{};
+
+
+        switch (operation) {
+        case SearchOperation::AutoConsumption:
+            {
+                recordValue = record.getAutoConsumption();
+                break;
             }
-            };
+        case SearchOperation::Export:
+            {
+                recordValue = record.getExport();
+                break;
+            }
+        case SearchOperation::Import:
+            {
+                recordValue = record.getImport();
+                break;
+            }
+        case SearchOperation::Consumption:
+            {
+                recordValue = record.getConsumption();
+                break;
+            }
+        case SearchOperation::Production:
+            {
+                recordValue = record.getProduction();
+                break;
+            }
+        }
+        if (lower_bound <= recordValue && recordValue <= upper_bound) {
+            std::cout << record.getAutoConsumption() << std::endl;
+            std::cout << record << std::endl;
+            std::cout << "Record value: " << recordValue << std::endl;
 
-        std::ranges::copy_if(records, std::back_inserter(matchingRecords),
-            [&](const Record& r) {
-                return r.getTime() >= convertToTimeT(time_begin) &&
-                    r.getTime() <= convertToTimeT(time_end) &&
-                    getValue(r, operation) >= value - tolerance &&
-                    getValue(r, operation) <= value + tolerance;
-            });
-        return 0.0;
-        });
-
-    std::cout << "Rekordy spełniające kryteria wyszukiwania:\n";
-    std::ranges::for_each(matchingRecords, [](const Record& r) { std::cout << r << '\n'; });
+            std::cout << "Tolerance: " << tolerance << std::endl;
+            std::cout << "Value: " << value << std::endl;
+            std::cout << "Lower bound: " << lower_bound << std::endl;
+            std::cout << "Upper bound: " << upper_bound << std::endl;
+        }
+        }, time_begin, time_end);
 }

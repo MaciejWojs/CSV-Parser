@@ -336,7 +336,7 @@ int main() {
                     std::cout << "5. Wyszukaj po produkcji" << std::endl;
 
                     std::cin >> selectedSearchOperation;
-                    if (selectedSearchOperation >= static_cast<int>(SearchOperation::SearchByAutoConsumption) && selectedSearchOperation <= static_cast<int>(SearchOperation::SearchByProduction)) {
+                    if (selectedSearchOperation >= static_cast<int>(SearchOperation::AutoConsumption) && selectedSearchOperation <= static_cast<int>(SearchOperation::Production)) {
 
                         break;
                     }
