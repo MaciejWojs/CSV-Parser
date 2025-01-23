@@ -41,7 +41,7 @@ jobs:
           mv output.exe ${{ env.FILE_NAME }}.exe
 
       - name: Upload compiled artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.6.0
         with:
           overwrite: true
           name: compiled-program

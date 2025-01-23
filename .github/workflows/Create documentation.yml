@@ -205,7 +205,7 @@ jobs:
 
       - name: Upload PDFs and UML assets
         if: env.IS_TAG == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.6.0
         with:
           overwrite: true
           name: documentation-assets

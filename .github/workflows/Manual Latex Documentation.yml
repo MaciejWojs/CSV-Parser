@@ -84,7 +84,7 @@ jobs:
 
           - name: Upload PDF artifact
             if: env.IS_TAG == 'true'
-            uses: actions/upload-artifact@v4
+            uses: actions/upload-artifact@v4.6.0
             with:
               overwrite: true
               name: Latex-Documentation
