@@ -5,7 +5,8 @@ var searchData=
   ['q3_2',['Q3',['../recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa4eebf705200f6e823ef85d95711c3a6c',1,'recordsTree.hpp']]],
   ['q4_3',['Q4',['../recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa966242192147c8f490bf262b04a7970e',1,'recordsTree.hpp']]],
   ['quarter_4',['Quarter',['../recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495a',1,'recordsTree.hpp']]],
-  ['quarternode_5',['QuarterNode',['../structQuarterNode.html',1,'']]],
-  ['quarters_6',['quarters',['../structDayNode.html#aecdde8b060d4c8b491336764881aee16',1,'DayNode']]],
-  ['query_7',['Query',['../classRecordsTree.html#aa33d602e0f74ff8a1dbc58eea3ead64f',1,'RecordsTree::Query(std::function&lt; void(const Record &amp;)&gt; func, const std::string time1, std::string time2) const'],['../classRecordsTree.html#a1aa4f8c31403004169601eda6fa54d7a',1,'RecordsTree::Query(std::function&lt; double(const Record &amp;)&gt; func) const']]]
+  ['quarterit_5',['quarterIt',['../classRecordsTreeIterator.html#aef345ea9b9453bf035d35ec47727d7b6',1,'RecordsTreeIterator']]],
+  ['quarternode_6',['QuarterNode',['../structQuarterNode.html',1,'']]],
+  ['quarters_7',['quarters',['../structDayNode.html#aecdde8b060d4c8b491336764881aee16',1,'DayNode']]],
+  ['query_8',['Query',['../classRecordsTree.html#aa33d602e0f74ff8a1dbc58eea3ead64f',1,'RecordsTree::Query(std::function&lt; void(const Record &amp;)&gt; func, const std::string time1, std::string time2) const'],['../classRecordsTree.html#a1aa4f8c31403004169601eda6fa54d7a',1,'RecordsTree::Query(std::function&lt; double(const Record &amp;)&gt; func) const']]]
 ];

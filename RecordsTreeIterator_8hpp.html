@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSV-Parser: Dokumentacja pliku RecordsTreeIterator.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CSV-Parser<span id="projectnumber">&#160;v0.1.3</span>
+   </div>
+   <div id="projectbrief">Implementacja CSV-Parser</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('RecordsTreeIterator_8hpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Komponenty</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja pliku RecordsTreeIterator.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="recordsTree_8hpp_source.html">recordsTree.hpp</a>&quot;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="Record_8hpp_source.html">./Record.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Wykres zależności załączania dla RecordsTreeIterator.hpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="RecordsTreeIterator_8hpp__incl.png" border="0" usemap="#aRecordsTreeIterator_8hpp" alt=""/></div>
+<map name="aRecordsTreeIterator_8hpp" id="aRecordsTreeIterator_8hpp">
+<area shape="rect" title=" " alt="" coords="510,5,670,31"/>
+<area shape="rect" href="recordsTree_8hpp.html" title="Plik nagłówkowy zawierający klasę RecordsTree i powiązane struktury do zarządzania i zapytań rekordów..." alt="" coords="486,79,601,105"/>
+<area shape="poly" title=" " alt="" coords="578,33,554,67,550,64,574,30"/>
+<area shape="rect" href="Record_8hpp.html" title="Plik nagłówkowy zawierający klasę Record do przechowywania i zarządzania danymi energetycznymi." alt="" coords="256,153,349,178"/>
+<area shape="poly" title=" " alt="" coords="567,34,341,148,339,143,565,29"/>
+<area shape="rect" title=" " alt="" coords="544,226,602,252"/>
+<area shape="poly" title=" " alt="" coords="607,30,635,56,665,93,676,114,682,136,683,158,675,180,664,195,649,208,617,226,615,221,646,203,660,191,671,177,678,157,677,137,671,116,660,96,631,60,604,34"/>
+<area shape="rect" title=" " alt="" coords="615,153,662,178"/>
+<area shape="poly" title=" " alt="" coords="598,30,616,78,634,137,629,139,610,80,593,32"/>
+<area shape="rect" title=" " alt="" coords="736,79,797,105"/>
+<area shape="poly" title=" " alt="" coords="621,29,723,70,722,75,619,34"/>
+<area shape="poly" title=" " alt="" coords="556,77,580,43,585,46,561,80"/>
+<area shape="poly" title=" " alt="" coords="503,108,359,150,357,145,502,103"/>
+<area shape="poly" title=" " alt="" coords="491,108,456,120,426,136,415,145,409,155,409,165,414,177,428,185,457,197,530,222,528,227,455,202,425,190,410,180,403,166,404,153,411,141,423,131,454,115,490,103"/>
+<area shape="poly" title=" " alt="" coords="561,103,612,141,609,145,558,107"/>
+<area shape="rect" title=" " alt="" coords="423,153,491,178"/>
+<area shape="poly" title=" " alt="" coords="531,107,485,145,481,141,527,103"/>
+<area shape="rect" title=" " alt="" coords="514,153,592,178"/>
+<area shape="poly" title=" " alt="" coords="548,105,552,137,547,138,543,105"/>
+<area shape="rect" title=" " alt="" coords="5,226,77,252"/>
+<area shape="poly" title=" " alt="" coords="259,181,93,227,91,221,257,176"/>
+<area shape="rect" title=" " alt="" coords="100,226,166,252"/>
+<area shape="poly" title=" " alt="" coords="275,181,177,222,175,217,273,176"/>
+<area shape="rect" title=" " alt="" coords="190,226,244,252"/>
+<area shape="poly" title=" " alt="" coords="290,181,244,218,241,214,286,177"/>
+<area shape="rect" title=" " alt="" coords="268,226,336,252"/>
+<area shape="poly" title=" " alt="" coords="305,179,305,211,300,211,300,179"/>
+<area shape="poly" title=" " alt="" coords="350,176,530,223,528,228,349,181"/>
+<area shape="rect" title=" " alt="" coords="361,226,436,252"/>
+<area shape="poly" title=" " alt="" coords="320,177,372,215,369,219,317,181"/>
+<area shape="rect" title=" " alt="" coords="460,226,520,252"/>
+<area shape="poly" title=" " alt="" coords="335,176,446,218,444,223,333,181"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
+<div class="dyncontent">
+<div class="center"><img src="RecordsTreeIterator_8hpp__dep__incl.png" border="0" usemap="#aRecordsTreeIterator_8hppdep" alt=""/></div>
+<map name="aRecordsTreeIterator_8hppdep" id="aRecordsTreeIterator_8hppdep">
+<area shape="rect" title=" " alt="" coords="135,5,295,31"/>
+<area shape="rect" href="RecordsTreeIterator_8cpp.html" title=" " alt="" coords="5,153,166,178"/>
+<area shape="poly" title=" " alt="" coords="189,43,147,81,117,120,95,154,90,151,112,117,144,77,185,39"/>
+<area shape="rect" href="recordsTree_8hpp.html" title="Plik nagłówkowy zawierający klasę RecordsTree i powiązane struktury do zarządzania i zapytań rekordów..." alt="" coords="158,79,272,105"/>
+<area shape="poly" title=" " alt="" coords="209,46,211,78,205,79,203,46"/>
+<area shape="poly" title=" " alt="" coords="221,64,219,31,224,31,226,63"/>
+<area shape="poly" title=" " alt="" coords="181,115,109,154,106,150,178,110"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="190,153,264,178"/>
+<area shape="poly" title=" " alt="" coords="222,119,227,152,222,153,217,120"/>
+<area shape="rect" href="recordsTree_8cpp.html" title=" " alt="" coords="287,153,401,178"/>
+<area shape="poly" title=" " alt="" coords="251,110,323,150,321,154,249,115"/>
+</map>
+</div>
+</div>
+<p><a href="RecordsTreeIterator_8hpp_source.html">Idź do kodu źródłowego tego pliku.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Komponenty</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRecordsTreeIterator.html">RecordsTreeIterator</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="RecordsTreeIterator_8hpp.html">RecordsTreeIterator.hpp</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

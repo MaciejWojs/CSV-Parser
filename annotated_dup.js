@@ -6,5 +6,6 @@ var annotated_dup =
     [ "QuarterNode", "structQuarterNode.html", "structQuarterNode" ],
     [ "Record", "classRecord.html", "classRecord" ],
     [ "RecordsTree", "classRecordsTree.html", "classRecordsTree" ],
+    [ "RecordsTreeIterator", "classRecordsTreeIterator.html", "classRecordsTreeIterator" ],
     [ "YearNode", "structYearNode.html", "structYearNode" ]
 ];

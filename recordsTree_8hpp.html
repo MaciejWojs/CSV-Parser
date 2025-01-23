@@ -29,7 +29,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">CSV-Parser<span id="projectnumber">&#160;v0.1.4</span>
+   <div id="projectname">CSV-Parser<span id="projectnumber">&#160;v0.1.3</span>
    </div>
    <div id="projectbrief">Implementacja CSV-Parser</div>
   </td>
@@ -109,7 +109,7 @@ $(function(){initNavTree('recordsTree_8hpp.html',''); initResizable(true); });
 <p>Plik nagłówkowy zawierający klasę <a class="el" href="classRecordsTree.html" title="Klasa do zarządzania i zapytań rekordów zorganizowanych według roku, miesiąca, dnia i kwartału.">RecordsTree</a> i powiązane struktury do zarządzania i zapytań rekordów.  
 <a href="#details">Więcej...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Record_8hpp_source.html">./Record.hpp</a>&quot;</code><br />
-<code>#include &quot;RecordsTreeIterator.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="RecordsTreeIterator_8hpp_source.html">RecordsTreeIterator.hpp</a>&quot;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -119,32 +119,38 @@ Wykres zależności załączania dla recordsTree.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="recordsTree_8hpp__incl.png" border="0" usemap="#arecordsTree_8hpp" alt=""/></div>
 <map name="arecordsTree_8hpp" id="arecordsTree_8hpp">
-<area shape="rect" title="Plik nagłówkowy zawierający klasę RecordsTree i powiązane struktury do zarządzania i zapytań rekordów..." alt="" coords="628,5,742,31"/>
-<area shape="rect" href="Record_8hpp.html" title="Plik nagłówkowy zawierający klasę Record do przechowywania i zarządzania danymi energetycznymi." alt="" coords="304,79,397,105"/>
-<area shape="poly" title=" " alt="" coords="628,34,413,80,412,75,627,29"/>
-<area shape="rect" title=" " alt="" coords="544,153,602,178"/>
-<area shape="poly" title=" " alt="" coords="628,28,601,35,575,45,550,60,531,80,526,95,530,110,550,140,546,143,525,112,521,95,527,78,547,56,572,40,600,30,627,23"/>
-<area shape="rect" title=" " alt="" coords="541,79,701,105"/>
-<area shape="poly" title=" " alt="" coords="676,33,644,69,640,66,672,29"/>
-<area shape="rect" title=" " alt="" coords="726,79,772,105"/>
-<area shape="poly" title=" " alt="" coords="698,29,730,66,726,69,694,33"/>
-<area shape="rect" title=" " alt="" coords="797,79,864,105"/>
-<area shape="poly" title=" " alt="" coords="711,29,793,69,791,74,708,34"/>
-<area shape="rect" title=" " alt="" coords="888,79,965,105"/>
-<area shape="poly" title=" " alt="" coords="727,29,874,72,872,77,725,34"/>
-<area shape="rect" title=" " alt="" coords="5,153,77,178"/>
-<area shape="poly" title=" " alt="" coords="304,106,92,154,91,149,303,101"/>
-<area shape="rect" title=" " alt="" coords="100,153,166,178"/>
-<area shape="poly" title=" " alt="" coords="314,108,181,151,180,146,313,103"/>
-<area shape="rect" title=" " alt="" coords="190,153,244,178"/>
-<area shape="poly" title=" " alt="" coords="329,108,254,147,252,143,326,103"/>
-<area shape="rect" title=" " alt="" coords="268,153,336,178"/>
-<area shape="poly" title=" " alt="" coords="345,106,321,141,317,138,340,103"/>
-<area shape="poly" title=" " alt="" coords="389,103,531,148,529,153,387,108"/>
-<area shape="rect" title=" " alt="" coords="361,153,436,178"/>
-<area shape="poly" title=" " alt="" coords="360,103,384,138,379,141,356,106"/>
-<area shape="rect" title=" " alt="" coords="460,153,520,178"/>
-<area shape="poly" title=" " alt="" coords="375,103,454,143,452,148,373,108"/>
+<area shape="rect" title="Plik nagłówkowy zawierający klasę RecordsTree i powiązane struktury do zarządzania i zapytań rekordów..." alt="" coords="484,5,598,31"/>
+<area shape="rect" href="Record_8hpp.html" title="Plik nagłówkowy zawierający klasę Record do przechowywania i zarządzania danymi energetycznymi." alt="" coords="256,153,349,178"/>
+<area shape="poly" title=" " alt="" coords="484,24,446,30,406,40,367,57,334,81,316,108,308,138,302,137,311,106,330,77,365,52,404,35,445,25,483,19"/>
+<area shape="rect" title=" " alt="" coords="544,226,602,252"/>
+<area shape="poly" title=" " alt="" coords="547,31,558,78,569,150,574,210,569,211,563,150,553,80,542,32"/>
+<area shape="rect" href="RecordsTreeIterator_8hpp.html" title=" " alt="" coords="344,79,504,105"/>
+<area shape="poly" title=" " alt="" coords="516,34,451,72,448,68,513,29"/>
+<area shape="rect" title=" " alt="" coords="508,153,555,178"/>
+<area shape="poly" title=" " alt="" coords="543,32,536,137,531,137,538,31"/>
+<area shape="rect" title=" " alt="" coords="629,79,696,105"/>
+<area shape="poly" title=" " alt="" coords="563,29,630,68,627,73,560,34"/>
+<area shape="rect" title=" " alt="" coords="720,79,797,105"/>
+<area shape="poly" title=" " alt="" coords="579,29,708,71,706,76,577,34"/>
+<area shape="rect" title=" " alt="" coords="5,226,77,252"/>
+<area shape="poly" title=" " alt="" coords="259,181,93,227,91,221,257,176"/>
+<area shape="rect" title=" " alt="" coords="100,226,166,252"/>
+<area shape="poly" title=" " alt="" coords="275,181,177,222,175,217,273,176"/>
+<area shape="rect" title=" " alt="" coords="190,226,244,252"/>
+<area shape="poly" title=" " alt="" coords="290,181,244,218,241,214,286,177"/>
+<area shape="rect" title=" " alt="" coords="268,226,336,252"/>
+<area shape="poly" title=" " alt="" coords="305,179,305,211,300,211,300,179"/>
+<area shape="poly" title=" " alt="" coords="350,176,530,223,528,228,349,181"/>
+<area shape="rect" title=" " alt="" coords="361,226,436,252"/>
+<area shape="poly" title=" " alt="" coords="320,177,372,215,369,219,317,181"/>
+<area shape="rect" title=" " alt="" coords="460,226,520,252"/>
+<area shape="poly" title=" " alt="" coords="335,176,446,218,444,223,333,181"/>
+<area shape="poly" title=" " alt="" coords="449,76,514,38,517,42,452,81"/>
+<area shape="poly" title=" " alt="" coords="404,108,338,147,335,142,402,103"/>
+<area shape="poly" title=" " alt="" coords="420,106,408,140,407,159,414,177,428,185,457,197,530,222,528,227,455,202,425,190,410,180,402,160,403,139,415,104"/>
+<area shape="rect" title=" " alt="" coords="424,153,485,178"/>
+<area shape="poly" title=" " alt="" coords="431,104,446,137,441,139,426,106"/>
+<area shape="poly" title=" " alt="" coords="443,103,502,141,499,146,441,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -152,11 +158,17 @@ Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten 
 <div class="dyncontent">
 <div class="center"><img src="recordsTree_8hpp__dep__incl.png" border="0" usemap="#arecordsTree_8hppdep" alt=""/></div>
 <map name="arecordsTree_8hppdep" id="arecordsTree_8hppdep">
-<area shape="rect" title="Plik nagłówkowy zawierający klasę RecordsTree i powiązane struktury do zarządzania i zapytań rekordów..." alt="" coords="44,5,158,31"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="5,79,79,105"/>
-<area shape="poly" title=" " alt="" coords="83,45,54,80,50,77,79,41"/>
-<area shape="rect" href="recordsTree_8cpp.html" title=" " alt="" coords="102,79,216,105"/>
-<area shape="poly" title=" " alt="" coords="122,41,151,77,147,80,118,45"/>
+<area shape="rect" title="Plik nagłówkowy zawierający klasę RecordsTree i powiązane struktury do zarządzania i zapytań rekordów..." alt="" coords="87,5,201,31"/>
+<area shape="rect" href="RecordsTreeIterator_8cpp.html" title=" " alt="" coords="5,153,166,178"/>
+<area shape="poly" title=" " alt="" coords="98,40,74,57,55,80,51,98,55,118,77,151,72,154,50,120,45,99,50,78,70,53,95,36"/>
+<area shape="rect" href="RecordsTreeIterator_8hpp.html" title=" " alt="" coords="64,79,224,105"/>
+<area shape="poly" title=" " alt="" coords="138,46,140,78,135,79,133,46"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="249,79,322,105"/>
+<area shape="poly" title=" " alt="" coords="183,36,263,76,260,81,180,41"/>
+<area shape="rect" href="recordsTree_8cpp.html" title=" " alt="" coords="346,79,460,105"/>
+<area shape="poly" title=" " alt="" coords="203,33,359,76,358,81,202,38"/>
+<area shape="poly" title=" " alt="" coords="150,64,148,31,154,31,156,63"/>
+<area shape="poly" title=" " alt="" coords="127,118,97,154,93,150,123,115"/>
 </map>
 </div>
 </div>

@@ -7,6 +7,8 @@ var files_dup =
     [ "Record.hpp", "Record_8hpp.html", "Record_8hpp" ],
     [ "recordsTree.cpp", "recordsTree_8cpp.html", "recordsTree_8cpp" ],
     [ "recordsTree.hpp", "recordsTree_8hpp.html", "recordsTree_8hpp" ],
+    [ "RecordsTreeIterator.cpp", "RecordsTreeIterator_8cpp.html", null ],
+    [ "RecordsTreeIterator.hpp", "RecordsTreeIterator_8hpp.html", "RecordsTreeIterator_8hpp" ],
     [ "utils.cpp", "utils_8cpp.html", "utils_8cpp" ],
     [ "utils.hpp", "utils_8hpp.html", null ]
 ];

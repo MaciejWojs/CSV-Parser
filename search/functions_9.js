@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['record_0',['Record',['../classRecord.html#ae8ee53ffec6ff4dac9911517d47e86a5',1,'Record']]],
-  ['run_5fcallables_1',['run_callables',['../recordsTree_8cpp.html#a507d2d7a7f9918f06a385b21095626f0',1,'recordsTree.cpp']]]
+  ['query_0',['Query',['../classRecordsTree.html#aa33d602e0f74ff8a1dbc58eea3ead64f',1,'RecordsTree::Query(std::function&lt; void(const Record &amp;)&gt; func, const std::string time1, std::string time2) const'],['../classRecordsTree.html#a1aa4f8c31403004169601eda6fa54d7a',1,'RecordsTree::Query(std::function&lt; double(const Record &amp;)&gt; func) const']]]
 ];

@@ -29,7 +29,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">CSV-Parser<span id="projectnumber">&#160;v0.1.4</span>
+   <div id="projectname">CSV-Parser<span id="projectnumber">&#160;v0.1.3</span>
    </div>
    <div id="projectbrief">Implementacja CSV-Parser</div>
   </td>
@@ -108,14 +108,14 @@ $(function(){initNavTree('recordsTree_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define C943C827_7391_4D56_A271_0E6494FEC661</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="Record_8hpp.html">./Record.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;RecordsTreeIterator.hpp&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="RecordsTreeIterator_8hpp.html">RecordsTreeIterator.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">class </span>RecordsTreeIterator;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">class </span><a class="code hl_class" href="classRecordsTreeIterator.html">RecordsTreeIterator</a>;</div>
 <div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495a">   37</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495a">Quarter</a> {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa8860370af76c01de5337d4626c2678f4">   38</a></span>    <a class="code hl_enumvalue" href="recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa8860370af76c01de5337d4626c2678f4">Q1</a>,</div>
@@ -222,13 +222,13 @@ $(function(){initNavTree('recordsTree_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="preprocessor">#define C943C827_7391_4D56_A271_0E6494FEC661</span></div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="preprocessor">#include &quot;<a class="code" href="Record_8hpp.html">./Record.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="preprocessor">#include &quot;RecordsTreeIterator.hpp&quot;</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="preprocessor">#include &quot;<a class="code" href="RecordsTreeIterator_8hpp.html">RecordsTreeIterator.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keyword">class </span>RecordsTreeIterator;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keyword">class </span><a class="code hl_class" href="classRecordsTreeIterator.html">RecordsTreeIterator</a>;</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495a">Quarter</a> {</div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <a class="code hl_enumvalue" href="recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa8860370af76c01de5337d4626c2678f4">Q1</a>,</div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <a class="code hl_enumvalue" href="recordsTree_8hpp.html#a90c364256882adf957d344b6e65e495aa3bb284154c27cd76e8dbac26517addbd">Q2</a>,</div>
@@ -316,7 +316,9 @@ $(function(){initNavTree('recordsTree_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span> </div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span><span class="preprocessor">#endif </span><span class="comment">/* C943C827_7391_4D56_A271_0E6494FEC661 */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aRecord_8hpp_html"><div class="ttname"><a href="Record_8hpp.html">Record.hpp</a></div><div class="ttdoc">Plik nagłówkowy zawierający klasę Record do przechowywania i zarządzania danymi energetycznymi.</div></div>
+<div class="ttc" id="aRecordsTreeIterator_8hpp_html"><div class="ttname"><a href="RecordsTreeIterator_8hpp.html">RecordsTreeIterator.hpp</a></div></div>
 <div class="ttc" id="aclassRecord_html"><div class="ttname"><a href="classRecord.html">Record</a></div><div class="ttdoc">Klasa do przechowywania i zarządzania rekordami danych energetycznych.</div><div class="ttdef"><b>Definicja</b> Record.hpp:45</div></div>
+<div class="ttc" id="aclassRecordsTreeIterator_html"><div class="ttname"><a href="classRecordsTreeIterator.html">RecordsTreeIterator</a></div><div class="ttdef"><b>Definicja</b> RecordsTreeIterator.hpp:33</div></div>
 <div class="ttc" id="aclassRecordsTree_html"><div class="ttname"><a href="classRecordsTree.html">RecordsTree</a></div><div class="ttdoc">Klasa do zarządzania i zapytań rekordów zorganizowanych według roku, miesiąca, dnia i kwartału.</div><div class="ttdef"><b>Definicja</b> recordsTree.hpp:148</div></div>
 <div class="ttc" id="aclassRecordsTree_html_a1ab47cd337ee7b50228bf4c0a65ce425"><div class="ttname"><a href="classRecordsTree.html#a1ab47cd337ee7b50228bf4c0a65ce425">RecordsTree::getImportSum</a></div><div class="ttdeci">double getImportSum(const std::string &amp;time1, const std::string &amp;time2) const</div><div class="ttdef"><b>Definicja</b> recordsTree.cpp:160</div></div>
 <div class="ttc" id="aclassRecordsTree_html_a1cc86f85d6452c906bff95e241b969de"><div class="ttname"><a href="classRecordsTree.html#a1cc86f85d6452c906bff95e241b969de">RecordsTree::getExportAverage</a></div><div class="ttdeci">double getExportAverage(const std::string &amp;time1, const std::string &amp;time2) const</div><div class="ttdef"><b>Definicja</b> recordsTree.cpp:282</div></div>

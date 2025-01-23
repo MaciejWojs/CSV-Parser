@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['iterator_0',['iterator',['../classRecordsTree.html#a63737cee442b4125628bde0c99cfb291',1,'RecordsTree']]]
+  ['difference_5ftype_0',['difference_type',['../classRecordsTreeIterator.html#a2b4da5609ffdde8251a7ac8cb7d33973',1,'RecordsTreeIterator']]]
 ];

@@ -12,5 +12,6 @@ var searchData=
   ['converttotimet_9',['convertToTimeT',['../utils_8cpp.html#ac45896cc61ad86b9c30841a9f466c35a',1,'utils.cpp']]],
   ['csv_2dparser_2ecpp_10',['CSV-Parser.cpp',['../CSV-Parser_8cpp.html',1,'']]],
   ['csv_2dparser_2ehpp_11',['CSV-Parser.hpp',['../CSV-Parser_8hpp.html',1,'']]],
-  ['csvparser_12',['CSVParser',['../classCSVParser.html',1,'CSVParser'],['../classCSVParser.html#a3700e49c67b4e4831a734f6a7140135b',1,'CSVParser::CSVParser()']]]
+  ['csvparser_12',['CSVParser',['../classCSVParser.html',1,'CSVParser'],['../classCSVParser.html#a3700e49c67b4e4831a734f6a7140135b',1,'CSVParser::CSVParser()']]],
+  ['current_13',['current',['../classRecordsTreeIterator.html#a428590d2cfea02acda76a2e6127c8c81',1,'RecordsTreeIterator']]]
 ];
