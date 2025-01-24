@@ -68,7 +68,7 @@ std::istream& operator>>(std::istream& is, Record& Record) {
 
 std::ostream& operator<<(std::ostream& os, const Record& Record) {
     std::tm tm = *std::localtime(&Record.Time);
-    os << "Time: " << std::put_time(&tm, "%d.%m.%Y %H:%M") << " AutoConsumption: " << Record.AutoConsumption << " Export: " << Record.Export
+    os << "Time: " << std::put_time(&tm, "%d.%m.%Y %H:%M:%S") << " AutoConsumption: " << Record.AutoConsumption << " Export: " << Record.Export
         << " Import: " << Record.Import << " Consumption: " << Record.Consumption << " Production: " << Record.Production;
     return os;
 }

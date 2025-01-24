@@ -17,7 +17,7 @@ std::string trimAllQuotationMarks(const std::string& str) {
 time_t convertToTimeT(const std::string& timeStr) {
     std::tm tm = {};
     std::istringstream ss(timeStr);
-    ss >> std::get_time(&tm, "%d.%m.%Y %H:%M");
+    ss >> std::get_time(&tm, "%d.%m.%Y %H:%M:%S");
     //naprawia dodawanie 1h do czasu
     tm.tm_isdst = -1; // Let mktime determine whether daylight saving time is in effect
     return std::mktime(&tm);
