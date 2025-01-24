@@ -57,6 +57,7 @@ std::istream& operator>>(std::istream& is, Record& Record) {
             if (!std::getline(ss, value, ',')) {
                 throw std::runtime_error("Missing field: " + name);
             }
+            value = trimAllQuotationMarks(value);
             field = std::stod(value);
         } catch (const std::exception& e) {
             std::throw_with_nested(std::runtime_error("Could not convert string to double in " + name));

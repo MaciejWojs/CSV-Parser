@@ -23,7 +23,7 @@ int main() {
     }
 
     tree.sortRecords();
-    tree.printTree();
+    // tree.printTree();
     // tree.printRecord();
 
     // double sum1 = tree.getAutoConsumptionSum( "01.10.2020 8:00", "01.10.2020 9:30");
