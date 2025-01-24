@@ -1,6 +1,6 @@
 <map id="RecordsTreeIterator" name="RecordsTreeIterator">
 <area shape="rect" id="Node000001" title=" " alt="" coords="36,94,172,120"/>
-<area shape="rect" id="Node000002" href="$classRecordsTree.html" title="Klasa do zarządzania i zapytań rekordów zorganizowanych według roku, miesiąca, dnia i kwartału." alt="" coords="5,5,101,31"/>
+<area shape="rect" id="Node000002" href="$classRecordsTree.html" title="A class representing a tree structure for storing and querying records." alt="" coords="5,5,101,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,43,99,92,94,95,65,46"/>
 <area shape="rect" id="Node000003" href="$classRecord.html" title="Klasa do przechowywania i zarządzania rekordami danych energetycznych." alt="" coords="124,5,187,31"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,46,113,95,109,92,138,43"/>
